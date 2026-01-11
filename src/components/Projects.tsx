@@ -24,6 +24,27 @@ const Projects = () => {
       color: 'from-indigo-500 to-blue-600',
     },
     {
+  title: 'Multimodal Emotion Detection System (Face + Voice)',
+  description:
+    'A Streamlit-based AI system that detects human emotions from facial expressions and voice, then fuses both signals to produce a final multimodal emotion prediction. Supports real-time webcam mode and uploaded video analysis.',
+  tech: [
+    'Python',
+    'Streamlit',
+    'PyTorch',
+    'EfficientNet-B4',
+    'OpenCV',
+    'Librosa',
+    'MFCC',
+    'Machine Learning',
+    'Deep Learning',
+  ],
+  image:
+    'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
+  github: 'https://github.com/gangireddymayur/Multimodal-Emotion-Detection-System--Face---Voice-/tree/main',
+  demo: 'https://emotiondetections123.streamlit.app/', // optional – remove Live Demo button if not deployed
+  color: 'from-violet-500 to-purple-600',
+  },
+    {
       title: 'Timeless Curation – Modern E-Commerce Platform',
       description:
         'A modern, elegant e-commerce and lifestyle web application built with React and Tailwind CSS, focusing on clean UI/UX, reusable components, and scalable frontend architecture.',
