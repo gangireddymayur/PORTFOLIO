@@ -41,7 +41,7 @@ const Projects = () => {
   image:
     'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
   github: 'https://github.com/gangireddymayur/Multimodal-Emotion-Detection-System--Face---Voice-/tree/main',
-  demo: 'https://emotiondetections123.streamlit.app/', // optional – remove Live Demo button if not deployed
+  demo: '', // optional – remove Live Demo button if not deployed
   color: 'from-violet-500 to-purple-600',
   },
     {
