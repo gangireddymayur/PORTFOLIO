@@ -3,30 +3,46 @@ import { Briefcase, GraduationCap, Calendar, Award } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      type: 'achievement',
-      title: 'Smart India Hackathon 2022 – Finalist',
-      organization: 'Ministry of Education, Government of India',
-      period: 'August 2022',
+      type: 'work',
+      title: 'Machine Learning Engineer',
+      organization: 'Bharat Smart Services',
+      period: 'Jan 2026 – Present',
       description:
-        'Selected for the Grand Finale of Smart India Hackathon 2022 (Senior Software Edition) after developing a Python-based application as part of a national-level team competition.',
+        'Working on a multi-model Non-Intrusive Load Monitoring (NILM) system for appliance-level energy disaggregation using smart meter time-series data.',
       achievements: [
-        'Developed a Python application addressing a real-world problem statement',
-        'Shortlisted among top teams nationwide',
-        'Participated in the Grand Finale held on August 25–26, 2022',
-        'Gained exposure to large-scale problem solving and team collaboration',
+        'Built and trained CNN models for smart meter identification and appliance classification',
+        'Designed preprocessing pipelines using sliding window segmentation for 5-second interval power data',
+        'Compared multiple models including CNN, Random Forest, and XGBoost',
+        'Optimized model performance using hyperparameter tuning and evaluation metrics (MAE, RMSE)',
       ],
     },
     {
       type: 'work',
-      title: 'Android App Development Intern',
-      organization: 'Acmegrade',
-      period: 'Nov 2023 – Jan 2024',
+      title: 'Full Stack Developer – Private Client Project',
+      organization: 'Chit Fund Management System (Production)',
+      period: '2024 – Present',
       description:
-        'Completed an internship focused on Android application development, gaining hands-on experience in building, structuring, and deploying mobile applications.',
+        'Designed and developed a secure, production-ready chit fund management system for a private client, handling both frontend and backend with accurate financial logic and secure deployment.',
       achievements: [
-        'Developed Android application modules using Java and XML',
-        'Worked on UI layouts, navigation, and activity lifecycle',
-        'Strengthened fundamentals of mobile app development',
+        'Built backend using Flask and Firebase Realtime Database',
+        'Developed frontend using HTML',
+        'Implemented accurate monthly payment and balance calculations',
+        'Ensured secure server-side authentication and data access',
+        'Deployed and maintained a live production system on Render',
+      ],
+    },
+    {
+      type: 'work',
+      title: 'Web Development Intern (MERN Stack)',
+      organization: 'EY Global Delivery Services × AICTE (Edunet Foundation)',
+      period: 'Mar 2025 – Apr 2025',
+      description:
+        'Successfully completed a 6-week industry-focused internship on building modern web applications using the MERN stack.',
+      achievements: [
+        'Built full-stack features using MongoDB, Express, React, and Node.js',
+        'Designed and integrated RESTful APIs',
+        'Developed responsive UI components following modern practices',
+        'Collaborated using Git and version control workflows',
       ],
     },
     {
@@ -45,34 +61,31 @@ const Experience = () => {
     },
     {
       type: 'work',
-      title: 'Web Development Intern (MERN Stack)',
-      organization: 'EY Global Delivery Services × AICTE (Edunet Foundation)',
-      period: 'Mar 2025 – Apr 2025',
+      title: 'Android App Development Intern',
+      organization: 'Acmegrade',
+      period: 'Nov 2023 – Jan 2024',
       description:
-        'Successfully completed a 6-week industry-focused internship on building modern web applications using the MERN stack.',
+        'Completed an internship focused on Android application development, gaining hands-on experience in building, structuring, and deploying mobile applications.',
       achievements: [
-        'Built full-stack features using MongoDB, Express, React, and Node.js',
-        'Designed and integrated RESTful APIs',
-        'Developed responsive UI components following modern practices',
-        'Collaborated using Git and version control workflows',
+        'Developed Android application modules using Java and XML',
+        'Worked on UI layouts, navigation, and activity lifecycle',
+        'Strengthened fundamentals of mobile app development',
       ],
     },
     {
-  type: 'work',
-  title: 'Full Stack Developer – Private Client Project',
-  organization: 'Chit Fund Management System (Production)',
-  period: '2024 – Present',
-  description:
-    'Designed and developed a secure, production-ready chit fund management system for a private client, handling both frontend and backend with accurate financial logic and secure deployment.',
-  achievements: [
-    'Built backend using Flask and Firebase Realtime Database',
-    'Developed frontend using HTML',
-    'Implemented accurate monthly payment and balance calculations',
-    'Ensured secure server-side authentication and data access',
-    'Deployed and maintained a live production system on Render',
-  ],
-}
-,
+      type: 'achievement',
+      title: 'Smart India Hackathon 2022 – Finalist',
+      organization: 'Ministry of Education, Government of India',
+      period: 'August 2022',
+      description:
+        'Selected for the Grand Finale of Smart India Hackathon 2022 (Senior Software Edition) after developing a Python-based application as part of a national-level team competition.',
+      achievements: [
+        'Developed a Python application addressing a real-world problem statement',
+        'Shortlisted among top teams nationwide',
+        'Participated in the Grand Finale held on August 25–26, 2022',
+        'Gained exposure to large-scale problem solving and team collaboration',
+      ],
+    },
   ];
 
   return (
