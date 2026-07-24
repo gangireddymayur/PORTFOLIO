@@ -9,8 +9,6 @@ const Projects = () => {
       tech: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL', 'TanStack Router', 'Tailwind CSS', 'QR Code', 'Radix UI'],
       image:
         'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
-      demo: 'https://exciting-greider.103-69-196-157.plesk.page',
-      github: 'https://github.com/gangireddymayur/hostel-hub-pro',
       color: 'from-cyan-500 to-blue-600',
     },
     {
@@ -20,7 +18,6 @@ const Projects = () => {
       tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Supabase', 'Kotlin', 'Jetpack Compose', 'Ktor', 'SQLite'],
       image:
         'https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: 'https://github.com/gangireddymayur/screen-connect-hub',
       color: 'from-blue-600 to-indigo-500',
     },
     {
@@ -30,7 +27,6 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'Express', 'SQLite', 'Jetpack Compose', 'TypeScript', 'Tailwind CSS'],
       image:
         'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: 'https://github.com/gangireddymayur/feedback-flow',
       color: 'from-teal-500 to-emerald-600',
     },
     {
