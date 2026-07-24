@@ -99,15 +99,15 @@ const Architecture: React.FC = () => {
       description:
         'A multi-mode hybrid digital signage network that coordinates content delivery across a cloud dashboard, a compiled Windows offline server, and a native Android TV client. Supports automated local UDP broadcast discovery, database synchronization, and local caching.',
       nodes: [
-        { label: 'Cloud Admin Panel', sub: 'React & Supabase', icon: Globe },
+        { label: 'Cloud Control Panel', sub: 'React & Supabase Creator', icon: Globe },
+        { label: 'Database Sync', sub: 'SQLite / Backup Sync', icon: Database },
         { label: 'UDP Local Discovery', sub: 'Multicast Auto-Pairing', icon: Activity },
-        { label: 'Multi Mode Local Cloud', sub: 'Parent Node: Windows .EXE', icon: Server, highlight: true },
-        { label: 'Multi Mode TV Screens', sub: 'Children Nodes: TV Players', icon: Smartphone },
-        { label: 'Solo Standalone Mode', sub: 'Self-Contained Ktor Player', icon: Zap },
+        { label: 'Local Edge Server', sub: 'Windows EXE / Ktor Netty Server', icon: Server, highlight: true },
+        { label: 'Android TV Player', sub: 'Jetpack Compose Playback', icon: Smartphone },
       ],
       keyHighlights: [
         'Multi Mode Parent-Child Hierarchy: A single local Windows server (Parent) acts as a local cloud hosting a local dashboard for multiple paired TV screens (Children)',
-        'Solo Standalone Mode: A self-contained deployment where the TV app runs its own embedded Ktor Netty server, eliminating the need for a external server PC',
+        'Solo Standalone Mode: A self-contained deployment where the TV app runs its own embedded Ktor Netty server, eliminating the need for an external server PC',
         'Zero-config local pairing via UDP multicast discovery on port 9999 utilizing Android WifiManager MulticastLock',
         'Self-healing keystore state: Auto-recovers from EncryptedSharedPreferences KeyStoreException corruption',
         'Offline-first playbacks cached locally in SQLite ensuring zero content playback downtime during internet outages',
