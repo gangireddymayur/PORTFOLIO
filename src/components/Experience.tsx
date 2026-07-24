@@ -1,165 +1,192 @@
-import { Briefcase, GraduationCap, Calendar, Award } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Briefcase, Award, Calendar, CheckCircle2, Building2, MapPin } from 'lucide-react';
 
-const Experience = () => {
+const Experience: React.FC = () => {
   const experiences = [
     {
-      type: 'work',
-      title: 'Machine Learning Engineer',
-      organization: 'Bharat Smart Services',
+      role: 'Machine Learning & Full-Stack Engineer',
+      company: 'Bharat Smart Services',
+      location: 'Hyderabad, India',
       period: 'Jan 2026 – Present',
+      type: 'work',
       description:
-        'Working on a multi-model Non-Intrusive Load Monitoring (NILM) system for appliance-level energy disaggregation using smart meter time-series data.',
+        'Engineered production machine learning models, Agentic AI systems, and cloud microservices for smart meter telemetry and energy disaggregation.',
       achievements: [
-        'Built and trained CNN models for smart meter identification and appliance classification',
-        'Designed preprocessing pipelines using sliding window segmentation for 5-second interval power data',
-        'Compared multiple models including CNN, Random Forest, and XGBoost',
-        'Optimized model performance using hyperparameter tuning and evaluation metrics (MAE, RMSE)',
+        'Built and trained CNN & XGBoost models for Non-Intrusive Load Monitoring (NILM) on 5-second interval smart meter time-series data',
+        'Developed OCR-based computer vision pipelines for automated numerical digit extraction from physical smart meters',
+        'Architected Agentic AI applications integrating LLMs, tool calling, and automated business workflows',
+        'Integrated REST APIs, databases (Supabase, Firebase, MySQL), and modern web/mobile frontends',
       ],
+      tech: ['Python', 'PyTorch', 'OpenCV', 'XGBoost', 'LLMs', 'React', 'Node.js', 'Supabase'],
     },
     {
-      type: 'work',
-      title: 'Full Stack Developer – Private Client Project',
-      organization: 'Chit Fund Management System (Production)',
-      period: '2024 – Present',
-      description:
-        'Designed and developed a secure, production-ready chit fund management system for a private client, handling both frontend and backend with accurate financial logic and secure deployment.',
-      achievements: [
-        'Built backend using Flask and Firebase Realtime Database',
-        'Developed frontend using HTML',
-        'Implemented accurate monthly payment and balance calculations',
-        'Ensured secure server-side authentication and data access',
-        'Deployed and maintained a live production system on Render',
-      ],
-    },
-    {
-      type: 'work',
-      title: 'Web Development Intern (MERN Stack)',
-      organization: 'EY Global Delivery Services × AICTE (Edunet Foundation)',
+      role: 'Web Development Intern (MERN Stack)',
+      company: 'EY Global Delivery Services × AICTE (Edunet Foundation)',
+      location: 'Virtual / Industry Program',
       period: 'Mar 2025 – Apr 2025',
+      type: 'work',
       description:
-        'Successfully completed a 6-week industry-focused internship on building modern web applications using the MERN stack.',
+        'Completed an intensive industry-focused software engineering program on full-stack web application development.',
       achievements: [
-        'Built full-stack features using MongoDB, Express, React, and Node.js',
-        'Designed and integrated RESTful APIs',
-        'Developed responsive UI components following modern practices',
-        'Collaborated using Git and version control workflows',
+        'Developed full-stack web modules using MongoDB, Express.js, React.js, and Node.js',
+        'Designed secure RESTful API endpoints and integrated responsive Tailwind CSS UI components',
+        'Collaborated using Git feature branching workflows and code review practices',
       ],
+      tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'REST APIs', 'Git'],
     },
     {
-      type: 'work',
-      title: 'Android Application Developer',
-      organization: 'Telangana State Police Academy (TGPA), Hyderabad',
+      role: 'Android Application Developer',
+      company: 'Telangana State Police Academy (TGPA)',
+      location: 'Hyderabad, India',
       period: 'Mar 2024 – Aug 2024',
-      description:
-        'Contributed to the development of an official Android application for TGPA that provides a comprehensive repository of Indian criminal laws, published on the Google Play Store.',
-      achievements: [
-        'Implemented structured content for old and new criminal laws',
-        'Added law comparison features and legal reference sections',
-        'Collaborated with faculty and TGPA officials',
-        'Successfully deployed and maintained the Play Store application',
-      ],
-    },
-    {
       type: 'work',
-      title: 'Android App Development Intern',
-      organization: 'Acmegrade',
-      period: 'Nov 2023 – Jan 2024',
       description:
-        'Completed an internship focused on Android application development, gaining hands-on experience in building, structuring, and deploying mobile applications.',
+        'Designed, built, and deployed an official legal repository Android application published on the Google Play Store.',
       achievements: [
-        'Developed Android application modules using Java and XML',
-        'Worked on UI layouts, navigation, and activity lifecycle',
-        'Strengthened fundamentals of mobile app development',
+        'Implemented structured legal section comparisons between old and new Indian criminal laws',
+        'Built high-speed offline search indexing enabling instant section retrieval for officers on duty',
+        'Worked directly with TGPA faculty and senior officials to ensure legal data integrity',
+        'Successfully published and maintained the application live on the Google Play Store',
       ],
+      tech: ['Android SDK', 'Java', 'XML', 'SQLite', 'Play Store Publishing'],
     },
     {
-      type: 'achievement',
-      title: 'Smart India Hackathon 2022 – Finalist',
-      organization: 'Ministry of Education, Government of India',
-      period: 'August 2022',
+      role: 'Android App Development Intern',
+      company: 'Acmegrade',
+      location: 'Remote',
+      period: 'Nov 2023 – Jan 2024',
+      type: 'work',
       description:
-        'Selected for the Grand Finale of Smart India Hackathon 2022 (Senior Software Edition) after developing a Python-based application as part of a national-level team competition.',
+        'Focused on core Android development fundamentals, system lifecycles, and UI architecture.',
       achievements: [
-        'Developed a Python application addressing a real-world problem statement',
-        'Shortlisted among top teams nationwide',
-        'Participated in the Grand Finale held on August 25–26, 2022',
-        'Gained exposure to large-scale problem solving and team collaboration',
+        'Designed and implemented Java-based mobile application modules with low latency',
+        'Structured layout hierarchies, navigation graphs, and activity state handling',
       ],
+      tech: ['Java', 'Android Studio', 'XML', 'Mobile UX'],
+    },
+    {
+      role: 'Smart India Hackathon (SIH) 2022 – Grand Finalist',
+      company: 'Ministry of Education, Government of India',
+      location: 'National Grand Finale',
+      period: 'August 2022',
+      type: 'achievement',
+      description:
+        'Shortlisted among top developer teams across India for the Grand Finale of SIH 2022 (Senior Software Edition).',
+      achievements: [
+        'Developed a Python software application addressing a real-world national problem statement',
+        'Shortlisted for the 36-hour non-stop Grand Finale hackathon held on August 25–26, 2022',
+        'Demonstrated rapid prototyping, system architecture design, and team leadership',
+      ],
+      tech: ['Python', 'System Architecture', 'Rapid Prototyping'],
     },
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Experience & Achievements
+    <section id="experience" className="py-24 relative bg-[#09090B] border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono">
+            <Briefcase className="w-3.5 h-3.5" />
+            <span>CAREER & MILESTONES</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Work Experience & Milestones
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            My academic journey, professional experience, and key achievements
-            across national competitions, internships, and real-world projects.
+          <p className="text-zinc-400 text-base sm:text-lg">
+            My professional journey across machine learning engineering, enterprise app development, and national hackathons.
           </p>
         </div>
 
-        <div className="relative">
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200"></div>
+        {/* Timeline */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical Center Line */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-cyan-500 to-transparent transform -translate-x-1/2 hidden sm:block opacity-30" />
 
           <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className={`relative flex items-center ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+            {experiences.map((exp, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className={`relative flex flex-col sm:flex-row items-start ${
+                  idx % 2 === 0 ? 'sm:flex-row-reverse' : ''
                 }`}
               >
-                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-blue-600 border-4 border-white shadow-lg flex items-center justify-center z-10">
-                  {exp.type === 'education' ? (
-                    <GraduationCap className="w-6 h-6 text-white" />
-                  ) : exp.type === 'achievement' ? (
-                    <Award className="w-6 h-6 text-white" />
+                {/* Timeline Icon Node */}
+                <div className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#111113] border-2 border-indigo-500 shadow-lg shadow-indigo-500/20 flex items-center justify-center z-10 hidden sm:flex">
+                  {exp.type === 'achievement' ? (
+                    <Award className="w-5 h-5 text-amber-400" />
                   ) : (
-                    <Briefcase className="w-6 h-6 text-white" />
+                    <Briefcase className="w-5 h-5 text-indigo-400" />
                   )}
                 </div>
 
-                <div
-                  className={`w-full md:w-5/12 ${
-                    index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
-                  }`}
-                >
-                  <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <div className="flex items-center text-sm text-gray-500 mb-2">
-                      <Calendar size={16} className="mr-1" />
-                      {exp.period}
+                {/* Content Box */}
+                <div className={`w-full sm:w-1/2 ${idx % 2 === 0 ? 'sm:pl-12' : 'sm:pr-12'}`}>
+                  <div className="p-6 sm:p-8 rounded-3xl bg-[#111113] border border-white/10 hover:border-indigo-500/40 transition-all duration-300 shadow-xl space-y-4 group">
+                    
+                    {/* Period & Location Pill */}
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-zinc-400">
+                      <div className="flex items-center gap-1.5 text-indigo-400">
+                        <Calendar className="w-3.5 h-3.5" />
+                        <span>{exp.period}</span>
+                      </div>
+                      <div className="flex items-center gap-1 text-zinc-500">
+                        <MapPin className="w-3 h-3" />
+                        <span>{exp.location}</span>
+                      </div>
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">
-                      {exp.title}
-                    </h3>
-                    <p className="text-blue-600 font-semibold mb-3">
-                      {exp.organization}
-                    </p>
-                    <p className="text-gray-600 mb-4 leading-relaxed">
+                    {/* Role & Company */}
+                    <div>
+                      <h3 className="text-xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+                        {exp.role}
+                      </h3>
+                      <p className="text-sm font-semibold text-indigo-400 flex items-center gap-1.5 mt-1">
+                        <Building2 className="w-4 h-4 text-zinc-400" />
+                        <span>{exp.company}</span>
+                      </p>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
                       {exp.description}
                     </p>
 
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="flex items-start">
-                          <span className="text-blue-600 mr-2">•</span>
-                          <span className="text-gray-700 text-sm">
-                            {achievement}
-                          </span>
-                        </li>
+                    {/* Achievements */}
+                    <div className="space-y-2 pt-2 border-t border-white/5">
+                      {exp.achievements.map((ach, aIdx) => (
+                        <div key={aIdx} className="flex items-start gap-2 text-xs text-zinc-300">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                          <span>{ach}</span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
+
+                    {/* Tech Badges */}
+                    <div className="flex flex-wrap gap-1.5 pt-2">
+                      {exp.tech.map((t, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="px-2.5 py-1 rounded-md bg-white/5 text-zinc-400 text-[10px] font-mono border border-white/5"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
                   </div>
                 </div>
-              </div>
+
+              </motion.div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );

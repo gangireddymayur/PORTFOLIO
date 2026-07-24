@@ -1,152 +1,171 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
+  Brain,
+  Server,
   Layout,
-  Code2,
-  Database,
-  Monitor,
   Smartphone,
-  GitBranch,
+  Database,
+  Wrench,
+  Cpu,
+  Layers,
 } from 'lucide-react';
 
-const Skills = () => {
-  const skillCategories = [
-    {
-      category: 'Frontend Development',
-      icon: Layout,
-      skills: [
-        { name: 'HTML5 & CSS3', level: 90 },
-        { name: 'TypeScript', level: 80 },
-        { name: 'React', level: 85 },
-        { name: 'Tailwind CSS', level: 85 },
-        { name: 'Streamlit', level: 90 }
-      ],
-    },
-    {
-      category: 'Backend Development',
-      icon: Code2,
-      skills: [
-        { name: 'Python', level: 85 },
-        { name: 'Java', level: 80 },
-        { name: 'Node.js & Express', level: 80 },
-        { name: 'REST APIs', level: 85 },
-        { name: 'C & C++', level: 75 },
-      ],
-    },
-    {
-      category: 'Mobile Development',
-      icon: Smartphone,
-      skills: [
-        { name: 'Kotlin', level: 85 },
-        { name: 'Android SDK & Studio', level: 90 },
-        { name: 'Jetpack Compose', level: 85 },
-        { name: 'Ktor (Local Server)', level: 80 },
-        { name: 'XML & Java', level: 80 },
-      ],
-    },
-    {
-      category: 'Databases',
-      icon: Database,
-      skills: [
-        { name: 'MySQL & PostgreSQL', level: 80 },
-        { name: 'Firebase', level: 80 },
-        { name: 'Supabase', level: 85 },
-        { name: 'MongoDB', level: 75 },
-      ],
-    },
-    {
-      category: 'IDEs & Development Tools',
-      icon: Monitor,
-      skills: [
-        { name: 'Visual Studio Code', level: 95 },
-        { name: 'Android Studio', level: 90 },
-        { name: 'Jupyter Notebook', level: 85 },
-        { name: 'PyCharm', level: 80 },
-      ],
-    },
-    {
-      category: 'Git & Version Control',
-      icon: GitBranch,
-      skills: [
-        { name: 'Git & GitHub', level: 85 },
-        { name: 'Docker', level: 75 },
-        { name: 'Linux/Unix Shell', level: 80 },
-      ],
-    },
+const Skills: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+
+  const categories = [
+    { id: 'all', label: 'All Technologies', icon: Layers },
+    { id: 'ai', label: 'AI & Machine Learning', icon: Brain },
+    { id: 'backend', label: 'Backend & Cloud', icon: Server },
+    { id: 'frontend', label: 'Frontend & Web', icon: Layout },
+    { id: 'mobile', label: 'Mobile Engineering', icon: Smartphone },
+    { id: 'databases', label: 'Databases', icon: Database },
+    { id: 'tools', label: 'DevOps & Tools', icon: Wrench },
   ];
 
-  const techIcons = [
-    { icon: Layout, name: 'Frontend' },
-    { icon: Code2, name: 'Backend' },
-    { icon: Database, name: 'Databases' },
-    { icon: Smartphone, name: 'Android' },
-    { icon: GitBranch, name: 'Git & Version Control' },
-    { icon: Monitor, name: 'Tools' },
+  const skillItems = [
+    // Languages
+    { name: 'Python', category: 'backend', level: 92, badge: 'Core', experience: '4+ Yrs' },
+    { name: 'Java', category: 'backend', level: 85, badge: 'Core', experience: '3+ Yrs' },
+    { name: 'TypeScript', category: 'frontend', level: 88, badge: 'Advanced', experience: '3+ Yrs' },
+    { name: 'JavaScript (ES6+)', category: 'frontend', level: 90, badge: 'Advanced', experience: '4+ Yrs' },
+    { name: 'Kotlin', category: 'mobile', level: 85, badge: 'Mobile Core', experience: '2+ Yrs' },
+    { name: 'C / C++', category: 'backend', level: 78, badge: 'Systems', experience: '2+ Yrs' },
+    { name: 'Dart', category: 'mobile', level: 80, badge: 'Flutter', experience: '2+ Yrs' },
+
+    // AI & ML
+    { name: 'PyTorch', category: 'ai', level: 88, badge: 'Deep Learning', experience: '3+ Yrs' },
+    { name: 'TensorFlow & Keras', category: 'ai', level: 82, badge: 'Deep Learning', experience: '2+ Yrs' },
+    { name: 'Scikit-Learn & XGBoost', category: 'ai', level: 90, badge: 'ML Modeling', experience: '3+ Yrs' },
+    { name: 'YOLOv8 & OpenCV', category: 'ai', level: 86, badge: 'Computer Vision', experience: '2+ Yrs' },
+    { name: 'CNNs & Time-Series NILM', category: 'ai', level: 90, badge: 'Specialized', experience: '2+ Yrs' },
+    { name: 'Agentic AI & LangChain', category: 'ai', level: 85, badge: 'LLMs & Agents', experience: '1+ Yrs' },
+    { name: 'OCR & Image Extraction', category: 'ai', level: 88, badge: 'CV Pipeline', experience: '2+ Yrs' },
+
+    // Backend & Cloud
+    { name: 'Node.js & Express', category: 'backend', level: 88, badge: 'Microservices', experience: '3+ Yrs' },
+    { name: 'FastAPI & Flask', category: 'backend', level: 86, badge: 'Python APIs', experience: '3+ Yrs' },
+    { name: 'REST API Design', category: 'backend', level: 92, badge: 'Architecture', experience: '4+ Yrs' },
+    { name: 'Supabase & Firebase', category: 'backend', level: 88, badge: 'Cloud BaaS', experience: '3+ Yrs' },
+    { name: 'Plesk Server Deployment', category: 'backend', level: 82, badge: 'DevOps', experience: '2+ Yrs' },
+    { name: 'Ktor (Local Embedded Server)', category: 'backend', level: 80, badge: 'Mobile Server', experience: '1+ Yrs' },
+
+    // Frontend & Web
+    { name: 'React.js', category: 'frontend', level: 90, badge: 'Frontend Core', experience: '3+ Yrs' },
+    { name: 'Tailwind CSS', category: 'frontend', level: 92, badge: 'Styling', experience: '3+ Yrs' },
+    { name: 'TanStack Router & Query', category: 'frontend', level: 85, badge: 'State & Routing', experience: '2+ Yrs' },
+    { name: 'Vite & Webpack', category: 'frontend', level: 88, badge: 'Build Tools', experience: '3+ Yrs' },
+    { name: 'Streamlit', category: 'frontend', level: 92, badge: 'AI Dashboards', experience: '3+ Yrs' },
+
+    // Mobile
+    { name: 'Android SDK & Studio', category: 'mobile', level: 90, badge: 'Android', experience: '3+ Yrs' },
+    { name: 'Jetpack Compose', category: 'mobile', level: 86, badge: 'Modern Android', experience: '2+ Yrs' },
+    { name: 'Flutter', category: 'mobile', level: 80, badge: 'Cross-Platform', experience: '2+ Yrs' },
+    { name: 'XML & Java Mobile Apps', category: 'mobile', level: 88, badge: 'Play Store Published', experience: '3+ Yrs' },
+
+    // Databases
+    { name: 'MySQL', category: 'databases', level: 88, badge: 'Relational DB', experience: '3+ Yrs' },
+    { name: 'PostgreSQL', category: 'databases', level: 82, badge: 'Relational DB', experience: '2+ Yrs' },
+    { name: 'DuckDB & Analytical SQL', category: 'databases', level: 85, badge: 'Analytical DB', experience: '2+ Yrs' },
+    { name: 'SQLite (Mobile & Local Sync)', category: 'databases', level: 90, badge: 'Embedded DB', experience: '3+ Yrs' },
+
+    // Tools & DevOps
+    { name: 'Git & GitHub', category: 'tools', level: 92, badge: 'Version Control', experience: '4+ Yrs' },
+    { name: 'Docker', category: 'tools', level: 78, badge: 'Containers', experience: '2+ Yrs' },
+    { name: 'Linux / Unix Shell', category: 'tools', level: 84, badge: 'Environment', experience: '3+ Yrs' },
+    { name: 'PyCharm & VS Code', category: 'tools', level: 95, badge: 'IDEs', experience: '4+ Yrs' },
   ];
+
+  const filteredSkills =
+    activeCategory === 'all'
+      ? skillItems
+      : skillItems.filter((skill) => skill.category === activeCategory);
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Skills & Expertise
+    <section id="skills" className="py-24 relative bg-[#09090B]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono">
+            <Cpu className="w-3.5 h-3.5" />
+            <span>TECHNICAL CAPABILITIES</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+            Skills & Tech Stack
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Technologies and tools I use to build real-world, production-ready applications
+          <p className="text-zinc-400 text-base sm:text-lg">
+            A comprehensive overview of programming languages, frameworks, AI tools, and infrastructure I work with daily.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 mb-16">
-          {techIcons.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center group cursor-pointer"
-            >
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md group-hover:shadow-xl transform group-hover:-translate-y-2 transition-all duration-200">
-                <item.icon className="w-8 h-8 text-blue-600" />
-              </div>
-              <span className="mt-2 text-sm text-gray-600 font-medium">
-                {item.name}
-              </span>
-            </div>
-          ))}
+        {/* Category Filter Tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
+          {categories.map((cat) => {
+            const Icon = cat.icon;
+            const isActive = activeCategory === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                  isActive
+                    ? 'bg-indigo-600 text-white border border-indigo-400/40 shadow-lg shadow-indigo-600/30'
+                    : 'bg-[#111113] text-zinc-400 hover:text-white border border-white/10 hover:border-white/20'
+                }`}
+              >
+                <Icon className="w-4 h-4" />
+                <span>{cat.label}</span>
+              </button>
+            );
+          })}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="flex items-center mb-6">
-                <category.icon className="w-8 h-8 text-blue-600 mr-3" />
-                <h3 className="text-xl font-bold text-gray-900">
-                  {category.category}
-                </h3>
-              </div>
-
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-700 font-medium">
-                        {skill.name}
-                      </span>
-                      <span className="text-gray-500 text-sm">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                      <div
-                        className="bg-gradient-to-r from-blue-500 to-blue-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
+        {/* Skills Cards Grid */}
+        <motion.div
+          layout
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          <AnimatePresence>
+            {filteredSkills.map((skill) => (
+              <motion.div
+                key={skill.name}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+                className="p-5 rounded-2xl bg-[#111113] border border-white/10 hover:border-indigo-500/40 transition-all duration-300 shadow-md group hover:shadow-xl hover:shadow-indigo-500/5"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-bold text-white text-base group-hover:text-indigo-300 transition-colors">
+                      {skill.name}
+                    </h3>
                   </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-400">
+                    {skill.badge}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between text-xs text-zinc-400 mb-2">
+                  <span className="font-mono text-[11px]">Proficiency</span>
+                  <span className="font-mono font-semibold text-indigo-400">{skill.level}%</span>
+                </div>
+
+                {/* Progress bar */}
+                <div className="w-full bg-zinc-900 rounded-full h-1.5 overflow-hidden border border-white/5">
+                  <div
+                    className="h-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-indigo-400 rounded-full transition-all duration-1000 ease-out"
+                    style={{ width: `${skill.level}%` }}
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
       </div>
     </section>
   );
