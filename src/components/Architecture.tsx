@@ -97,18 +97,19 @@ const Architecture: React.FC = () => {
       subtitle: 'Enterprise Digital Signage Architecture',
       category: 'Hybrid Cloud & Mobile App',
       description:
-        'A production digital signage network with a cloud management dashboard, local UDP broadcast auto-discovery, a compiled local Windows server bundle for offline operation, and a native Android TV player app with SQLite local caching.',
+        'A multi-mode hybrid digital signage network that coordinates content delivery across a cloud dashboard, a compiled Windows offline server, and a native Android TV client. Supports automated local UDP broadcast discovery, database synchronization, and local caching.',
       nodes: [
-        { label: 'Cloud Admin Dashboard', sub: 'React Control Panel', icon: Globe },
-        { label: 'UDP Local Discovery', sub: 'Local Network Pairing', icon: Activity },
-        { label: 'Local Express Server', sub: 'Compiled Offline Bundle', icon: Server, highlight: true },
-        { label: 'SQLite Local Sync', sub: 'Offline Caching Engine', icon: Database },
-        { label: 'Android TV App', sub: 'Jetpack Compose Player', icon: Smartphone },
+        { label: 'Cloud Admin Panel', sub: 'React & Supabase', icon: Globe },
+        { label: 'UDP Local Discovery', sub: 'Multicast Socket Listener', icon: Activity },
+        { label: 'Local Server Bundle', sub: 'Compiled Windows .EXE', icon: Server, highlight: true },
+        { label: 'SQLite & Preferences', sub: 'Device Cache & KeyStore Recovery', icon: Database },
+        { label: 'Android TV Player', sub: 'Jetpack Compose & Ktor Netty', icon: Smartphone },
       ],
       keyHighlights: [
-        'Operates continuously even during internet outages via local server bundle and SQLite sync',
-        'Zero-configuration device pairing using UDP broadcast discovery on local LAN networks',
-        'Native Jetpack Compose player application on Android TV for smooth 60 FPS media rendering',
+        'Dual deployment modes: Solo Mode (Ktor Netty server running on TV) and Multi Mode (Windows server bundle)',
+        'Zero-config local pairing via UDP multicast discovery on port 9999 utilizing Android WifiManager MulticastLock',
+        'Self-healing keystore state: Auto-recovers from EncryptedSharedPreferences KeyStoreException corruption',
+        'Offline-first playbacks cached locally in SQLite ensuring zero content playback downtime during internet outages',
       ],
     },
   ];
