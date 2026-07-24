@@ -14,10 +14,10 @@ const Skills = () => {
       icon: Layout,
       skills: [
         { name: 'HTML5 & CSS3', level: 90 },
-        { name: 'JavaScript', level: 75 },
-        { name: 'React', level: 70 },
-        { name: 'Responsive Design', level: 85 },
-        { name: 'steemit', level: 90}
+        { name: 'TypeScript', level: 80 },
+        { name: 'React', level: 85 },
+        { name: 'Tailwind CSS', level: 85 },
+        { name: 'Streamlit', level: 90 }
       ],
     },
     {
@@ -26,18 +26,29 @@ const Skills = () => {
       skills: [
         { name: 'Python', level: 85 },
         { name: 'Java', level: 80 },
-        { name: 'C', level: 80 },
-        { name: 'C++', level: 75 },
-        { name: 'REST APIs', level: 75 },
+        { name: 'Node.js & Express', level: 80 },
+        { name: 'REST APIs', level: 85 },
+        { name: 'C & C++', level: 75 },
+      ],
+    },
+    {
+      category: 'Mobile Development',
+      icon: Smartphone,
+      skills: [
+        { name: 'Kotlin', level: 85 },
+        { name: 'Android SDK & Studio', level: 90 },
+        { name: 'Jetpack Compose', level: 85 },
+        { name: 'Ktor (Local Server)', level: 80 },
+        { name: 'XML & Java', level: 80 },
       ],
     },
     {
       category: 'Databases',
       icon: Database,
       skills: [
-        { name: 'MySQL', level: 75 },
+        { name: 'MySQL & PostgreSQL', level: 80 },
         { name: 'Firebase', level: 80 },
-        { name: 'Supabase', level: 80 },
+        { name: 'Supabase', level: 85 },
         { name: 'MongoDB', level: 75 },
       ],
     },
@@ -45,10 +56,19 @@ const Skills = () => {
       category: 'IDEs & Development Tools',
       icon: Monitor,
       skills: [
-        { name: 'Visual Studio Code', level: 90 },
+        { name: 'Visual Studio Code', level: 95 },
+        { name: 'Android Studio', level: 90 },
         { name: 'Jupyter Notebook', level: 85 },
         { name: 'PyCharm', level: 80 },
-        { name: 'Android Studio', level: 85 },
+      ],
+    },
+    {
+      category: 'Git & Version Control',
+      icon: GitBranch,
+      skills: [
+        { name: 'Git & GitHub', level: 85 },
+        { name: 'Docker', level: 75 },
+        { name: 'Linux/Unix Shell', level: 80 },
       ],
     },
   ];
