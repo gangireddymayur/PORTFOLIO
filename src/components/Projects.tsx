@@ -3,6 +3,16 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      title: 'Feedback Flow – Enterprise Kiosk Survey & Device Management',
+      description:
+        'A production-grade, offline-first survey builder and Android tablet management network built for brick-and-mortar storefronts. Features a live drag-and-drop brand canvas, dynamic theme engine, sub-admin device licensing, and native Jetpack Compose integration.',
+      tech: ['React', 'Node.js', 'Express', 'SQLite', 'Jetpack Compose', 'TypeScript', 'Tailwind CSS'],
+      image:
+        'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800',
+      github: 'https://github.com/gangireddymayur/feedback-flow',
+      color: 'from-teal-500 to-emerald-600',
+    },
+    {
       title: 'Samarth – Intelligent Agricultural & Climate Q&A System',
       description:
         'An end-to-end intelligent Question-Answering system that enables natural-language analytics over Indian Government rainfall and crop production datasets with full SQL-backed traceability.',
@@ -24,25 +34,25 @@ const Projects = () => {
       color: 'from-indigo-500 to-blue-600',
     },
     {
-  title: 'Multimodal Emotion Detection System (Face + Voice)',
-  description:
-    'A Streamlit-based AI system that detects human emotions from facial expressions and voice, then fuses both signals to produce a final multimodal emotion prediction. Supports real-time webcam mode and uploaded video analysis.',
-  tech: [
-    'Python',
-    'Streamlit',
-    'PyTorch',
-    'EfficientNet-B4',
-    'OpenCV',
-    'Librosa',
-    'MFCC',
-    'Machine Learning',
-    'Deep Learning',
-  ],
-  image:
-    'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
-  github: 'https://github.com/gangireddymayur/Multimodal-Emotion-Detection-System--Face---Voice-/tree/main',
-  color: 'from-violet-500 to-purple-600',
-  },
+      title: 'Multimodal Emotion Detection System (Face + Voice)',
+      description:
+        'A Streamlit-based AI system that detects human emotions from facial expressions and voice, then fuses both signals to produce a final multimodal emotion prediction. Supports real-time webcam mode and uploaded video analysis.',
+      tech: [
+        'Python',
+        'Streamlit',
+        'PyTorch',
+        'EfficientNet-B4',
+        'OpenCV',
+        'Librosa',
+        'MFCC',
+        'Machine Learning',
+        'Deep Learning',
+      ],
+      image:
+        'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
+      github: 'https://github.com/gangireddymayur/Multimodal-Emotion-Detection-System--Face---Voice-/tree/main',
+      color: 'from-violet-500 to-purple-600',
+    },
     {
       title: 'Timeless Curation – Modern E-Commerce Platform',
       description:
@@ -124,24 +134,28 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-4">
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
-                  >
-                    <ExternalLink size={18} />
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-700 hover:text-gray-900 font-semibold transition-colors"
-                  >
-                    <Github size={18} />
-                    Code
-                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+                    >
+                      <ExternalLink size={18} />
+                      Live Demo
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-700 hover:text-gray-900 font-semibold transition-colors"
+                    >
+                      <Github size={18} />
+                      Code
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
