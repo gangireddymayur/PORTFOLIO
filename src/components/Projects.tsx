@@ -3,6 +3,17 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      title: 'Hostel Hub Pro – Smart Hostel Management System',
+      description:
+        'A production-grade, full-stack hostel management platform serving students, parents, staff, and security guards. Features QR-code based check-in/out, role-based dashboards, time-restricted visitor permissions, real-time student flow tracking, and a multi-hostel admin panel. Built and deployed live on Plesk.',
+      tech: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL', 'TanStack Router', 'Tailwind CSS', 'QR Code', 'Radix UI'],
+      image:
+        'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
+      demo: 'https://exciting-greider.103-69-196-157.plesk.page',
+      github: 'https://github.com/gangireddymayur/hostel-hub-pro',
+      color: 'from-cyan-500 to-blue-600',
+    },
+    {
       title: 'SignageHub – Hybrid Digital Signage & TV Management Network',
       description:
         'A production-grade digital signage system featuring a cloud control dashboard, hybrid local/offline hosting via a compiled Windows server bundle, and a native Android TV app. Supports UDP broadcast local discovery, SQLite synchronization, offline playlist caching, and dynamic layouts.',
