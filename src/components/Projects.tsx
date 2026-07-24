@@ -3,6 +3,16 @@ import { ExternalLink, Github } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      title: 'SignageHub – Hybrid Digital Signage & TV Management Network',
+      description:
+        'A production-grade digital signage system featuring a cloud control dashboard, hybrid local/offline hosting via a compiled Windows server bundle, and a native Android TV app. Supports UDP broadcast local discovery, SQLite synchronization, offline playlist caching, and dynamic layouts.',
+      tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Supabase', 'Kotlin', 'Jetpack Compose', 'Ktor', 'SQLite'],
+      image:
+        'https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg?auto=compress&cs=tinysrgb&w=800',
+      github: 'https://github.com/gangireddymayur/screen-connect-hub',
+      color: 'from-blue-600 to-indigo-500',
+    },
+    {
       title: 'Feedback Flow – Enterprise Kiosk Survey & Device Management',
       description:
         'A production-grade, offline-first survey builder and Android tablet management network built for brick-and-mortar storefronts. Features a live drag-and-drop brand canvas, dynamic theme engine, sub-admin device licensing, and native Jetpack Compose integration.',
