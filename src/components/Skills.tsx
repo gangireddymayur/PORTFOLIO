@@ -12,10 +12,9 @@ import {
 } from 'lucide-react';
 
 const Skills: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [activeCategory, setActiveCategory] = useState<string>('ai');
 
   const categories = [
-    { id: 'all', label: 'All Technologies', icon: Layers },
     { id: 'ai', label: 'AI & Machine Learning', icon: Brain },
     { id: 'backend', label: 'Backend & Cloud', icon: Server },
     { id: 'frontend', label: 'Frontend & Web', icon: Layout },
@@ -73,8 +72,13 @@ const Skills: React.FC = () => {
     // Tools & DevOps
     { name: 'Git & GitHub', category: 'tools', level: 92, badge: 'Version Control', experience: '4+ Yrs' },
     { name: 'Docker', category: 'tools', level: 78, badge: 'Containers', experience: '2+ Yrs' },
-    { name: 'Linux / Unix Shell', category: 'tools', level: 84, badge: 'Environment', experience: '3+ Yrs' },
-    { name: 'PyCharm & VS Code', category: 'tools', level: 95, badge: 'IDEs', experience: '4+ Yrs' },
+    { name: 'macOS / Unix Shell', category: 'tools', level: 90, badge: 'Environment', experience: '4+ Yrs' },
+    { name: 'Windows OS', category: 'tools', level: 88, badge: 'Environment', experience: '4+ Yrs' },
+    { name: 'Antigravity AI', category: 'tools', level: 92, badge: 'AI IDE & Tooling', experience: '1+ Yrs' },
+    { name: 'VS Code', category: 'tools', level: 95, badge: 'IDE', experience: '4+ Yrs' },
+    { name: 'Android Studio', category: 'tools', level: 92, badge: 'IDE', experience: '3+ Yrs' },
+    { name: 'Xcode', category: 'tools', level: 82, badge: 'iOS / macOS IDE', experience: '2+ Yrs' },
+    { name: 'PyCharm', category: 'tools', level: 90, badge: 'Python IDE', experience: '3+ Yrs' },
   ];
 
   const filteredSkills =
