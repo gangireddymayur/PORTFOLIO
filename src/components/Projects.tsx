@@ -5,6 +5,8 @@ import {
   Github,
   Layers,
   BookOpen,
+  Play,
+  Apple,
 } from 'lucide-react';
 import ProjectCaseStudyModal, { ProjectData } from './ProjectCaseStudyModal';
 
@@ -14,29 +16,128 @@ const Projects: React.FC = () => {
 
   const filterTabs = [
     { id: 'all', label: 'All Projects' },
-    { id: 'ai', label: 'AI & ML Systems' },
+    { id: 'enterprise', label: '🏢 Bharat Smart Services' },
+    { id: 'client', label: '💼 Freelance Deployments' },
+    { id: 'mobile', label: 'Mobile & IoT' },
     { id: 'fullstack', label: 'Full-Stack Web' },
-    { id: 'mobile', label: 'Mobile Engineering' },
+    { id: 'ai', label: 'AI & ML Systems' },
   ];
 
   const projects: ProjectData[] = [
     {
-      id: 'hostel-hub-pro',
-      title: 'Hostel Hub Pro – Smart Hostel Management System',
-      subtitle: 'Production Multi-Role Web Platform',
+      id: 'bss-smart-connect',
+      title: 'Bharat Smart Connect – Smart Meter Reading, Billing & Live Energy Monitoring',
+      subtitle: 'Capacitor Android/iOS App + Camera OCR + Native USB IR Dongle + Utility Billing',
+      category: 'mobile',
+      tag: '🏢 Bharat Smart Services (Current Role)',
+      demo: 'https://play.google.com/store/apps/details?id=in.coral.met',
+      playStore: 'https://play.google.com/store/apps/details?id=in.coral.met',
+      appStore: 'https://apps.apple.com/in/app/bharat-smart-services/id1584345371',
+      tech: ['React 18', 'TypeScript', 'Capacitor.js', 'Java Native Plugins', 'USB Serial IRDA', 'OCR', 'Firebase Messaging', 'Android Widgets', 'iOS WidgetKit', 'Tailwind CSS'],
+      image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800',
+      color: 'from-blue-600 to-cyan-500',
+      problem:
+        'Electricity consumers and field staff across several discoms (TSSPDCL, TSNPDCL) needed one app to submit accurate meter readings, see live usage and demand, generate bills, and handle water board (HMWSSB) billing, without manual paperwork or errors from mismatched meter data.',
+      solution:
+        'Built a cross-platform React and Capacitor app. A user logs in with phone OTP and picks a profile, where backend-owned fields are locked and the rest can be edited. A meter reading comes from either camera OCR or a USB IR dongle, goes through a review page with checks against the previous reading, and is submitted to the billing backend. Home cards show Green Days, Demand Monitoring and Live Data using backend values.',
+      architecture: [
+        'Single API layer with TTL cache, in-flight de-duplication and write invalidation for all backend calls',
+        'Custom Capacitor plugins for camera OCR, IR dongle scanning and home screen widgets',
+        'IR dongle stack in Java: USB serial handshake, IRDA and 1/3-phase command tables, parsed readings returned to the web layer',
+        'Multiple backends for main data, device telemetry, meter readings and OCR, with phone numbers for access tiers kept in one config file',
+        'Push notifications through Firebase, with token re-registration when it changes',
+      ],
+      challenges: [
+        'Keeping the camera reliable across retries and app backgrounding on different phones',
+        'Matching the legacy Java app exactly when submitting readings and water bills, so backend records stay consistent',
+        'Auditing app-side calculations and moving them to backend values to remove mismatched numbers',
+        'Supporting new iOS UIScene requirements and an unknown IR dongle model on Android',
+      ],
+      impact: [
+        'Live production app on Android and iOS for utility consumers',
+        'Fewer server calls per screen, for example one call for all team members instead of one per member',
+        'Water bills now show exactly what the water board returns',
+      ],
+    },
+    {
+      id: 'bharat-smart-home',
+      title: 'Bharat Smart Home – Enterprise IoT & Lifestyle Automation Platform',
+      subtitle: 'Unified Smart Home Ecosystem with Real-Time Device Orchestration',
+      category: 'mobile',
+      tag: '🏢 Bharat Smart Services (Current Role)',
+      demo: 'https://play.google.com/store/apps/details?id=com.bharat.smarthome',
+      playStore: 'https://play.google.com/store/apps/details?id=com.bharat.smarthome',
+      appStore: 'https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389',
+      tech: ['React', 'TypeScript', 'Capacitor', 'Tailwind CSS', 'State Machine', 'WebSockets', 'IoT Protocols'],
+      image: 'https://images.pexels.com/photos/1036936/pexels-photo-1036936.jpeg?auto=compress&cs=tinysrgb&w=800',
+      color: 'from-indigo-600 to-purple-600',
+      problem:
+        'Consumer smart home applications suffer from fragmented device pairing workflows, complex industrial energy dashboards that confuse everyday users, and high command latency across distributed appliances.',
+      solution:
+        'Designed and built an enterprise-grade smart home automation platform featuring room-based organization, customizable lifestyle scenes, condition-based automation schedules, and clear energy intelligence disaggregation.',
+      architecture: [
+        'Hierarchical Room & Device Control Engine (lighting, climate, relays, smart plugs)',
+        'Lifestyle Scene Orchestration & conditional automation scheduler with timer routines',
+        'Cross-platform native mobile shell via Capacitor for iOS and Android',
+        'Disaggregated household energy insights translating raw kWh into actionable cost savings',
+      ],
+      challenges: [
+        'Achieving sub-100ms UI responsiveness for device toggle state updates over fluctuating Wi-Fi connections',
+        'Balancing deep energy consumption intelligence with an intuitive, clutter-free lifestyle UI',
+      ],
+      impact: [
+        'Unified multi-room appliance control with instant feedback across mobile and web',
+        'V1 production platform serving next-generation residential smart home automation',
+      ],
+    },
+    {
+      id: 'temple-donation-hub',
+      title: 'Temple Donation Signage Hub & Devotee Android TV Network',
+      subtitle: 'Dynamic Zero-Fee UPI QR Kiosk + Native Android TV Devotee Signage',
       category: 'fullstack',
-      tech: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL', 'TanStack Router', 'Tailwind CSS', 'QR Code'],
+      categories: ['fullstack', 'mobile'],
+      tag: '💼 Freelance Client Production',
+      tech: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL', 'Kotlin', 'Jetpack Compose', 'ExoPlayer', 'UPI QR API'],
+      image: 'https://images.pexels.com/photos/2161449/pexels-photo-2161449.jpeg?auto=compress&cs=tinysrgb&w=800',
+      color: 'from-amber-500 to-orange-600',
+      problem:
+        'Religious institutions and temples faced slow manual paper receipt issuance, massive donation queue bottlenecks during festivals, and lacked digital signage screens to acknowledge devotees and announce pooja schedules.',
+      solution:
+        'Engineered an end-to-end devotional donation kiosk and digital signage TV ecosystem combining a web-based administrative hub with dynamic zero-transaction-fee UPI QR codes and a native Android TV app.',
+      architecture: [
+        'Devotee Donation Kiosk with dynamic instant-payment UPI QR generation and Razorpay merchant fallback',
+        'Native Android TV client built in Kotlin & Jetpack Compose with simple 6-character claiming codes',
+        'ExoPlayer (media3) offline video/image caching guaranteeing 100% continuous display uptime',
+        'Real-time donation ledger analytics with automated database schema migrations (MariaDB/MySQL)',
+      ],
+      challenges: [
+        'Constructing dynamic instant-settlement UPI payment payloads with automated verification polling without intermediary fees',
+        'Ensuring 24/7 continuous video playlist looping without memory leaks on entry-level Android TV hardware',
+      ],
+      impact: [
+        'Eliminated manual cash and paper receipt queues during peak festival rush',
+        'Deployed live on temple donation kiosks and large devotional Android TV screens',
+      ],
+    },
+    {
+      id: 'hostel-hub-pro',
+      title: 'Hostel Hub Pro & Flutter App – Smart Hostel Management System',
+      subtitle: 'Multi-Tenant Web Platform (TanStack Start) + Flutter Companion App',
+      category: 'fullstack',
+      categories: ['fullstack', 'mobile'],
+      tag: '💼 Freelance Client Production',
+      tech: ['TanStack Start', 'React', 'TypeScript', 'Node.js', 'Express', 'MySQL', 'Flutter', 'Dart', 'QR Code'],
       image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-cyan-500 to-blue-600',
       problem:
         'Hostel management in educational institutions faced manual paper logs, security bottlenecks at gates, delay in parent permission approvals, and poor visibility into student whereabouts.',
       solution:
-        'Architected a full-stack multi-tenant platform serving Students, Parents, Staff, and Security Guards. Built QR-code gate scanner logic, automated time-restricted leave approvals, and multi-hostel admin analytics.',
+        'Architected a full-stack multi-tenant platform serving Students, Parents, Staff, and Security Guards. Built QR-code gate scanner logic, automated time-restricted leave approvals, and multi-hostel admin analytics with companion Flutter mobile app.',
       architecture: [
         'Multi-Role Authorization (Student, Parent, Staff, Security Guard)',
         'Time-Restricted QR Permission Engine for Gate Scanners',
-        'Real-Time Student Flow & Hostel Occupancy Dashboard',
-        'Production Deployment on Plesk Infrastructure with MySQL',
+        'Companion Flutter cross-platform mobile app for students and parents',
+        'Real-Time Student Flow & Hostel Occupancy Dashboard on Plesk MySQL',
       ],
       challenges: [
         'Preventing unauthorized cross-hostel access for staff assigned to all hostels vs specific hostels',
@@ -52,6 +153,8 @@ const Projects: React.FC = () => {
       title: 'SignageHub – Hybrid Digital Signage & TV Network',
       subtitle: 'Cloud Control + Offline Edge Android TV Architecture',
       category: 'fullstack',
+      categories: ['fullstack', 'mobile'],
+      tag: '💼 Freelance Client Production',
       tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Supabase', 'Kotlin', 'Jetpack Compose', 'Ktor', 'SQLite'],
       image: 'https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-blue-600 to-indigo-500',
@@ -78,6 +181,7 @@ const Projects: React.FC = () => {
       title: 'Feedback Flow – Enterprise Kiosk Survey & Device Network',
       subtitle: 'Offline-First Tablet Management & Live Canvas Builder',
       category: 'fullstack',
+      tag: '💼 Freelance Client Production',
       tech: ['React', 'Node.js', 'Express', 'SQLite', 'Jetpack Compose', 'TypeScript', 'Tailwind CSS'],
       image: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-teal-500 to-emerald-600',
@@ -104,6 +208,7 @@ const Projects: React.FC = () => {
       title: 'Samarth – Intelligent Agriculture & Climate Q&A Engine',
       subtitle: 'Natural Language to SQL Conversational Analytics',
       category: 'ai',
+      tag: '🔬 Research & AI System',
       tech: ['FastAPI', 'DuckDB', 'Python', 'SQL', 'NLP', 'Streamlit'],
       image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: 'https://github.com/gangireddymayur/Samarth-theChatBot',
@@ -131,6 +236,7 @@ const Projects: React.FC = () => {
       title: 'Post-CNN Framework for Satellite Ship Detection (YOLOv8)',
       subtitle: 'High-Resolution Optical Satellite Imagery Analysis',
       category: 'ai',
+      tag: '🔬 Research & AI System',
       tech: ['Python', 'YOLOv8', 'Computer Vision', 'PyTorch', 'OpenCV', 'Streamlit'],
       image: 'https://images.pexels.com/photos/753331/pexels-photo-753331.jpeg?auto=compress&cs=tinysrgb&w=800',
       demo: 'https://shipdetectionyolov8.streamlit.app/',
@@ -159,6 +265,7 @@ const Projects: React.FC = () => {
       title: 'Multimodal Emotion Detection System (Face + Voice)',
       subtitle: 'Dual-Stream Deep Learning Fusion Model',
       category: 'ai',
+      tag: '🔬 Research & AI System',
       tech: ['Python', 'Streamlit', 'PyTorch', 'EfficientNet-B4', 'OpenCV', 'Librosa', 'MFCC'],
       image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: 'https://github.com/gangireddymayur/Multimodal-Emotion-Detection-System--Face---Voice-/tree/main',
@@ -186,9 +293,11 @@ const Projects: React.FC = () => {
       title: 'Criminal Laws by TGPA – Official Android Application',
       subtitle: 'Telangana State Police Academy (Published on Play Store)',
       category: 'mobile',
+      tag: '🏛️ Telangana State Police Academy',
       tech: ['Android SDK', 'Java', 'XML', 'Mobile Security', 'Google Play Store'],
       image: 'https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=800',
       demo: 'https://play.google.com/store/apps/details?id=com.sphn.tgpa&hl=en_IN',
+      playStore: 'https://play.google.com/store/apps/details?id=com.sphn.tgpa&hl=en_IN',
       color: 'from-red-500 to-orange-500',
       problem:
         'Law enforcement officers needed instant, offline access to complex Indian criminal legal codes, including comparative analysis between old and new criminal laws during field operations.',
@@ -213,6 +322,7 @@ const Projects: React.FC = () => {
       title: 'Chit Fund Management System – Live Financial Platform',
       subtitle: 'Private Client Production System Deployed on Render',
       category: 'fullstack',
+      tag: '💼 Freelance Client Production',
       tech: ['Python', 'Flask', 'Firebase', 'Server-Side Auth', 'Render'],
       image: 'https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-slate-600 to-gray-800',
@@ -239,11 +349,15 @@ const Projects: React.FC = () => {
   const filteredProjects =
     activeFilter === 'all'
       ? projects
-      : projects.filter((p) => p.category === activeFilter);
+      : projects.filter((p) => {
+          if (activeFilter === 'enterprise') return p.tag?.includes('Bharat Smart Services');
+          if (activeFilter === 'client') return p.tag?.includes('Freelance');
+          return p.category === activeFilter || p.categories?.includes(activeFilter);
+        });
 
   return (
     <section id="projects" className="py-24 relative bg-[#09090B]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
@@ -276,8 +390,8 @@ const Projects: React.FC = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <motion.div layout className="grid md:grid-cols-2 gap-8">
+        {/* Projects Grid - 4 Columns in a row */}
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           <AnimatePresence>
             {filteredProjects.map((project) => (
               <motion.div
@@ -287,7 +401,7 @@ const Projects: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
-                className="group rounded-3xl bg-[#111113] border border-white/10 overflow-hidden hover:border-indigo-500/40 transition-all duration-500 shadow-xl flex flex-col justify-between"
+                className="group rounded-2xl bg-[#111113] border border-white/10 overflow-hidden hover:border-indigo-500/40 transition-all duration-500 shadow-xl flex flex-col justify-between"
               >
                 <div>
                   {/* Card Media */}
@@ -302,34 +416,39 @@ const Projects: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#111113] via-transparent to-transparent opacity-90 z-20" />
                     
-                    <div className="absolute top-4 left-4 z-30">
-                      <span className="px-3 py-1 rounded-md bg-[#111113]/90 text-white text-[11px] font-mono border border-white/10 backdrop-blur-md">
+                    <div className="absolute top-3 left-3 right-3 z-30 flex flex-wrap items-center justify-between gap-1.5">
+                      <span className="px-2.5 py-0.5 rounded-md bg-[#111113]/90 text-white text-[10px] font-mono border border-white/10 backdrop-blur-md">
                         {project.category.toUpperCase()}
                       </span>
+                      {project.tag && (
+                        <span className="px-2 py-0.5 rounded-md bg-black/80 text-indigo-300 text-[9px] font-medium border border-indigo-500/30 backdrop-blur-md">
+                          {project.tag}
+                        </span>
+                      )}
                     </div>
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-6 space-y-4">
+                  <div className="p-5 space-y-3">
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-indigo-300 transition-colors">
+                      <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-indigo-300 transition-colors line-clamp-2 leading-snug">
                         {project.title}
                       </h3>
-                      <p className="text-xs text-zinc-400 font-mono mt-1">
+                      <p className="text-[11px] text-zinc-400 font-mono mt-1 line-clamp-1">
                         {project.subtitle}
                       </p>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed line-clamp-3">
+                    <p className="text-xs text-zinc-300 leading-relaxed line-clamp-3">
                       {project.solution}
                     </p>
 
                     {/* Tech Badges */}
-                    <div className="flex flex-wrap gap-1.5 pt-2">
+                    <div className="flex flex-wrap gap-1 pt-1">
                       {project.tech.map((t, idx) => (
                         <span
                           key={idx}
-                          className="px-2.5 py-1 rounded-md bg-white/5 text-zinc-400 text-[11px] font-mono border border-white/5"
+                          className="px-2 py-0.5 rounded-md bg-white/5 text-zinc-400 text-[10px] font-mono border border-white/5"
                         >
                           {t}
                         </span>
@@ -339,25 +458,47 @@ const Projects: React.FC = () => {
                 </div>
 
                 {/* Card Actions Footer */}
-                <div className="p-6 pt-0 flex flex-wrap items-center justify-between gap-3 border-t border-white/5 mt-4">
+                <div className="p-5 pt-3.5 flex items-center justify-between gap-2 border-t border-white/10 mt-2">
                   <button
                     onClick={() => setSelectedCaseStudy(project)}
-                    className="px-4 py-2 bg-indigo-600/20 hover:bg-indigo-600/40 text-indigo-300 rounded-xl text-xs font-semibold border border-indigo-500/30 flex items-center gap-1.5 transition-colors cursor-pointer"
+                    className="h-8 px-3 bg-indigo-600/20 hover:bg-indigo-600/40 text-indigo-300 rounded-lg text-xs font-semibold border border-indigo-500/30 flex items-center gap-1.5 transition-colors cursor-pointer"
                   >
                     <BookOpen className="w-3.5 h-3.5" />
                     <span>Case Study</span>
                   </button>
 
                   <div className="flex items-center gap-2">
-                    {project.demo && (
+                    {project.playStore && (
+                      <a
+                        href={project.playStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 flex items-center justify-center text-zinc-400 hover:text-emerald-400 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-colors"
+                        title="Google Play Store"
+                      >
+                        <Play className="w-3.5 h-3.5 fill-current" />
+                      </a>
+                    )}
+                    {project.appStore && (
+                      <a
+                        href={project.appStore}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 flex items-center justify-center text-zinc-400 hover:text-indigo-400 bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-colors"
+                        title="Apple App Store"
+                      >
+                        <Apple className="w-3.5 h-3.5" />
+                      </a>
+                    )}
+                    {project.demo && !project.playStore && !project.appStore && (
                       <a
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-zinc-400 hover:text-white bg-white/5 rounded-lg border border-white/10 transition-colors"
-                        title="Live Demo / Store"
+                        className="w-8 h-8 flex items-center justify-center text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-colors"
+                        title="Live Demo"
                       >
-                        <ExternalLink className="w-4 h-4" />
+                        <ExternalLink className="w-3.5 h-3.5" />
                       </a>
                     )}
                     {project.github && (
@@ -365,10 +506,10 @@ const Projects: React.FC = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-zinc-400 hover:text-white bg-white/5 rounded-lg border border-white/10 transition-colors"
+                        className="w-8 h-8 flex items-center justify-center text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-colors"
                         title="GitHub Repository"
                       >
-                        <Github className="w-4 h-4" />
+                        <Github className="w-3.5 h-3.5" />
                       </a>
                     )}
                   </div>

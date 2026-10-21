@@ -1,15 +1,19 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, Zap, CheckCircle2 } from 'lucide-react';
+import { X, ExternalLink, Github, Zap, CheckCircle2, Play, Apple } from 'lucide-react';
 
 export interface ProjectData {
   id: string;
   title: string;
   subtitle: string;
   category: string;
+  categories?: string[];
+  tag?: string;
   tech: string[];
   image: string;
   demo?: string;
+  playStore?: string;
+  appStore?: string;
   github?: string;
   color: string;
   problem: string;
@@ -47,9 +51,16 @@ const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({ project, 
 
           {/* Banner & Title */}
           <div className="space-y-4 pr-12">
-            <span className="px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-300 text-xs font-mono border border-indigo-500/20">
-              {project.category}
-            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="px-3 py-1 rounded-md bg-indigo-500/10 text-indigo-300 text-xs font-mono border border-indigo-500/20">
+                {project.category.toUpperCase()}
+              </span>
+              {project.tag && (
+                <span className="px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-300 text-xs font-mono border border-emerald-500/20">
+                  {project.tag}
+                </span>
+              )}
+            </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               {project.title}
             </h2>
@@ -137,8 +148,30 @@ const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({ project, 
 
           {/* Action Links */}
           <div className="pt-4 border-t border-white/10 flex flex-wrap gap-4 items-center justify-between">
-            <div className="flex gap-3">
-              {project.demo && (
+            <div className="flex flex-wrap gap-3">
+              {project.playStore && (
+                <a
+                  href={project.playStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 rounded-xl text-xs font-semibold flex items-center gap-2 transition-colors border border-emerald-500/30"
+                >
+                  <Play className="w-3.5 h-3.5 fill-current" />
+                  <span>Google Play</span>
+                </a>
+              )}
+              {project.appStore && (
+                <a
+                  href={project.appStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 rounded-xl text-xs font-semibold flex items-center gap-2 transition-colors border border-indigo-500/30"
+                >
+                  <Apple className="w-4 h-4" />
+                  <span>App Store</span>
+                </a>
+              )}
+              {project.demo && !project.playStore && !project.appStore && (
                 <a
                   href={project.demo}
                   target="_blank"

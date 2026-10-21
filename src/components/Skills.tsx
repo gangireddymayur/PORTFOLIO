@@ -8,7 +8,6 @@ import {
   Database,
   Wrench,
   Cpu,
-  Layers,
 } from 'lucide-react';
 
 const Skills: React.FC = () => {
@@ -53,14 +52,16 @@ const Skills: React.FC = () => {
     // Frontend & Web
     { name: 'React.js', category: 'frontend', level: 90, badge: 'Frontend Core', experience: '3+ Yrs' },
     { name: 'Tailwind CSS', category: 'frontend', level: 92, badge: 'Styling', experience: '3+ Yrs' },
-    { name: 'TanStack Router & Query', category: 'frontend', level: 85, badge: 'State & Routing', experience: '2+ Yrs' },
+    { name: 'TanStack Start & Router', category: 'frontend', level: 88, badge: 'Full-Stack SSR', experience: '2+ Yrs' },
     { name: 'Vite & Webpack', category: 'frontend', level: 88, badge: 'Build Tools', experience: '3+ Yrs' },
     { name: 'Streamlit', category: 'frontend', level: 92, badge: 'AI Dashboards', experience: '3+ Yrs' },
 
-    // Mobile
+    // Mobile & Hardware
     { name: 'Android SDK & Studio', category: 'mobile', level: 90, badge: 'Android', experience: '3+ Yrs' },
-    { name: 'Jetpack Compose', category: 'mobile', level: 86, badge: 'Modern Android', experience: '2+ Yrs' },
-    { name: 'Flutter', category: 'mobile', level: 80, badge: 'Cross-Platform', experience: '2+ Yrs' },
+    { name: 'Capacitor.js (iOS & Android)', category: 'mobile', level: 90, badge: 'Cross-Platform Bridge', experience: '2+ Yrs' },
+    { name: 'Jetpack Compose & Compose for TV', category: 'mobile', level: 88, badge: 'Android TV & Mobile', experience: '2+ Yrs' },
+    { name: 'USB Serial / IRDA Protocols', category: 'mobile', level: 86, badge: 'Hardware Telemetry', experience: '2+ Yrs' },
+    { name: 'Flutter & Dart', category: 'mobile', level: 82, badge: 'Cross-Platform', experience: '2+ Yrs' },
     { name: 'XML & Java Mobile Apps', category: 'mobile', level: 88, badge: 'Play Store Published', experience: '3+ Yrs' },
 
     // Databases
