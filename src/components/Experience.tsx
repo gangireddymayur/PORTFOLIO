@@ -38,7 +38,9 @@ const Experience: React.FC = () => {
         {
           title: 'AI & Machine Learning Engineering',
           points: [
-            'Built and trained CNN & XGBoost models for Non-Intrusive Load Monitoring (NILM) on 5-second interval smart meter time-series data',
+            'Trained & benchmarked deep learning models (1D/2D CNNs, Time-Series Transformers) and tabular XGBoost for Non-Intrusive Load Monitoring (NILM) on 5-second interval smart meter time-series data',
+            'Engineered sliding-window transient feature pipelines on total mains power paired with appliance ground-truth telemetry; selected XGBoost for superior production generalization and inference speed',
+            'Achieved 97% disaggregation accuracy on Geyser (water heater) and ~85% average accuracy across dynamic multi-state appliances (AC, Refrigerator, Washing Machine)',
             'Developed OCR-based computer vision pipelines for automated numerical digit extraction from physical smart meters',
             'Architected Agentic AI applications integrating LLMs, tool calling, and automated business workflows',
           ],

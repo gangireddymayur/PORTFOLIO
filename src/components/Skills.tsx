@@ -37,7 +37,8 @@ const Skills: React.FC = () => {
     { name: 'TensorFlow & Keras', category: 'ai', level: 82, badge: 'Deep Learning', experience: '2+ Yrs' },
     { name: 'Scikit-Learn & XGBoost', category: 'ai', level: 90, badge: 'ML Modeling', experience: '3+ Yrs' },
     { name: 'YOLOv8 & OpenCV', category: 'ai', level: 86, badge: 'Computer Vision', experience: '2+ Yrs' },
-    { name: 'CNNs & Time-Series NILM', category: 'ai', level: 90, badge: 'Specialized', experience: '2+ Yrs' },
+    { name: 'XGBoost & Time-Series NILM', category: 'ai', level: 92, badge: 'Disaggregation AI', experience: '2+ Yrs' },
+    { name: 'CNNs & Transformers (NILM)', category: 'ai', level: 86, badge: 'Deep Learning', experience: '2+ Yrs' },
     { name: 'Agentic AI & LangChain', category: 'ai', level: 85, badge: 'LLMs & Agents', experience: '1+ Yrs' },
     { name: 'OCR & Image Extraction', category: 'ai', level: 88, badge: 'CV Pipeline', experience: '2+ Yrs' },
 

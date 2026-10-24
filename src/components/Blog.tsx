@@ -19,17 +19,17 @@ const Blog: React.FC = () => {
   const articles: Article[] = [
     {
       id: 'nilm-engineering',
-      title: 'Engineering Non-Intrusive Load Monitoring (NILM) with PyTorch & Time-Series Data',
+      title: 'Benchmarking NILM Architectures: CNNs vs Transformers vs XGBoost on 5-Second Smart Meter Data',
       category: 'AI & Time-Series Modeling',
       date: 'June 2026',
       readTime: '6 min read',
       summary:
-        'A deep dive into processing high-frequency 5-second interval smart meter telemetry data using sliding window segmentation and CNN models to disaggregate appliance-level energy consumption.',
+        'A comprehensive benchmark comparing 1D/2D CNNs, Time-Series Transformers, and XGBoost on 5-second interval smart meter telemetry to disaggregate residential appliance loads.',
       content: [
-        'Non-Intrusive Load Monitoring (NILM) allows power utilities to identify individual appliance energy usage (such as air conditioners, refrigerators, and electric vehicles) from a single smart meter point.',
-        'At Bharat Smart Services, we designed a pipeline that converts raw active and reactive power signals into 5-second sliding windows. Features like active power spikes, steady-state power levels, and harmonic distortions are extracted.',
-        'We compared 1D CNNs against Random Forest and XGBoost classifiers. Convolutional architectures excelled at capturing temporal waveform signatures, achieving higher classification accuracy and lower Mean Absolute Error (MAE).',
-        'Additionally, we coupled the disaggregation model with a Computer Vision OCR pipeline trained on physical meter displays to cross-verify cumulative energy consumption readings.',
+        'Non-Intrusive Load Monitoring (NILM) enables power utilities and consumers to identify individual appliance energy usage—including water geysers, air conditioners, refrigerators, and washing machines—directly from a single aggregate smart meter feed without per-device sub-metering.',
+        'At Bharat Smart Services, our office provided high-frequency 5-second interval time-series datasets containing total household mains power (active and reactive power) paired with sub-metered ground-truth power readings for each target appliance.',
+        'We benchmarked multiple architectures: 1D/2D Convolutional Neural Networks (CNNs), Temporal Attention Transformers, and Gradient Boosted Decision Trees (XGBoost) trained on sliding-window statistical and transient step-change features.',
+        'While deep neural networks captured complex wave shapes, XGBoost delivered markedly superior generalization and lower inference latency on 5-second windowed tabular features—achieving an outstanding 97% disaggregation accuracy on Geysers and ~85% average accuracy across Air Conditioners, Refrigerators, and Washing Machines.',
       ],
     },
     {

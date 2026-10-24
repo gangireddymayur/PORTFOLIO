@@ -16,7 +16,7 @@ const About: React.FC = () => {
       icon: Brain,
       title: 'AI & Agentic Systems',
       description:
-        'Designing CNNs, Computer Vision (YOLOv8), Time-Series disaggregation (NILM), and multi-step Agentic AI workflows with LLMs and tool-calling capabilities.',
+        'Designing XGBoost & CNN models for Time-Series energy disaggregation (NILM), Computer Vision (YOLOv8 & OCR), and multi-step Agentic AI workflows with LLMs and tool calling.',
       color: 'text-indigo-400',
       borderColor: 'hover:border-indigo-500/50',
       glow: 'group-hover:shadow-indigo-500/10',

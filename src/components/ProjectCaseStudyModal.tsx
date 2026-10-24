@@ -146,6 +146,23 @@ const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({ project, 
             </div>
           </div>
 
+          {/* Production Impact & Benchmark Metrics */}
+          {project.impact && project.impact.length > 0 && (
+            <div className="space-y-3">
+              <h3 className="text-xs font-mono uppercase tracking-wider text-emerald-400">
+                Key Production Impact & Benchmark Results
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {project.impact.map((metric, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5 p-3.5 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-xs text-zinc-200">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                    <span className="leading-relaxed">{metric}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Action Links */}
           <div className="pt-4 border-t border-white/10 flex flex-wrap gap-4 items-center justify-between">
             <div className="flex flex-wrap gap-3">
