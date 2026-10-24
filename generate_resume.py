@@ -1,8 +1,10 @@
 import subprocess
 import os
 import re
+import pypdf
 
-html_content = """<!DOCTYPE html>
+def build_resume():
+    html_content = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,7 +12,7 @@ html_content = """<!DOCTYPE html>
 <style>
   @page {
     size: A4;
-    margin: 8mm 12mm 8mm 12mm;
+    margin: 8.5mm 12.5mm 8.5mm 12.5mm;
   }
   * {
     box-sizing: border-box;
@@ -36,10 +38,10 @@ html_content = """<!DOCTYPE html>
     text-align: center;
     border-bottom: 1.5px solid #0f172a;
     padding-bottom: 4.5px;
-    margin-bottom: 7px;
+    margin-bottom: 6px;
   }
   .name {
-    font-size: 21pt;
+    font-size: 20.5pt;
     font-weight: 800;
     letter-spacing: -0.5px;
     color: #0f172a;
@@ -47,10 +49,10 @@ html_content = """<!DOCTYPE html>
     margin-bottom: 2px;
   }
   .title-sub {
-    font-size: 10.3pt;
+    font-size: 10.2pt;
     font-weight: 700;
     color: #3730a3;
-    margin-bottom: 3px;
+    margin-bottom: 3.5px;
     letter-spacing: 0.2px;
   }
   .contact {
@@ -59,7 +61,7 @@ html_content = """<!DOCTYPE html>
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
     flex-wrap: wrap;
   }
   .contact span.sep {
@@ -70,7 +72,7 @@ html_content = """<!DOCTYPE html>
     margin-bottom: 5.5px;
   }
   .section-title {
-    font-size: 10.3pt;
+    font-size: 10.2pt;
     font-weight: 800;
     color: #0f172a;
     text-transform: uppercase;
@@ -100,12 +102,12 @@ html_content = """<!DOCTYPE html>
     margin-bottom: 1.5px;
   }
   .job-title {
-    font-size: 9.4pt;
+    font-size: 9.35pt;
     font-weight: 700;
     color: #0f172a;
   }
   .job-company {
-    font-size: 9.4pt;
+    font-size: 9.35pt;
     font-weight: 700;
     color: #3730a3;
   }
@@ -115,56 +117,45 @@ html_content = """<!DOCTYPE html>
     color: #64748b;
   }
 
+  /* Standard natural flow list without position:relative to preserve strict ATS sequential text stream */
   ul.bullets {
-    list-style-type: none;
-    padding-left: 0;
+    list-style-type: disc;
+    padding-left: 15px;
+    margin: 0;
   }
   ul.bullets li {
-    position: relative;
-    padding-left: 12px;
-    margin-bottom: 3px;
+    margin-bottom: 2.8px;
     font-size: 8.95pt;
     color: #334155;
     text-align: justify;
-    line-height: 1.34;
-  }
-  ul.bullets li::before {
-    content: "•";
-    position: absolute;
-    left: 1px;
-    color: #4338ca;
-    font-size: 9pt;
-    line-height: 1;
-    top: 2px;
+    line-height: 1.33;
   }
 
   .link-pill {
     display: inline-block;
-    font-size: 7.5pt;
+    font-size: 7.4pt;
     font-weight: 600;
     color: #1d4ed8;
     background: #eff6ff;
     border: 0.5px solid #bfdbfe;
     padding: 0.5px 5px;
     border-radius: 3px;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin: 0 1px;
   }
 
-  .skills-grid {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 8px;
-    row-gap: 2.5px;
-    font-size: 9pt;
+  .skills-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+    font-size: 8.95pt;
   }
-  .skills-label {
-    font-weight: 700;
-    color: #0f172a;
-    white-space: nowrap;
-  }
-  .skills-val {
+  .skill-item {
     color: #334155;
+    line-height: 1.33;
+  }
+  .skill-item strong {
+    color: #0f172a;
+    font-weight: 700;
   }
 
   .edu-row {
@@ -172,7 +163,7 @@ html_content = """<!DOCTYPE html>
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 2px;
-    font-size: 9.1pt;
+    font-size: 9pt;
   }
   .edu-inst {
     font-weight: 700;
@@ -183,7 +174,7 @@ html_content = """<!DOCTYPE html>
     font-weight: 600;
   }
   .edu-date {
-    font-size: 8.6pt;
+    font-size: 8.5pt;
     font-weight: 600;
     color: #64748b;
   }
@@ -193,7 +184,7 @@ html_content = """<!DOCTYPE html>
     flex-wrap: wrap;
     gap: 8px;
     font-size: 8.6pt;
-    margin-top: 4px;
+    margin-top: 3.5px;
   }
   .ach-item {
     background: #f8fafc;
@@ -216,15 +207,15 @@ html_content = """<!DOCTYPE html>
     <div class="title-sub">AI/ML Engineer &bull; Full-Stack Systems Developer</div>
     <div class="contact">
       <span>Hyderabad, Telangana, India</span>
-      <span class="sep">|</span>
+      <span class="sep">&nbsp;|&nbsp;</span>
       <span>+91 6281192139</span>
-      <span class="sep">|</span>
+      <span class="sep">&nbsp;|&nbsp;</span>
       <a href="mailto:mayurgangereddy12345@gmail.com">mayurgangereddy12345@gmail.com</a>
-      <span class="sep">|</span>
+      <span class="sep">&nbsp;|&nbsp;</span>
       <a href="https://github.com/gangireddymayur" target="_blank">GitHub</a>
-      <span class="sep">|</span>
+      <span class="sep">&nbsp;|&nbsp;</span>
       <a href="http://www.linkedin.com/in/mayur-gangireddy" target="_blank">LinkedIn</a>
-      <span class="sep">|</span>
+      <span class="sep">&nbsp;|&nbsp;</span>
       <a href="https://gangireddymayur.github.io" target="_blank">Portfolio</a>
     </div>
   </div>
@@ -233,7 +224,7 @@ html_content = """<!DOCTYPE html>
   <div class="section">
     <div class="section-title">Professional Summary</div>
     <div class="summary">
-      <strong>AI/ML & Full-Stack Engineer</strong> with proven production experience deploying high-frequency time-series pipelines, edge intelligence, and cross-platform mobile systems published to the Google Play Store and Apple App Store. Specialized in energy disaggregation (NILM), privacy-preserving Model Context Protocol (MCP) data proxies, native hardware integrations (USB IRDA / OCR), and high-throughput web microservices.
+      <strong>AI/ML & Full-Stack Engineer</strong> with proven production experience deploying 5-second interval time-series pipelines, edge intelligence, and cross-platform mobile systems published to the Google Play Store and Apple App Store. Specialized in energy disaggregation (NILM), privacy-preserving Model Context Protocol (MCP) data proxies, native hardware integrations (USB IRDA / OCR), and high-throughput web microservices.
     </div>
   </div>
 
@@ -251,7 +242,7 @@ html_content = """<!DOCTYPE html>
       </div>
       <ul class="bullets">
         <li>
-          <strong>NILM Time-Series Energy Disaggregation:</strong> Built production appliance disaggregation models on high-frequency 5-second interval smart meter telemetry. Benchmarked 1D/2D CNNs and Temporal Transformers against an optimized sliding-window <strong>XGBoost</strong> pipeline; achieved <strong>97% state detection accuracy on Geysers</strong> and <strong>~85% F1-score on AC, Refrigerator, and Washing Machines</strong> (evaluated on held-out temporal splits), yielding sub-10ms CPU inference latency.
+          <strong>NILM Time-Series Energy Disaggregation:</strong> Built production appliance disaggregation models on 5-second interval smart meter telemetry. Benchmarked 1D/2D CNNs and Temporal Transformers against an optimized sliding-window <strong>XGBoost</strong> pipeline; achieved <strong>96% F1-score on Geysers</strong> and <strong>~85% F1-score across AC, Refrigerator, and Washing Machines</strong> (evaluated on held-out temporal splits), yielding sub-10ms CPU inference latency.
         </li>
         <li>
           <strong>NerveNet &ndash; Client-Side Encrypted Enterprise MCP Platform:</strong> Architected an enterprise AI agent platform on the <strong>Model Context Protocol (MCP)</strong>. Engineered client-side AES-256 encryption and key tokenization over private CSV tables and SQL databases, allowing cloud LLMs to execute reasoning and queries strictly over anonymized tokens without exposing unencrypted corporate records.
@@ -292,13 +283,13 @@ html_content = """<!DOCTYPE html>
     <div class="job">
       <div class="job-header">
         <div>
-          <span class="job-company">Acmegrade</span> &ndash; <span class="job-title">Java Software Engineering Intern</span>
+          <span class="job-company">Acmegrade</span> &ndash; <span class="job-title">Android App Development Intern</span>
         </div>
-        <div class="job-date">11/2023 &ndash; 01/2024 | Virtual</div>
+        <div class="job-date">11/2023 &ndash; 01/2024 | Remote</div>
       </div>
       <ul class="bullets">
         <li>
-          Developed backend core Java service modules and relational database schemas with high-throughput transaction handling and structured error-handling middleware.
+          Developed and deployed native Android mobile application modules in Java, implementing activity lifecycles, UI layout hierarchies, REST API integration, and local SQLite caching.
         </li>
       </ul>
     </div>
@@ -330,21 +321,12 @@ html_content = """<!DOCTYPE html>
   <!-- TECHNICAL SKILLS -->
   <div class="section">
     <div class="section-title">Technical Skills</div>
-    <div class="skills-grid">
-      <div class="skills-label">Languages:</div>
-      <div class="skills-val">Python, TypeScript, JavaScript (ES6+), Java, SQL, Dart, C, C++</div>
-
-      <div class="skills-label">AI & Machine Learning:</div>
-      <div class="skills-val">XGBoost, PyTorch, Transformers, CNNs, Time-Series NILM, Model Context Protocol (MCP), YOLOv8, Computer Vision (OCR), LangChain, Scikit-Learn</div>
-
-      <div class="skills-label">Web & Mobile:</div>
-      <div class="skills-val">React.js, Node.js, Express, FastAPI, Capacitor.js, Flutter, Android (Java/Kotlin), Tailwind CSS, Vite</div>
-
-      <div class="skills-label">Databases & Cloud:</div>
-      <div class="skills-val">PostgreSQL, MySQL, MariaDB, DuckDB, Supabase, Firebase, Plesk Linux, RESTful APIs</div>
-
-      <div class="skills-label">Tools & DevOps:</div>
-      <div class="skills-val">Git, Docker, Android Studio, Xcode, Postman, Linux CLI, USB Serial Hardware (IRDA)</div>
+    <div class="skills-block">
+      <div class="skill-item"><strong>Languages:</strong> Python, TypeScript, JavaScript (ES6+), Java, SQL, Dart, C, C++</div>
+      <div class="skill-item"><strong>AI & Machine Learning:</strong> XGBoost, PyTorch, Transformers, CNNs, Time-Series NILM, Model Context Protocol (MCP), YOLOv8, Computer Vision (OCR), LangChain, Scikit-Learn</div>
+      <div class="skill-item"><strong>Web & Mobile:</strong> React.js, Node.js, Express, FastAPI, Capacitor.js, Flutter, Android (Java/Kotlin), Tailwind CSS, Vite</div>
+      <div class="skill-item"><strong>Databases & Cloud:</strong> PostgreSQL, MySQL, MariaDB, DuckDB, Supabase, Firebase, Plesk Linux, RESTful APIs</div>
+      <div class="skill-item"><strong>Tools & DevOps:</strong> Git, Docker, Android Studio, Xcode, Postman, Linux CLI, USB Serial Hardware (IRDA)</div>
     </div>
   </div>
 
@@ -375,34 +357,29 @@ html_content = """<!DOCTYPE html>
 </html>
 """
 
-html_path = "/Users/mayur/personal/PORTFOLIO/public/resume.html"
-with open(html_path, "w") as f:
-    f.write(html_content)
+    html_path = "/Users/mayur/personal/PORTFOLIO/public/resume.html"
+    with open(html_path, "w") as f:
+        f.write(html_content)
 
-output_pdf = "/Users/mayur/personal/PORTFOLIO/public/Mayur_Gangireddy_Resume.pdf"
-root_pdf = "/Users/mayur/personal/PORTFOLIO/Mayur_Gangireddy_Resume.pdf"
+    output_pdf = "/Users/mayur/personal/PORTFOLIO/public/Mayur_Gangireddy_Resume.pdf"
+    root_pdf = "/Users/mayur/personal/PORTFOLIO/Mayur_Gangireddy_Resume.pdf"
 
-cmd = [
-    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-    "--headless",
-    "--disable-gpu",
-    "--run-all-compositor-stages-before-draw",
-    f"--print-to-pdf={output_pdf}",
-    "--no-pdf-header-footer",
-    f"file://{html_path}"
-]
+    cmd = [
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "--headless",
+        "--disable-gpu",
+        "--run-all-compositor-stages-before-draw",
+        f"--print-to-pdf={output_pdf}",
+        "--no-pdf-header-footer",
+        f"file://{html_path}"
+    ]
 
-res = subprocess.run(cmd, capture_output=True, text=True)
-print("Chrome returncode:", res.returncode)
+    subprocess.run(cmd, capture_output=True, text=True)
+    subprocess.run(["cp", output_pdf, root_pdf])
 
-# Also copy to root
-subprocess.run(["cp", output_pdf, root_pdf])
-print("Generated PDF saved to:")
-print(f"1. {output_pdf}")
-print(f"2. {root_pdf}")
+    reader = pypdf.PdfReader(output_pdf)
+    print("Page count:", len(reader.pages))
+    print("--- EXTRACTED TEXT STREAM ---")
+    print(reader.pages[0].extract_text()[:1600])
 
-# Check page count
-with open(output_pdf, "rb") as f:
-    pdf_bytes = f.read()
-pages = re.findall(b'/Type\\s*/Page[^s]', pdf_bytes)
-print("Page count:", len(pages))
+build_resume()
