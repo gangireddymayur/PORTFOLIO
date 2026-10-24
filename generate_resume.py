@@ -1,0 +1,415 @@
+import subprocess
+import os
+
+html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mayur Gangireddy - Resume</title>
+<style>
+  @page {
+    size: A4;
+    margin: 10mm 12mm 10mm 12mm;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    background: #ffffff;
+    font-size: 8.8pt;
+    line-height: 1.35;
+  }
+  a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .header {
+    text-align: center;
+    border-bottom: 1.5px solid #0f172a;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+  }
+  .name {
+    font-size: 20pt;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #0f172a;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .title-sub {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #4338ca;
+    margin-bottom: 4px;
+    letter-spacing: 0.2px;
+  }
+  .contact {
+    font-size: 8.2pt;
+    color: #475569;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .contact span.sep {
+    color: #94a3b8;
+  }
+
+  .section {
+    margin-bottom: 7px;
+  }
+  .section-title {
+    font-size: 9.5pt;
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .summary {
+    font-size: 8.5pt;
+    color: #334155;
+    text-align: justify;
+    line-height: 1.35;
+  }
+
+  .job {
+    margin-bottom: 5px;
+  }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1px;
+  }
+  .job-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .job-company {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #4338ca;
+  }
+  .job-date {
+    font-size: 8.2pt;
+    font-weight: 600;
+    color: #64748b;
+  }
+  .job-location {
+    font-size: 8pt;
+    color: #64748b;
+  }
+
+  ul.bullets {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  ul.bullets li {
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 2.5px;
+    font-size: 8.4pt;
+    color: #334155;
+    text-align: justify;
+    line-height: 1.32;
+  }
+  ul.bullets li::before {
+    content: "•";
+    position: absolute;
+    left: 2px;
+    color: #4338ca;
+    font-size: 9pt;
+    line-height: 1;
+    top: 2px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0px 4px;
+    border-radius: 3px;
+    font-size: 7.2pt;
+    font-weight: 600;
+    background: #e0e7ff;
+    color: #3730a3;
+    border: 0.5px solid #c7d2fe;
+    vertical-align: middle;
+    margin-left: 3px;
+  }
+  .link-pill {
+    display: inline-block;
+    font-size: 7.4pt;
+    font-weight: 600;
+    color: #1d4ed8;
+    background: #eff6ff;
+    border: 0.5px solid #bfdbfe;
+    padding: 0.5px 4px;
+    border-radius: 3px;
+    margin-left: 2px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 8px;
+    row-gap: 2.5px;
+    font-size: 8.4pt;
+  }
+  .skills-label {
+    font-weight: 700;
+    color: #0f172a;
+    white-space: nowrap;
+  }
+  .skills-val {
+    color: #334155;
+  }
+
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+    font-size: 8.5pt;
+  }
+  .edu-inst {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .edu-deg {
+    color: #4338ca;
+    font-weight: 600;
+  }
+  .edu-date {
+    font-size: 8.2pt;
+    font-weight: 600;
+    color: #64748b;
+  }
+
+  .achievements {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 8.2pt;
+  }
+  .ach-item {
+    background: #f8fafc;
+    border: 0.5px solid #cbd5e1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #1e293b;
+    font-weight: 500;
+  }
+  .ach-item strong {
+    color: #0f172a;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="name">MAYUR GANGIREDDY</div>
+    <div class="title-sub">AI & Machine Learning Engineer &bull; Full-Stack & Mobile Systems</div>
+    <div class="contact">
+      <span>Hyderabad, Telangana, India</span>
+      <span class="sep">|</span>
+      <span>+91 6281192139</span>
+      <span class="sep">|</span>
+      <a href="mailto:mayurgangereddy12345@gmail.com">mayurgangereddy12345@gmail.com</a>
+      <span class="sep">|</span>
+      <a href="https://github.com/gangireddymayur" target="_blank">GitHub</a>
+      <span class="sep">|</span>
+      <a href="http://www.linkedin.com/in/mayur-gangireddy" target="_blank">LinkedIn</a>
+      <span class="sep">|</span>
+      <a href="https://gangireddymayur.github.io" target="_blank">Portfolio</a>
+    </div>
+  </div>
+
+  <!-- CAREER SUMMARY -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <div class="summary">
+      <strong>Machine Learning & Full-Stack Engineer</strong> with proven production experience architecting end-to-end AI systems, mobile applications deployed to the Google Play Store and Apple App Store, and scalable microservices. Specialized in time-series energy disaggregation (NILM), privacy-preserving Agentic AI via the Model Context Protocol (MCP), native hardware integrations (USB IRDA / OCR), and modern web platforms.
+    </div>
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <!-- BHARAT SMART SERVICES -->
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <span class="job-company">Bharat Smart Services</span> &ndash; <span class="job-title">Machine Learning & Full-Stack Engineer</span>
+        </div>
+        <div class="job-date">01/2026 &ndash; Present | Hyderabad, India</div>
+      </div>
+      <ul class="bullets">
+        <li>
+          <strong>NILM Energy Disaggregation AI:</strong> Built 5-second smart meter time-series models with <strong>XGBoost</strong> (benchmarked against CNNs/Transformers), achieving <strong>97% accuracy on Geysers</strong> and <strong>~85% on AC, Fridge, and Washing Machines</strong>.
+        </li>
+        <li>
+          <strong>NerveNet &ndash; Enterprise MCP Platform:</strong> Architected zero-knowledge AI platform on <strong>Model Context Protocol (MCP)</strong> with client-side encryption over CSV/SQL datasets to protect private company data from cloud LLMs.
+        </li>
+        <li>
+          <strong>Bharat Smart Services App (Utility & Billing)</strong>
+          <a class="link-pill" href="https://play.google.com/store/apps/details?id=in.coral.met" target="_blank">Google Play</a>
+          <a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-services/id1584345371" target="_blank">App Store</a>:
+          Built React/Capacitor app with native Java USB IRDA serial drivers, camera OCR verification review, and utility billing (TSSPDCL, TSNPDCL, HMWSSB).
+        </li>
+        <li>
+          <strong>Bharat Smart Home (IoT Automation)</strong>
+          <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.bharat.smarthome" target="_blank">Google Play</a>
+          <a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389" target="_blank">App Store</a>:
+          Built smart home app featuring device hierarchy, condition-based automation schedules, lifestyle scenes, and real-time disaggregated energy intelligence.
+        </li>
+      </ul>
+    </div>
+
+    <!-- TELANGANA POLICE ACADEMY -->
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <span class="job-company">Telangana State Police Academy (TGPA)</span> &ndash; <span class="job-title">Android Application Developer</span>
+        </div>
+        <div class="job-date">03/2024 &ndash; 08/2024 | Hyderabad, India</div>
+      </div>
+      <ul class="bullets">
+        <li>
+          <strong>Criminal Laws by TGPA</strong>
+          <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.sphn.tgpa&hl=en_IN" target="_blank">Google Play Store</a>:
+          Designed, built, and published the official government legal repository Android application for police officers and legal trainees. Implemented sub-second offline search across criminal penal codes, bilingual document viewers, and high-performance SQLite caching.
+        </li>
+      </ul>
+    </div>
+
+    <!-- ACMEGRADE -->
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <span class="job-company">Acmegrade</span> &ndash; <span class="job-title">Java Software Engineering Intern</span>
+        </div>
+        <div class="job-date">11/2023 &ndash; 01/2024 | Virtual</div>
+      </div>
+      <ul class="bullets">
+        <li>
+          Developed backend core Java service modules and relational database schemas with high-throughput transaction handling and structured error-handling middleware.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SELECTED PROJECTS -->
+  <div class="section">
+    <div class="section-title">Selected Projects</div>
+
+    <ul class="bullets">
+      <li>
+        <strong>Hostel Hub Pro & Companion Mobile App:</strong>
+        Multi-tenant campus accommodation platform connecting administration, wardens, students, and guards. Built administrative web portal with <strong>TanStack Start SSR & React</strong>, companion <strong>Flutter app</strong> with 24-hr time-restricted cryptographic QR gate passes, and an Express/MySQL backend on Plesk.
+      </li>
+      <li>
+        <strong>Satellite Ship Detection & Classification (YOLOv8)</strong>
+        <a class="link-pill" href="https://shipdetectionyolov8.streamlit.app/" target="_blank">Live Demo</a>
+        <a class="link-pill" href="https://github.com/gangireddymayur/Ship_Detection_YOLOv8" target="_blank">GitHub</a>:
+        Engineered post-CNN framework for high-resolution satellite imagery analysis. Implemented automated water/land masking followed by YOLOv8 deep learning vessel detection with confidence bounding boxes.
+      </li>
+      <li>
+        <strong>Samarth &ndash; Intelligent Agriculture & Climate Q&A Engine</strong>
+        <a class="link-pill" href="https://github.com/gangireddymayur/Samarth-theChatBot" target="_blank">GitHub</a>:
+        Built deterministic Natural Language to SQL query translation engine over Indian agricultural datasets using FastAPI, schema-aware LLM prompt architecture, and DuckDB analytical database with 100% SQL traceability.
+      </li>
+    </ul>
+  </div>
+
+  <!-- TECHNICAL SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skills-label">Languages:</div>
+      <div class="skills-val">Python, TypeScript, JavaScript (ES6+), Java, SQL, Dart, C, C++</div>
+
+      <div class="skills-label">AI & Machine Learning:</div>
+      <div class="skills-val">XGBoost, PyTorch, Transformers, CNNs, Time-Series NILM, Model Context Protocol (MCP), YOLOv8, Computer Vision (OCR), LangChain, Scikit-Learn</div>
+
+      <div class="skills-label">Web & Mobile:</div>
+      <div class="skills-val">React.js, Node.js, Express, FastAPI, Capacitor.js, Flutter, Android (Java/Kotlin), Tailwind CSS, Vite</div>
+
+      <div class="skills-label">Databases & Cloud:</div>
+      <div class="skills-val">PostgreSQL, MySQL, MariaDB, DuckDB, Supabase, Firebase, Plesk Linux, REST APIs</div>
+
+      <div class="skills-label">Tools & DevOps:</div>
+      <div class="skills-val">Git, Docker, Android Studio, Xcode, Postman, Linux CLI, USB Serial Hardware (IRDA)</div>
+    </div>
+  </div>
+
+  <!-- EDUCATION & HONORS -->
+  <div class="section">
+    <div class="section-title">Education & Honors</div>
+    <div class="edu-row">
+      <div>
+        <span class="edu-inst">Sphoorthy Engineering College</span> &ndash;
+        <span class="edu-deg">B.Tech in Computer Science & Engineering (AIML)</span>
+      </div>
+      <div class="edu-date">2021 &ndash; 2025 | Hyderabad, India</div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <span class="edu-inst">Sri Gayatri Junior College</span> &ndash;
+        <span class="edu-deg">Board of Intermediate Education (MPC)</span>
+      </div>
+      <div class="edu-date">2019 &ndash; 2021 | Hyderabad, India</div>
+    </div>
+    <div class="achievements" style="margin-top: 4px;">
+      <div class="ach-item"><strong>National Finalist</strong> &ndash; Smart India Hackathon (SIH)</div>
+      <div class="ach-item"><strong>Production Apps</strong> &ndash; 3 Published Apps on Google Play Store & Apple App Store</div>
+    </div>
+  </div>
+
+</body>
+</html>
+"""
+
+html_path = "/Users/mayur/personal/PORTFOLIO/public/resume.html"
+with open(html_path, "w") as f:
+    f.write(html_content)
+
+output_pdf = "/Users/mayur/personal/PORTFOLIO/public/Mayur_Gangireddy_Resume.pdf"
+root_pdf = "/Users/mayur/personal/PORTFOLIO/Mayur_Gangireddy_Resume.pdf"
+
+cmd = [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--headless",
+    "--disable-gpu",
+    "--run-all-compositor-stages-before-draw",
+    f"--print-to-pdf={output_pdf}",
+    "--no-pdf-header-footer",
+    f"file://{html_path}"
+]
+
+res = subprocess.run(cmd, capture_output=True, text=True)
+print("Chrome returncode:", res.returncode)
+
+# Also copy to root
+subprocess.run(["cp", output_pdf, root_pdf])
+print("Generated PDF saved to:")
+print(f"1. {output_pdf}")
+print(f"2. {root_pdf}")
