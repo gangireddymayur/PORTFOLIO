@@ -55,13 +55,13 @@ const Experience: React.FC = () => {
           apps: [
             {
               name: 'NILM Energy Disaggregation AI',
-              desc: 'Production time-series disaggregation on 5-second interval smart meter feeds. Benchmarked CNNs & Transformers against XGBoost; achieved 97% accuracy on Geysers and ~85% average across AC, Refrigerator & Washing Machine.',
+              desc: 'Production time-series disaggregation on 5-second interval smart meter feeds. Benchmarked CNNs & Transformers against XGBoost; achieved 96% F1-score on Geysers and ~85% average F1-score across AC, Refrigerator & Washing Machine.',
               badge: 'Production AI',
               iconType: 'sparkles',
             },
             {
               name: 'NerveNet – Enterprise MCP Agent Platform',
-              desc: 'Privacy-first enterprise AI platform built on Model Context Protocol (MCP). Features hierarchical org access, CSV/SQL data ingestion, and zero-knowledge client-side encryption preventing enterprise data exposure to cloud LLMs.',
+              desc: 'Privacy-first enterprise AI platform built on Model Context Protocol (MCP). Features hierarchical org access, CSV/SQL data ingestion, and client-side AES encryption preventing enterprise data exposure to cloud LLMs.',
               badge: 'Enterprise MCP',
               iconType: 'shield',
             },

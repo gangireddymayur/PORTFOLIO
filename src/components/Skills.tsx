@@ -156,17 +156,9 @@ const Skills: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-zinc-400 mb-2">
-                  <span className="font-mono text-[11px]">Proficiency</span>
-                  <span className="font-mono font-semibold text-indigo-400">{skill.level}%</span>
-                </div>
-
-                {/* Progress bar */}
-                <div className="w-full bg-zinc-900 rounded-full h-1.5 overflow-hidden border border-white/5">
-                  <div
-                    className="h-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-indigo-400 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${skill.level}%` }}
-                  />
+                <div className="flex items-center justify-between text-xs text-zinc-400 pt-2 border-t border-white/5">
+                  <span className="font-mono text-[11px] text-zinc-400">Experience</span>
+                  <span className="font-mono font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">{skill.experience}</span>
                 </div>
               </motion.div>
             ))}

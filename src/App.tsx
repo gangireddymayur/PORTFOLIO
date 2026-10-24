@@ -6,7 +6,6 @@ import Architecture from './components/Architecture';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Achievements from './components/Achievements';
-import Testimonials from './components/Testimonials';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -28,7 +27,6 @@ function App() {
         <Projects />
         <Experience />
         <Achievements />
-        <Testimonials />
         <Blog />
         <Contact />
       </main>

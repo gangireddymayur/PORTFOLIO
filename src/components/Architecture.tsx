@@ -152,7 +152,7 @@ const Architecture: React.FC = () => {
       subtitle: 'Bharat Smart Services Production AI Architecture',
       category: 'AI / Time-Series & Computer Vision',
       description:
-        'A high-frequency energy disaggregation pipeline that ingests 5-second interval smart meter time-series data, segments power signals using sliding windows, benchmarks CNNs, Transformers, and XGBoost, and deploys an optimized gradient boosted model delivering 97% accuracy on Geysers and ~85% average accuracy across AC, Refrigerator, and Washing Machine.',
+        'An energy disaggregation pipeline that ingests 5-second interval smart meter time-series data, segments power signals using sliding windows, benchmarks CNNs, Transformers, and XGBoost, and deploys an optimized gradient boosted model delivering 96% F1-score on Geysers and ~85% average F1-score across AC, Refrigerator, and Washing Machine.',
       nodes: [
         { label: 'Smart Meter Data', sub: '5s Interval Mains & Appliance Feeds', icon: Activity },
         { label: 'Sliding Window DSP', sub: 'Transient & Temporal Features', icon: Cpu },
@@ -161,23 +161,23 @@ const Architecture: React.FC = () => {
         { label: 'Energy Dashboard', sub: 'Appliance-Level Disaggregation', icon: Globe },
       ],
       keyHighlights: [
-        'Processes high-frequency 5-second interval mains and appliance ground-truth power telemetry',
+        'Processes 5-second interval mains and appliance ground-truth power telemetry',
         'Systematic benchmark: evaluated 1D/2D CNNs and Temporal Transformers against XGBoost on sliding-window features',
-        'Selected XGBoost for superior production generalization, achieving 97% Geyser and ~85% AC, Refrigerator, and Washing Machine accuracy',
+        'Selected XGBoost for superior production generalization, achieving 96% Geyser F1-score and ~85% average F1-score across AC, Refrigerator, and Washing Machine',
         'Computer Vision OCR extracts numerical readings directly from physical smart meter LCD displays to cross-verify cumulative energy',
       ],
     },
     {
       id: 'nervenet-mcp',
       tabName: 'NerveNet AI (MCP)',
-      title: 'NerveNet – Zero-Knowledge Enterprise MCP Architecture',
+      title: 'NerveNet – Client-Side Encrypted Enterprise MCP Architecture',
       subtitle: 'Bharat Smart Services Proprietary AI Agent Platform',
       category: 'Agentic AI / Model Context Protocol & Security',
       description:
-        'A privacy-first enterprise AI platform designed on the Model Context Protocol (MCP). Enables organizational leadership to onboard CSV files and live SQL databases while a client-side MCP proxy encrypts proprietary data into anonymized tokens before passing context to cloud LLM query engines—decrypting verified answers locally with zero cloud data exposure.',
+        'A privacy-first enterprise AI platform designed on the Model Context Protocol (MCP). Enables organizational leadership to onboard CSV files and live SQL databases while a client-side MCP proxy encrypts proprietary data into anonymized tokens before passing context to cloud LLM query engines—decrypting verified answers locally with zero unencrypted cloud data exposure.',
       nodes: [
         { label: 'Admin & Org Head', sub: 'Hierarchical CSV & SQL Ingestion', icon: Database },
-        { label: 'Client-Side MCP Proxy', sub: 'Zero-Knowledge Tokenizer & Encryptor', icon: ShieldCheck, highlight: true },
+        { label: 'Client-Side MCP Proxy', sub: 'Client-Side Tokenizer & Encryptor', icon: ShieldCheck, highlight: true },
         { label: 'Cloud LLM Reasoner', sub: 'SQL & Query Engine on Anonymized Keys', icon: Sparkles },
         { label: 'Local Keyring Decryptor', sub: 'Private Sub-Second Response Resolver', icon: Zap },
         { label: 'Chatbot Interface', sub: 'Natural-Language User Queries', icon: Globe },
@@ -185,7 +185,7 @@ const Architecture: React.FC = () => {
       keyHighlights: [
         'Conceived and engineered around the Model Context Protocol (MCP) for enterprise agentic workflows',
         'Hierarchical RBAC framework allowing Org Heads to upload spreadsheets and configure database query scopes',
-        'Zero-knowledge client-side encryption: raw proprietary company data never leaves the local perimeter unencrypted',
+        'Client-side AES-256 encryption: raw proprietary company records never leave the local perimeter unencrypted',
         'Cloud LLMs execute reasoning strictly through ephemeral encrypted tokens and keys, preventing data leakages',
       ],
     },

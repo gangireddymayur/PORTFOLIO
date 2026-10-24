@@ -12,7 +12,7 @@ def build_resume():
 <style>
   @page {
     size: A4;
-    margin: 8.5mm 12.5mm 8.5mm 12.5mm;
+    margin: 6.5mm 10.5mm 6.5mm 10.5mm;
   }
   * {
     box-sizing: border-box;
@@ -23,8 +23,8 @@ def build_resume():
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #1e293b;
     background: #ffffff;
-    font-size: 9.1pt;
-    line-height: 1.34;
+    font-size: 8.7pt;
+    line-height: 1.28;
   }
   a {
     color: #1d4ed8;
@@ -36,32 +36,32 @@ def build_resume():
   }
   .header {
     text-align: center;
-    border-bottom: 1.5px solid #0f172a;
-    padding-bottom: 4.5px;
-    margin-bottom: 6px;
+    border-bottom: 1.2px solid #0f172a;
+    padding-bottom: 3px;
+    margin-bottom: 4px;
   }
   .name {
-    font-size: 20.5pt;
+    font-size: 18.5pt;
     font-weight: 800;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.4px;
     color: #0f172a;
     text-transform: uppercase;
-    margin-bottom: 2px;
+    margin-bottom: 1.5px;
   }
   .title-sub {
-    font-size: 10.2pt;
+    font-size: 9.6pt;
     font-weight: 700;
     color: #3730a3;
-    margin-bottom: 3.5px;
+    margin-bottom: 2.5px;
     letter-spacing: 0.2px;
   }
   .contact {
-    font-size: 8.9pt;
+    font-size: 8.5pt;
     color: #475569;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 7px;
+    gap: 6px;
     flex-wrap: wrap;
   }
   .contact span.sep {
@@ -69,50 +69,50 @@ def build_resume():
   }
 
   .section {
-    margin-bottom: 5.5px;
+    margin-bottom: 4px;
   }
   .section-title {
-    font-size: 10.2pt;
+    font-size: 9.6pt;
     font-weight: 800;
     color: #0f172a;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 1.2px solid #cbd5e1;
-    padding-bottom: 1.5px;
-    margin-bottom: 3.5px;
+    letter-spacing: 0.4px;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 1px;
+    margin-bottom: 2.5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   .summary {
-    font-size: 9pt;
+    font-size: 8.65pt;
     color: #334155;
     text-align: justify;
-    line-height: 1.34;
+    line-height: 1.28;
   }
 
   .job {
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .job-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 1.5px;
+    margin-bottom: 1px;
   }
   .job-title {
-    font-size: 9.35pt;
+    font-size: 8.9pt;
     font-weight: 700;
     color: #0f172a;
   }
   .job-company {
-    font-size: 9.35pt;
+    font-size: 8.9pt;
     font-weight: 700;
     color: #3730a3;
   }
   .job-date {
-    font-size: 8.5pt;
+    font-size: 8.2pt;
     font-weight: 600;
     color: #64748b;
   }
@@ -120,25 +120,25 @@ def build_resume():
   /* Standard natural flow list without position:relative to preserve strict ATS sequential text stream */
   ul.bullets {
     list-style-type: disc;
-    padding-left: 15px;
+    padding-left: 14px;
     margin: 0;
   }
   ul.bullets li {
-    margin-bottom: 2.8px;
-    font-size: 8.95pt;
+    margin-bottom: 1.8px;
+    font-size: 8.5pt;
     color: #334155;
     text-align: justify;
-    line-height: 1.33;
+    line-height: 1.27;
   }
 
   .link-pill {
     display: inline-block;
-    font-size: 7.4pt;
+    font-size: 7.2pt;
     font-weight: 600;
     color: #1d4ed8;
     background: #eff6ff;
     border: 0.5px solid #bfdbfe;
-    padding: 0.5px 5px;
+    padding: 0.5px 4.5px;
     border-radius: 3px;
     margin: 0 1px;
   }
@@ -146,12 +146,12 @@ def build_resume():
   .skills-block {
     display: flex;
     flex-direction: column;
-    gap: 2.5px;
-    font-size: 8.95pt;
+    gap: 1.5px;
+    font-size: 8.5pt;
   }
   .skill-item {
     color: #334155;
-    line-height: 1.33;
+    line-height: 1.27;
   }
   .skill-item strong {
     color: #0f172a;
@@ -162,8 +162,8 @@ def build_resume():
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 2px;
-    font-size: 9pt;
+    margin-bottom: 1.5px;
+    font-size: 8.65pt;
   }
   .edu-inst {
     font-weight: 700;
@@ -174,7 +174,7 @@ def build_resume():
     font-weight: 600;
   }
   .edu-date {
-    font-size: 8.5pt;
+    font-size: 8.2pt;
     font-weight: 600;
     color: #64748b;
   }
@@ -182,14 +182,14 @@ def build_resume():
   .achievements {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    font-size: 8.6pt;
-    margin-top: 3.5px;
+    gap: 6px;
+    font-size: 8.2pt;
+    margin-top: 2px;
   }
   .ach-item {
     background: #f8fafc;
     border: 0.5px solid #cbd5e1;
-    padding: 2.5px 7px;
+    padding: 1.5px 6px;
     border-radius: 4px;
     color: #1e293b;
     font-weight: 500;
@@ -216,7 +216,7 @@ def build_resume():
       <span class="sep">&nbsp;|&nbsp;</span>
       <a href="http://www.linkedin.com/in/mayur-gangireddy" target="_blank">LinkedIn</a>
       <span class="sep">&nbsp;|&nbsp;</span>
-      <a href="https://gangireddymayur.github.io" target="_blank">Portfolio</a>
+      <a href="https://portfolio-steel-six-n4cc8s07o5.vercel.app" target="_blank">Portfolio</a>
     </div>
   </div>
 
@@ -279,6 +279,21 @@ def build_resume():
       </ul>
     </div>
 
+    <!-- EY GDS × AICTE -->
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <span class="job-company">EY Global Delivery Services &times; AICTE</span> &ndash; <span class="job-title">Web Development Intern (MERN Stack)</span>
+        </div>
+        <div class="job-date">03/2025 &ndash; 04/2025 | Virtual</div>
+      </div>
+      <ul class="bullets">
+        <li>
+          Developed full-stack web applications using MongoDB, Express.js, React.js, and Node.js. Built scalable RESTful APIs, JWT authentication, and responsive administrative dashboards.
+        </li>
+      </ul>
+    </div>
+
     <!-- ACMEGRADE -->
     <div class="job">
       <div class="job-header">
@@ -297,23 +312,20 @@ def build_resume():
 
   <!-- SELECTED PROJECTS -->
   <div class="section">
-    <div class="section-title">Selected Projects</div>
+    <div class="section-title">Selected Projects (Client Production)</div>
 
     <ul class="bullets">
+      <li>
+        <strong>Temple Donation Signage Hub & Devotee Android TV Network: </strong>
+        Devotional donation kiosk & digital signage TV network. Built administrative portal generating dynamic zero-transaction-fee UPI QR codes with automated verification polling, and a native Android TV app (Kotlin, Jetpack Compose, ExoPlayer/media3) featuring 6-character claiming codes and resilient offline media caching; deployed live on temple donation kiosks and display screens.
+      </li>
       <li>
         <strong>Hostel Hub Pro & Companion Mobile App: </strong>
         Multi-tenant accommodation platform connecting administrators, wardens, students, and guards. Built administrative web portal with <strong>TanStack Start SSR & React</strong>, companion <strong>Flutter app</strong> featuring time-restricted (24-hr) HMAC dynamic QR gate passes with server-side nonce verification to prevent pass re-use and sharing, and an Express/MySQL backend on Plesk.
       </li>
       <li>
-        <strong>Satellite Ship Detection & Classification (YOLOv8) </strong>
-        <a class="link-pill" href="https://shipdetectionyolov8.streamlit.app/" target="_blank">Live Demo</a>
-        <a class="link-pill" href="https://github.com/gangireddymayur/Ship_Detection_YOLOv8" target="_blank">GitHub</a>:
-        Engineered computer vision pipeline for high-resolution optical satellite imagery analysis. Implemented automated water/land masking followed by fine-tuned YOLOv8 deep learning vessel detection with confidence-scored bounding boxes.
-      </li>
-      <li>
-        <strong>Samarth &ndash; Intelligent Agriculture & Climate Q&A Engine </strong>
-        <a class="link-pill" href="https://github.com/gangireddymayur/Samarth-theChatBot" target="_blank">GitHub</a>:
-        Built Natural Language to SQL analytics engine over Indian agricultural datasets using FastAPI and DuckDB. Enforced schema-constrained LLM prompt architecture and AST query validation, guaranteeing 100% auditable generated SQL execution logs.
+        <strong>SignageHub &ndash; Hybrid Digital Signage & TV Network: </strong>
+        Commercial digital signage platform featuring cloud media scheduling dashboard and compiled local server broadcasting UDP discovery packets to auto-pair native Android TV screens. Engineered Android TV client in Jetpack Compose, Ktor, and local SQLite caching for continuous offline playlist playback with zero manual IP setup.
       </li>
     </ul>
   </div>
@@ -322,11 +334,11 @@ def build_resume():
   <div class="section">
     <div class="section-title">Technical Skills</div>
     <div class="skills-block">
-      <div class="skill-item"><strong>Languages:</strong> Python, TypeScript, JavaScript (ES6+), Java, SQL, Dart, C, C++</div>
-      <div class="skill-item"><strong>AI & Machine Learning:</strong> XGBoost, PyTorch, Transformers, CNNs, Time-Series NILM, Model Context Protocol (MCP), YOLOv8, Computer Vision (OCR), LangChain, Scikit-Learn</div>
-      <div class="skill-item"><strong>Web & Mobile:</strong> React.js, Node.js, Express, FastAPI, Capacitor.js, Flutter, Android (Java/Kotlin), Tailwind CSS, Vite</div>
-      <div class="skill-item"><strong>Databases & Cloud:</strong> PostgreSQL, MySQL, MariaDB, DuckDB, Supabase, Firebase, Plesk Linux, RESTful APIs</div>
-      <div class="skill-item"><strong>Tools & DevOps:</strong> Git, Docker, Android Studio, Xcode, Postman, Linux CLI, USB Serial Hardware (IRDA)</div>
+      <div class="skill-item"><strong>Languages:</strong> Python, TypeScript, JavaScript (ES6+), Java, Kotlin, SQL, Dart, C, C++</div>
+      <div class="skill-item"><strong>AI & Machine Learning:</strong> XGBoost, PyTorch, Transformers, CNNs, Time-Series NILM, Model Context Protocol (MCP), Computer Vision (OCR), Scikit-Learn</div>
+      <div class="skill-item"><strong>Web & Mobile:</strong> React.js, Node.js, Express, FastAPI, Capacitor.js, Flutter, Android (Jetpack Compose/Java), Ktor, Tailwind CSS</div>
+      <div class="skill-item"><strong>Databases & Cloud:</strong> PostgreSQL, MySQL, MariaDB, SQLite, DuckDB, Supabase, Firebase, Plesk Linux, RESTful APIs</div>
+      <div class="skill-item"><strong>Tools & Hardware:</strong> Git, Docker, Android Studio, Xcode, Postman, Linux CLI, USB Serial Hardware (IRDA), UDP Discovery</div>
     </div>
   </div>
 
@@ -348,8 +360,8 @@ def build_resume():
       <div class="edu-date">2019 &ndash; 2021 | Hyderabad, India</div>
     </div>
     <div class="achievements">
-      <div class="ach-item"><strong>National Finalist</strong> &ndash; Smart India Hackathon (SIH 2024)</div>
-      <div class="ach-item"><strong>Production Apps</strong> &ndash; 3 Published Apps on Google Play Store & Apple App Store</div>
+      <div class="ach-item"><strong>Grand Finalist</strong> &ndash; Smart India Hackathon (SIH 2022)</div>
+      <div class="ach-item"><strong>Production Systems</strong> &ndash; 3 Published Apps on Google Play & App Store | Live Paid Client Deployments</div>
     </div>
   </div>
 

@@ -27,9 +27,9 @@ const Blog: React.FC = () => {
         'A comprehensive benchmark comparing 1D/2D CNNs, Time-Series Transformers, and XGBoost on 5-second interval smart meter telemetry to disaggregate residential appliance loads.',
       content: [
         'Non-Intrusive Load Monitoring (NILM) enables power utilities and consumers to identify individual appliance energy usage—including water geysers, air conditioners, refrigerators, and washing machines—directly from a single aggregate smart meter feed without per-device sub-metering.',
-        'At Bharat Smart Services, our office provided high-frequency 5-second interval time-series datasets containing total household mains power (active and reactive power) paired with sub-metered ground-truth power readings for each target appliance.',
+        'At Bharat Smart Services, our office provided 5-second interval time-series datasets containing total household mains power (active and reactive power) paired with sub-metered ground-truth power readings for each target appliance.',
         'We benchmarked multiple architectures: 1D/2D Convolutional Neural Networks (CNNs), Temporal Attention Transformers, and Gradient Boosted Decision Trees (XGBoost) trained on sliding-window statistical and transient step-change features.',
-        'While deep neural networks captured complex wave shapes, XGBoost delivered markedly superior generalization and lower inference latency on 5-second windowed tabular features—achieving an outstanding 97% disaggregation accuracy on Geysers and ~85% average accuracy across Air Conditioners, Refrigerators, and Washing Machines.',
+        'While deep neural networks captured complex wave shapes, XGBoost delivered markedly superior generalization and lower inference latency on 5-second windowed tabular features—achieving an outstanding 96% F1-score on Geysers and ~85% average F1-score across Air Conditioners, Refrigerators, and Washing Machines.',
       ],
     },
     {
@@ -40,7 +40,7 @@ const Blog: React.FC = () => {
       date: 'May 2026',
       readTime: '8 min read',
       summary:
-        'How to build resilient Android tablet and Android TV applications that maintain 100% display uptime during internet outages using embedded Ktor local servers and SQLite synchronization.',
+        'How to build resilient Android tablet and Android TV applications that maintain continuous display operation during internet outages using embedded Ktor local servers and SQLite synchronization.',
       content: [
         'Commercial kiosk systems placed in retail stores or institutional lobbies face frequent network disconnects. Relying on continuous cloud connections leads to broken screens and lost user feedback.',
         'Our architecture uses a local Windows server bundle that broadcasts UDP packets across the local LAN network. Android TV units running Jetpack Compose discover the local server automatically with zero manual IP setup.',
@@ -54,7 +54,7 @@ const Blog: React.FC = () => {
       date: 'April 2026',
       readTime: '5 min read',
       summary:
-        'Designing LLM query translation engines over government agricultural and climate datasets that guarantee zero SQL hallucinations and 100% auditability.',
+        'Designing LLM query translation engines over government agricultural and climate datasets that enforce schema-constrained query execution and full SQL traceability.',
       content: [
         'Large Language Models (LLMs) often suffer from hallucinations when generating SQL queries over large multi-table databases. In critical domains like agriculture and government policy, incorrect query logic is unacceptable.',
         'In the Samarth project, we implemented a schema-aware prompt architecture where the LLM is constrained to validated table schemas and strict column types. Generated SQL is validated against an Abstract Syntax Tree (AST) parser before execution.',

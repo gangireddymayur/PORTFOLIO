@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
     {
       id: 'bharat-nilm-disaggregation',
       title: 'NILM Energy Disaggregation – 5s Smart Meter Appliance AI',
-      subtitle: 'Time-Series Disaggregation Engine • CNNs vs Transformers vs XGBoost Benchmark • 97% Geyser Accuracy',
+      subtitle: 'Time-Series Disaggregation Engine • CNNs vs Transformers vs XGBoost Benchmark • 96% Geyser F1-Score',
       category: 'ai',
       categories: ['ai', 'enterprise'],
       tag: '🏢 Bharat Smart Services (Production AI)',
@@ -80,11 +80,11 @@ const Projects: React.FC = () => {
       image: '/nilm-energy-dashboard.jpg',
       color: 'from-emerald-500 to-cyan-500',
       problem:
-        'Electric utilities and consumers had access to high-frequency 5-second interval smart meter feeds capturing total household mains power (active and reactive power), but had zero visibility into individual appliance power draw without installing expensive sub-meters on every wall socket.',
+        'Electric utilities and consumers had access to 5-second interval smart meter feeds capturing total household mains power (active and reactive power), but had zero visibility into individual appliance power draw without installing expensive sub-meters on every wall socket.',
       solution:
         'Engineered an end-to-end Non-Intrusive Load Monitoring (NILM) disaggregation engine trained on 5-second interval mains power paired with ground-truth appliance telemetry from office field deployments. Benchmarked deep learning 1D/2D CNNs and Temporal Transformers against tabular gradient boosted trees, concluding with an optimized XGBoost model that achieved superior real-world accuracy, lower inference latency, and exceptional transient feature separation across target appliances.',
       architecture: [
-        'High-frequency ingestion of 5-second interval aggregate mains active power, reactive power, and voltage waveforms from smart meters',
+        'Ingestion of 5-second interval aggregate mains active power, reactive power, and voltage waveforms from smart meters',
         'Sliding-window signal segmentation extracting statistical, temporal, and on/off transient step-change features',
         'Systematic architectural benchmarking: evaluated 1D/2D Convolutional Neural Networks (CNNs), Temporal Transformers, and Gradient Boosted Decision Trees (XGBoost)',
         'Multi-target appliance classification & power consumption regression isolating individual appliance signatures from aggregate mains',
@@ -96,8 +96,8 @@ const Projects: React.FC = () => {
         'Transient Inrush vs Steady State: Distinguishing between the high initial inductive motor inrush current (compressors/motors) and sustained resistive thermal draw (geyser heating elements)',
       ],
       impact: [
-        '🎯 97% Detection & Disaggregation Accuracy on Geyser (water heater), reliably isolating high-power resistive cycles',
-        '⚡ ~85% Average Disaggregation Accuracy across complex dynamic loads: Air Conditioner (AC), Refrigerator, and Washing Machine',
+        '🎯 96% F1-Score on Geyser (water heater), reliably isolating high-power resistive cycles',
+        '⚡ ~85% Average F1-Score across complex dynamic loads: Air Conditioner (AC), Refrigerator, and Washing Machine',
         '🏆 Proved XGBoost outperforming deep learning Transformers and CNNs on 5-second interval tabularized time-series metrics',
         '💡 Zero-Hardware Appliance Monitoring: Delivered per-appliance energy breakdown and peak demand insights directly from existing smart meters',
       ],
@@ -105,7 +105,7 @@ const Projects: React.FC = () => {
     {
       id: 'bharat-nervenet-mcp',
       title: 'NerveNet – Privacy-First Enterprise AI Agent Platform (MCP)',
-      subtitle: 'Hierarchical Model Context Protocol (MCP) Architecture • Zero-Knowledge Data Encryption • Enterprise CSV & SQL Data Agents',
+      subtitle: 'Hierarchical Model Context Protocol (MCP) Architecture • Client-Side Token Encryption • Enterprise CSV & SQL Data Agents',
       category: 'ai',
       categories: ['ai', 'enterprise'],
       tag: '🏢 Bharat Smart Services (Enterprise AI)',
@@ -114,7 +114,7 @@ const Projects: React.FC = () => {
         'Python',
         'TypeScript',
         'Client-Side Encryption',
-        'Zero-Knowledge Tokens',
+        'AES Keyring',
         'SQL & CSV Data Agents',
         'Cloud LLM APIs',
         'RBAC Hierarchical Access',
@@ -124,12 +124,12 @@ const Projects: React.FC = () => {
       problem:
         'Enterprises and departments want to deploy conversational AI agents over proprietary organizational files (CSVs, private spreadsheets, internal SQL databases), but cannot risk transmitting sensitive corporate records or identifiable customer data directly to third-party public cloud LLM APIs due to confidentiality and regulatory privacy risks.',
       solution:
-        'Conceived and architected NerveNet based on the Model Context Protocol (MCP). Implemented a hierarchical organizational interface where leadership uploads office files (CSV tables, database links) and sets role-based permissions. Positioned a secure client-side MCP proxy between user chat queries and cloud LLMs that anonymizes and encrypts enterprise data into tokenized keys. The cloud LLM operates strictly as a query/reasoning engine over encrypted tokens, returning key-based logic that the MCP proxy decrypts locally for the user—guaranteeing zero data leakage.',
+        'Conceived and architected NerveNet based on the Model Context Protocol (MCP). Implemented a hierarchical organizational interface where leadership uploads office files (CSV tables, database links) and sets role-based permissions. Positioned a secure client-side MCP proxy between user chat queries and cloud LLMs that anonymizes and encrypts enterprise data into tokenized keys. The cloud LLM operates strictly as a query/reasoning engine over encrypted tokens, returning key-based logic that the MCP proxy decrypts locally for the user—ensuring raw enterprise records are never exposed to cloud LLM APIs.',
       architecture: [
         'Hierarchical Organization Management: Top-level Head (Admin) and departmental sub-components configuring data scopes and role-based access control',
         'Multi-Source Data Ingestion Engine: Seamless onboarding of internal CSV spreadsheets, document repositories, and live SQL database connection links',
         'Client-Side MCP Proxy Security Layer: Sits between user chat sessions and cloud LLM APIs, handling real-time tokenization and client-side encryption',
-        'Zero-Knowledge Query Execution: Cloud LLMs parse queries, generate SQL logic, and reason strictly over anonymized token keys without ever exposing underlying proprietary records',
+        'Encrypted Query Execution: Cloud LLMs parse queries, generate SQL logic, and reason strictly over anonymized token keys without ever exposing underlying proprietary records',
         'Local Client-Side Decryption & Verification: MCP layer intercepts model responses, decrypts token references against local secure keyrings, and delivers verified human-readable answers',
       ],
       challenges: [
@@ -192,7 +192,7 @@ const Projects: React.FC = () => {
       architecture: [
         'Devotee Donation Kiosk with dynamic instant-payment UPI QR generation and Razorpay merchant fallback',
         'Native Android TV client built in Kotlin & Jetpack Compose with simple 6-character claiming codes',
-        'ExoPlayer (media3) offline video/image caching guaranteeing 100% continuous display uptime',
+        'ExoPlayer (media3) offline video/image caching enabling continuous resilient playback during network loss',
         'Real-time donation ledger analytics with automated database schema migrations (MariaDB/MySQL)',
       ],
       challenges: [
@@ -257,7 +257,7 @@ const Projects: React.FC = () => {
         'Bi-directional sync between local Windows SQLite server and cloud Supabase database',
       ],
       impact: [
-        '100% display uptime guaranteed via offline fallback cache',
+        'Continuous display playback guaranteed via offline local SQLite cache',
         'Zero manual IP configuration required for screen deployment',
       ],
     },
