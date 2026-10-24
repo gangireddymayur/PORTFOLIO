@@ -1,5 +1,6 @@
 import subprocess
 import os
+import re
 
 html_content = """<!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,7 @@ html_content = """<!DOCTYPE html>
 <style>
   @page {
     size: A4;
-    margin: 9.5mm 12mm 9.5mm 12mm;
+    margin: 8mm 12mm 8mm 12mm;
   }
   * {
     box-sizing: border-box;
@@ -17,16 +18,16 @@ html_content = """<!DOCTYPE html>
     padding: 0;
   }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: #1e293b;
     background: #ffffff;
-    font-size: 8.75pt;
+    font-size: 9.1pt;
     line-height: 1.34;
   }
   a {
     color: #1d4ed8;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
   }
   a:hover {
     text-decoration: underline;
@@ -34,11 +35,11 @@ html_content = """<!DOCTYPE html>
   .header {
     text-align: center;
     border-bottom: 1.5px solid #0f172a;
-    padding-bottom: 5px;
+    padding-bottom: 4.5px;
     margin-bottom: 7px;
   }
   .name {
-    font-size: 20pt;
+    font-size: 21pt;
     font-weight: 800;
     letter-spacing: -0.5px;
     color: #0f172a;
@@ -46,19 +47,19 @@ html_content = """<!DOCTYPE html>
     margin-bottom: 2px;
   }
   .title-sub {
-    font-size: 9.8pt;
+    font-size: 10.3pt;
     font-weight: 700;
-    color: #4338ca;
-    margin-bottom: 3.5px;
+    color: #3730a3;
+    margin-bottom: 3px;
     letter-spacing: 0.2px;
   }
   .contact {
-    font-size: 8.2pt;
+    font-size: 8.9pt;
     color: #475569;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 7px;
+    gap: 8px;
     flex-wrap: wrap;
   }
   .contact span.sep {
@@ -66,50 +67,50 @@ html_content = """<!DOCTYPE html>
   }
 
   .section {
-    margin-bottom: 6.5px;
+    margin-bottom: 5.5px;
   }
   .section-title {
-    font-size: 9.4pt;
+    font-size: 10.3pt;
     font-weight: 800;
     color: #0f172a;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
-    border-bottom: 1px solid #cbd5e1;
+    letter-spacing: 0.5px;
+    border-bottom: 1.2px solid #cbd5e1;
     padding-bottom: 1.5px;
-    margin-bottom: 4px;
+    margin-bottom: 3.5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   .summary {
-    font-size: 8.4pt;
+    font-size: 9pt;
     color: #334155;
     text-align: justify;
-    line-height: 1.33;
+    line-height: 1.34;
   }
 
   .job {
-    margin-bottom: 4.5px;
+    margin-bottom: 4px;
   }
   .job-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 1px;
+    margin-bottom: 1.5px;
   }
   .job-title {
-    font-size: 8.9pt;
+    font-size: 9.4pt;
     font-weight: 700;
     color: #0f172a;
   }
   .job-company {
-    font-size: 8.9pt;
+    font-size: 9.4pt;
     font-weight: 700;
-    color: #4338ca;
+    color: #3730a3;
   }
   .job-date {
-    font-size: 8.1pt;
+    font-size: 8.5pt;
     font-weight: 600;
     color: #64748b;
   }
@@ -120,12 +121,12 @@ html_content = """<!DOCTYPE html>
   }
   ul.bullets li {
     position: relative;
-    padding-left: 11px;
-    margin-bottom: 2.2px;
-    font-size: 8.35pt;
+    padding-left: 12px;
+    margin-bottom: 3px;
+    font-size: 8.95pt;
     color: #334155;
     text-align: justify;
-    line-height: 1.31;
+    line-height: 1.34;
   }
   ul.bullets li::before {
     content: "•";
@@ -139,12 +140,12 @@ html_content = """<!DOCTYPE html>
 
   .link-pill {
     display: inline-block;
-    font-size: 7.2pt;
+    font-size: 7.5pt;
     font-weight: 600;
     color: #1d4ed8;
     background: #eff6ff;
     border: 0.5px solid #bfdbfe;
-    padding: 0.5px 4.5px;
+    padding: 0.5px 5px;
     border-radius: 3px;
     margin-left: 2px;
     margin-right: 2px;
@@ -154,8 +155,8 @@ html_content = """<!DOCTYPE html>
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 8px;
-    row-gap: 2.2px;
-    font-size: 8.35pt;
+    row-gap: 2.5px;
+    font-size: 9pt;
   }
   .skills-label {
     font-weight: 700;
@@ -170,19 +171,19 @@ html_content = """<!DOCTYPE html>
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 1.5px;
-    font-size: 8.4pt;
+    margin-bottom: 2px;
+    font-size: 9.1pt;
   }
   .edu-inst {
     font-weight: 700;
     color: #0f172a;
   }
   .edu-deg {
-    color: #4338ca;
+    color: #3730a3;
     font-weight: 600;
   }
   .edu-date {
-    font-size: 8.1pt;
+    font-size: 8.6pt;
     font-weight: 600;
     color: #64748b;
   }
@@ -190,13 +191,14 @@ html_content = """<!DOCTYPE html>
   .achievements {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    font-size: 8.1pt;
+    gap: 8px;
+    font-size: 8.6pt;
+    margin-top: 4px;
   }
   .ach-item {
     background: #f8fafc;
     border: 0.5px solid #cbd5e1;
-    padding: 2px 6px;
+    padding: 2.5px 7px;
     border-radius: 4px;
     color: #1e293b;
     font-weight: 500;
@@ -211,7 +213,7 @@ html_content = """<!DOCTYPE html>
   <!-- HEADER -->
   <div class="header">
     <div class="name">MAYUR GANGIREDDY</div>
-    <div class="title-sub">AI/ML Engineer &bull; Data Scientist &bull; Full-Stack Systems Developer</div>
+    <div class="title-sub">AI/ML Engineer &bull; Full-Stack Systems Developer</div>
     <div class="contact">
       <span>Hyderabad, Telangana, India</span>
       <span class="sep">|</span>
@@ -249,10 +251,10 @@ html_content = """<!DOCTYPE html>
       </div>
       <ul class="bullets">
         <li>
-          <strong>NILM Time-Series Energy Disaggregation:</strong> Built production appliance disaggregation models trained on high-frequency 5-second interval smart meter telemetry. Benchmarked 1D/2D CNNs and Temporal Transformers against an optimized sliding-window <strong>XGBoost</strong> model, achieving <strong>97% detection accuracy on Geysers</strong> and <strong>~85% average F1/accuracy across AC, Refrigerator, and Washing Machines</strong> with 10x lower inference latency.
+          <strong>NILM Time-Series Energy Disaggregation:</strong> Built production appliance disaggregation models on high-frequency 5-second interval smart meter telemetry. Benchmarked 1D/2D CNNs and Temporal Transformers against an optimized sliding-window <strong>XGBoost</strong> pipeline; achieved <strong>97% state detection accuracy on Geysers</strong> and <strong>~85% F1-score on AC, Refrigerator, and Washing Machines</strong> (evaluated on held-out temporal splits), yielding sub-10ms CPU inference latency.
         </li>
         <li>
-          <strong>NerveNet &ndash; Privacy-Preserving Enterprise MCP Platform:</strong> Architected an enterprise data agent platform built on the <strong>Model Context Protocol (MCP)</strong>. Engineered client-side encryption and key-tokenization over private CSV tables and SQL databases, enabling cloud LLMs to execute reasoning and queries strictly over anonymized tokens without exposing raw enterprise records.
+          <strong>NerveNet &ndash; Client-Side Encrypted Enterprise MCP Platform:</strong> Architected an enterprise AI agent platform on the <strong>Model Context Protocol (MCP)</strong>. Engineered client-side AES-256 encryption and key tokenization over private CSV tables and SQL databases, allowing cloud LLMs to execute reasoning and queries strictly over anonymized tokens without exposing unencrypted corporate records.
         </li>
         <li>
           <strong>Bharat Smart Services App (Utility & Billing)</strong>
@@ -309,7 +311,7 @@ html_content = """<!DOCTYPE html>
     <ul class="bullets">
       <li>
         <strong>Hostel Hub Pro & Companion Mobile App:</strong>
-        Multi-tenant accommodation platform connecting administrators, wardens, students, and guards. Built administrative web portal with <strong>TanStack Start SSR & React</strong>, companion <strong>Flutter app</strong> featuring cryptographic 24-hr time-restricted QR gate passes (sub-second camera verification & replay prevention), and an Express/MySQL backend on Plesk.
+        Multi-tenant accommodation platform connecting administrators, wardens, students, and guards. Built administrative web portal with <strong>TanStack Start SSR & React</strong>, companion <strong>Flutter app</strong> featuring time-restricted (24-hr) HMAC dynamic QR gate passes with server-side nonce verification to prevent pass re-use and sharing, and an Express/MySQL backend on Plesk.
       </li>
       <li>
         <strong>Satellite Ship Detection & Classification (YOLOv8)</strong>
@@ -363,7 +365,7 @@ html_content = """<!DOCTYPE html>
       </div>
       <div class="edu-date">2019 &ndash; 2021 | Hyderabad, India</div>
     </div>
-    <div class="achievements" style="margin-top: 3px;">
+    <div class="achievements">
       <div class="ach-item"><strong>National Finalist</strong> &ndash; Smart India Hackathon (SIH 2024)</div>
       <div class="ach-item"><strong>Production Apps</strong> &ndash; 3 Published Apps on Google Play Store & Apple App Store</div>
     </div>
@@ -398,3 +400,9 @@ subprocess.run(["cp", output_pdf, root_pdf])
 print("Generated PDF saved to:")
 print(f"1. {output_pdf}")
 print(f"2. {root_pdf}")
+
+# Check page count
+with open(output_pdf, "rb") as f:
+    pdf_bytes = f.read()
+pages = re.findall(b'/Type\\s*/Page[^s]', pdf_bytes)
+print("Page count:", len(pages))
