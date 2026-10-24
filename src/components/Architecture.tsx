@@ -111,8 +111,8 @@ const Architecture: React.FC = () => {
   const systems: SystemFlow[] = [
     {
       id: 'bss-connect',
-      tabName: 'BSS Smart Connect',
-      title: 'Bharat Smart Connect App Architecture',
+      tabName: 'Bharat Smart Services',
+      title: 'Bharat Smart Services App Architecture',
       subtitle: 'React Web UI + Capacitor Bridge + Native Android/iOS Shells + USB IR Dongle + Home Screen Widgets',
       category: 'Mobile, IoT & Utility Billing',
       description:

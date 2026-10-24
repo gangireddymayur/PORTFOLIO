@@ -32,8 +32,8 @@ const Hero: React.FC = () => {
   const stats = [
     { label: 'Production Projects', value: '10+', icon: Layers, color: 'text-indigo-400' },
     { label: 'AI & ML Systems', value: '5+', icon: Cpu, color: 'text-cyan-400' },
-    { label: 'Mobile Apps', value: '2', icon: Smartphone, color: 'text-emerald-400' },
-    { label: 'Google Play Store App', value: '1', icon: Globe, color: 'text-amber-400' },
+    { label: 'Mobile Apps', value: '4+', icon: Smartphone, color: 'text-emerald-400' },
+    { label: 'Play & App Store Apps', value: '3', icon: Globe, color: 'text-amber-400' },
     { label: 'SIH Finalist', value: 'National', icon: Award, color: 'text-rose-400' },
   ];
 

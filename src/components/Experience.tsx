@@ -48,7 +48,7 @@ const Experience: React.FC = () => {
           points: [],
           apps: [
             {
-              name: 'Bharat Smart Connect',
+              name: 'Bharat Smart Services',
               desc: 'Production utility app for smart meter reading, billing & live telemetry. Features custom native Java USB IRDA serial drivers, camera OCR verification review, utility billing (TSSPDCL, TSNPDCL, HMWSSB), and native iOS/Android home screen widgets.',
               playStore: 'https://play.google.com/store/apps/details?id=in.coral.met',
               appStore: 'https://apps.apple.com/in/app/bharat-smart-services/id1584345371',

@@ -25,8 +25,8 @@ const Projects: React.FC = () => {
 
   const projects: ProjectData[] = [
     {
-      id: 'bss-smart-connect',
-      title: 'Bharat Smart Connect – Smart Meter Reading, Billing & Live Energy Monitoring',
+      id: 'bharat-smart-services',
+      title: 'Bharat Smart Services – Smart Meter Reading, Billing & Live Energy Monitoring',
       subtitle: 'Capacitor Android/iOS App + Camera OCR + Native USB IR Dongle + Utility Billing',
       category: 'mobile',
       tag: '🏢 Bharat Smart Services (Current Role)',

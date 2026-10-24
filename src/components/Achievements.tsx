@@ -5,14 +5,14 @@ import { Award, Globe, ShieldCheck, Zap, ExternalLink } from 'lucide-react';
 const Achievements: React.FC = () => {
   const achievements = [
     {
-      title: 'Official Google Play Store Publisher',
+      title: 'Google Play & App Store Publisher',
       category: 'Mobile Engineering',
       description:
-        'Engineered and published the official "Criminal Laws by TGPA" application live on the Google Play Store for Telangana State Police Academy.',
+        'Engineered and published official production applications live on Google Play and Apple App Store (Bharat Smart Services, Bharat Smart Home, TGPA).',
       icon: Globe,
       color: 'text-emerald-400',
-      badge: 'Play Store Published',
-      link: 'https://play.google.com/store/apps/details?id=com.sphn.tgpa&hl=en_IN',
+      badge: 'Play & App Store Published',
+      link: 'https://play.google.com/store/apps/details?id=in.coral.met',
     },
     {
       title: 'Smart India Hackathon 2022 Finalist',
