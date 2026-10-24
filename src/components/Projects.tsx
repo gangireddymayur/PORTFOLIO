@@ -103,6 +103,48 @@ const Projects: React.FC = () => {
       ],
     },
     {
+      id: 'bharat-nervenet-mcp',
+      title: 'NerveNet – Privacy-First Enterprise AI Agent Platform (MCP)',
+      subtitle: 'Hierarchical Model Context Protocol (MCP) Architecture • Zero-Knowledge Data Encryption • Enterprise CSV & SQL Data Agents',
+      category: 'ai',
+      categories: ['ai', 'enterprise'],
+      tag: '🏢 Bharat Smart Services (Enterprise AI)',
+      tech: [
+        'Model Context Protocol (MCP)',
+        'Python',
+        'TypeScript',
+        'Client-Side Encryption',
+        'Zero-Knowledge Tokens',
+        'SQL & CSV Data Agents',
+        'Cloud LLM APIs',
+        'RBAC Hierarchical Access',
+      ],
+      image: '/nervenet-ai-mcp.jpg',
+      color: 'from-purple-600 to-indigo-600',
+      problem:
+        'Enterprises and departments want to deploy conversational AI agents over proprietary organizational files (CSVs, private spreadsheets, internal SQL databases), but cannot risk transmitting sensitive corporate records or identifiable customer data directly to third-party public cloud LLM APIs due to confidentiality and regulatory privacy risks.',
+      solution:
+        'Conceived and architected NerveNet based on the Model Context Protocol (MCP). Implemented a hierarchical organizational interface where leadership uploads office files (CSV tables, database links) and sets role-based permissions. Positioned a secure client-side MCP proxy between user chat queries and cloud LLMs that anonymizes and encrypts enterprise data into tokenized keys. The cloud LLM operates strictly as a query/reasoning engine over encrypted tokens, returning key-based logic that the MCP proxy decrypts locally for the user—guaranteeing zero data leakage.',
+      architecture: [
+        'Hierarchical Organization Management: Top-level Head (Admin) and departmental sub-components configuring data scopes and role-based access control',
+        'Multi-Source Data Ingestion Engine: Seamless onboarding of internal CSV spreadsheets, document repositories, and live SQL database connection links',
+        'Client-Side MCP Proxy Security Layer: Sits between user chat sessions and cloud LLM APIs, handling real-time tokenization and client-side encryption',
+        'Zero-Knowledge Query Execution: Cloud LLMs parse queries, generate SQL logic, and reason strictly over anonymized token keys without ever exposing underlying proprietary records',
+        'Local Client-Side Decryption & Verification: MCP layer intercepts model responses, decrypts token references against local secure keyrings, and delivers verified human-readable answers',
+      ],
+      challenges: [
+        'Preserving Semantic Reasoning over Encrypted Schemas: Ensuring external cloud LLMs can formulate accurate multi-table SQL queries and analytical calculations when table names, identifiers, and sensitive text values are tokenized and pseudonymized',
+        'Hierarchical Multi-Tenant Data Isolation: Restricting data visibility so sub-tier employees can only query documents and tables explicitly assigned to their departmental tier by the Organization Head',
+        'Sub-Second Decryption Latency: Streaming encrypted model completions through the local MCP proxy and decrypting contextual tokens on-the-fly without introducing perceptible UI lag',
+      ],
+      impact: [
+        '🛡️ 100% Zero-Knowledge Data Privacy: Proprietary company data never leaves the local perimeter unencrypted',
+        '⚡ Democratized Enterprise AI: Enabled non-technical staff to query complex CSVs and SQL databases using natural language',
+        '🔑 Strict Cryptographic Isolation: Cloud models execute reasoning strictly through ephemeral encrypted tokens and keys',
+        '🏢 Multi-Department Scalability: Successfully deployed across hierarchical teams with granular admin permissions',
+      ],
+    },
+    {
       id: 'bharat-smart-home',
       title: 'Bharat Smart Home – Enterprise IoT & Lifestyle Automation Platform',
       subtitle: 'Unified Smart Home Ecosystem with Real-Time Device Orchestration',

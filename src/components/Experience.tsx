@@ -1,6 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Award, Calendar, CheckCircle2, Building2, MapPin, Smartphone, Home, Sparkles, Play, Apple } from 'lucide-react';
+import {
+  Briefcase,
+  Award,
+  Calendar,
+  CheckCircle2,
+  Building2,
+  MapPin,
+  Smartphone,
+  Home,
+  Sparkles,
+  Play,
+  Apple,
+  ShieldCheck,
+} from 'lucide-react';
 
 interface ExperienceItem {
   role: string;
@@ -14,10 +27,12 @@ interface ExperienceItem {
   achievements?: string[];
   tracks?: {
     title: string;
-    points: string[];
+    points?: string[];
     apps?: {
       name: string;
       desc: string;
+      badge?: string;
+      iconType?: 'sparkles' | 'shield' | 'smartphone' | 'home';
       playStore?: string;
       appStore?: string;
     }[];
@@ -36,28 +51,38 @@ const Experience: React.FC = () => {
         'Dual-responsibility engineering role spanning production machine learning research and end-to-end full-stack & mobile application engineering.',
       tracks: [
         {
-          title: 'AI & Machine Learning Engineering',
-          points: [
-            'Trained & benchmarked deep learning models (1D/2D CNNs, Time-Series Transformers) and tabular XGBoost for Non-Intrusive Load Monitoring (NILM) on 5-second interval smart meter time-series data',
-            'Engineered sliding-window transient feature pipelines on total mains power paired with appliance ground-truth telemetry; selected XGBoost for superior production generalization and inference speed',
-            'Achieved 97% disaggregation accuracy on Geyser (water heater) and ~85% average accuracy across dynamic multi-state appliances (AC, Refrigerator, Washing Machine)',
-            'Developed OCR-based computer vision pipelines for automated numerical digit extraction from physical smart meters',
-            'Architected Agentic AI applications integrating LLMs, tool calling, and automated business workflows',
+          title: 'AI & Machine Learning Engineering (Flagship Systems)',
+          apps: [
+            {
+              name: 'NILM Energy Disaggregation AI',
+              desc: 'Production time-series disaggregation on 5-second interval smart meter feeds. Benchmarked CNNs & Transformers against XGBoost; achieved 97% accuracy on Geysers and ~85% average across AC, Refrigerator & Washing Machine.',
+              badge: 'Production AI',
+              iconType: 'sparkles',
+            },
+            {
+              name: 'NerveNet – Enterprise MCP Agent Platform',
+              desc: 'Privacy-first enterprise AI platform built on Model Context Protocol (MCP). Features hierarchical org access, CSV/SQL data ingestion, and zero-knowledge client-side encryption preventing enterprise data exposure to cloud LLMs.',
+              badge: 'Enterprise MCP',
+              iconType: 'shield',
+            },
           ],
         },
         {
-          title: 'Full-Stack & Mobile Engineering (Flagship Production Apps)',
-          points: [],
+          title: 'Full-Stack & Mobile Engineering (Flagship Apps)',
           apps: [
             {
               name: 'Bharat Smart Services',
               desc: 'Production utility app for smart meter reading, billing & live telemetry. Features custom native Java USB IRDA serial drivers, camera OCR verification review, utility billing (TSSPDCL, TSNPDCL, HMWSSB), and native iOS/Android home screen widgets.',
+              badge: 'Production App',
+              iconType: 'smartphone',
               playStore: 'https://play.google.com/store/apps/details?id=in.coral.met',
               appStore: 'https://apps.apple.com/in/app/bharat-smart-services/id1584345371',
             },
             {
               name: 'Bharat Smart Home',
               desc: 'Enterprise smart home & IoT lifestyle automation platform. Unified room device hierarchy, condition-based automation schedulers, scenes orchestration, and disaggregated household energy intelligence.',
+              badge: 'Production App',
+              iconType: 'home',
               playStore: 'https://play.google.com/store/apps/details?id=com.bharat.smarthome',
               appStore: 'https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389',
             },
@@ -204,7 +229,7 @@ const Experience: React.FC = () => {
                     {exp.tracks ? (
                       <div className="pt-2">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 relative">
-                          {/* Left Column: AI & ML */}
+                          {/* Left Column: AI & ML Systems */}
                           <div className="space-y-3 md:pr-5 md:border-r md:border-indigo-500/20">
                             <div className="flex items-center gap-1.5">
                               <Sparkles className="w-3.5 h-3.5 text-purple-400" />
@@ -212,13 +237,39 @@ const Experience: React.FC = () => {
                                 {exp.tracks[0].title}
                               </span>
                             </div>
-                            <div className="space-y-2">
-                              {exp.tracks[0].points.map((pt, pIdx) => (
-                                <div key={pIdx} className="flex items-start gap-2 text-xs text-zinc-300 leading-relaxed">
-                                  <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 flex-shrink-0 mt-0.5" />
-                                  <span>{pt}</span>
-                                </div>
-                              ))}
+                            <div className="space-y-2.5">
+                              {exp.tracks[0].apps ? (
+                                exp.tracks[0].apps.map((app, aIdx) => (
+                                  <div
+                                    key={aIdx}
+                                    className="p-3.5 rounded-2xl bg-zinc-900/90 border border-white/10 hover:border-purple-500/40 transition-all space-y-1.5"
+                                  >
+                                    <div className="flex items-center justify-between">
+                                      <h4 className="text-xs font-bold text-white flex items-center gap-1.5">
+                                        {app.iconType === 'shield' ? (
+                                          <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
+                                        ) : (
+                                          <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+                                        )}
+                                        <span>{app.name}</span>
+                                      </h4>
+                                      <span className="text-[9px] font-mono text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">
+                                        {app.badge || 'Production AI'}
+                                      </span>
+                                    </div>
+                                    <p className="text-[11px] text-zinc-300 leading-relaxed">
+                                      {app.desc}
+                                    </p>
+                                  </div>
+                                ))
+                              ) : (
+                                exp.tracks[0].points?.map((pt, pIdx) => (
+                                  <div key={pIdx} className="flex items-start gap-2 text-xs text-zinc-300 leading-relaxed">
+                                    <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 flex-shrink-0 mt-0.5" />
+                                    <span>{pt}</span>
+                                  </div>
+                                ))
+                              )}
                             </div>
                           </div>
 
@@ -238,15 +289,15 @@ const Experience: React.FC = () => {
                                 >
                                   <div className="flex items-center justify-between">
                                     <h4 className="text-xs font-bold text-white flex items-center gap-1.5">
-                                      {aIdx === 0 ? (
-                                        <Smartphone className="w-3.5 h-3.5 text-cyan-400" />
-                                      ) : (
+                                      {app.iconType === 'home' ? (
                                         <Home className="w-3.5 h-3.5 text-indigo-400" />
+                                      ) : (
+                                        <Smartphone className="w-3.5 h-3.5 text-cyan-400" />
                                       )}
                                       <span>{app.name}</span>
                                     </h4>
                                     <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                                      Production
+                                      {app.badge || 'Production'}
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-zinc-300 leading-relaxed">

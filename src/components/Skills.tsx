@@ -40,6 +40,7 @@ const Skills: React.FC = () => {
     { name: 'XGBoost & Time-Series NILM', category: 'ai', level: 92, badge: 'Disaggregation AI', experience: '2+ Yrs' },
     { name: 'CNNs & Transformers (NILM)', category: 'ai', level: 86, badge: 'Deep Learning', experience: '2+ Yrs' },
     { name: 'Agentic AI & LangChain', category: 'ai', level: 85, badge: 'LLMs & Agents', experience: '1+ Yrs' },
+    { name: 'Model Context Protocol (MCP)', category: 'ai', level: 90, badge: 'Agent Architecture', experience: '1+ Yrs' },
     { name: 'OCR & Image Extraction', category: 'ai', level: 88, badge: 'CV Pipeline', experience: '2+ Yrs' },
 
     // Backend & Cloud

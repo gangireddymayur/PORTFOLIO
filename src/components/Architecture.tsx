@@ -168,6 +168,28 @@ const Architecture: React.FC = () => {
       ],
     },
     {
+      id: 'nervenet-mcp',
+      tabName: 'NerveNet AI (MCP)',
+      title: 'NerveNet – Zero-Knowledge Enterprise MCP Architecture',
+      subtitle: 'Bharat Smart Services Proprietary AI Agent Platform',
+      category: 'Agentic AI / Model Context Protocol & Security',
+      description:
+        'A privacy-first enterprise AI platform designed on the Model Context Protocol (MCP). Enables organizational leadership to onboard CSV files and live SQL databases while a client-side MCP proxy encrypts proprietary data into anonymized tokens before passing context to cloud LLM query engines—decrypting verified answers locally with zero cloud data exposure.',
+      nodes: [
+        { label: 'Admin & Org Head', sub: 'Hierarchical CSV & SQL Ingestion', icon: Database },
+        { label: 'Client-Side MCP Proxy', sub: 'Zero-Knowledge Tokenizer & Encryptor', icon: ShieldCheck, highlight: true },
+        { label: 'Cloud LLM Reasoner', sub: 'SQL & Query Engine on Anonymized Keys', icon: Sparkles },
+        { label: 'Local Keyring Decryptor', sub: 'Private Sub-Second Response Resolver', icon: Zap },
+        { label: 'Chatbot Interface', sub: 'Natural-Language User Queries', icon: Globe },
+      ],
+      keyHighlights: [
+        'Conceived and engineered around the Model Context Protocol (MCP) for enterprise agentic workflows',
+        'Hierarchical RBAC framework allowing Org Heads to upload spreadsheets and configure database query scopes',
+        'Zero-knowledge client-side encryption: raw proprietary company data never leaves the local perimeter unencrypted',
+        'Cloud LLMs execute reasoning strictly through ephemeral encrypted tokens and keys, preventing data leakages',
+      ],
+    },
+    {
       id: 'temple-hub',
       tabName: 'Temple Kiosk & TV',
       title: 'Temple Devotee Donation Kiosk & Android TV Network',
