@@ -340,14 +340,14 @@ const Projects: React.FC = () => {
       problem:
         'Non-technical agricultural policy makers and researchers struggle to extract actionable insights from vast, tabular Indian government crop yield and rainfall datasets.',
       solution:
-        'Developed an end-to-end NLP Question-Answering system that converts natural-language queries into audited SQL statements executed against DuckDB.',
+        'Built a rule-based NL-to-SQL engine with no external LLM: regex intent recognition, entity extraction and fuzzy state/crop matching generate SQL that runs on DuckDB, and every answer shows the SQL behind it.',
       architecture: [
-        'FastAPI backend with schema-aware SQL translation layer',
+        'FastAPI backend with rule-based intent parsing and SQL templates',
         'DuckDB in-memory analytical database for high-speed aggregation',
         'Streamlit interactive dashboard with downloadable analytical charts and query audit logs',
       ],
       challenges: [
-        'Eliminating SQL injection risks and LLM query hallucinations on complex joins',
+        'Mapping free-form questions to the right tables and overlapping year ranges without an LLM',
         'Ensuring exact state and district name matching across historical datasets',
       ],
       impact: [
@@ -358,7 +358,7 @@ const Projects: React.FC = () => {
     {
       id: 'ship-detection',
       image: '/projects/covers/ship-detection.svg',
-      title: 'Post-CNN Framework for Satellite Ship Detection (YOLOv8)',
+      title: 'Satellite Ship Detection with YOLOv8',
       subtitle: 'High-Resolution Optical Satellite Imagery Analysis',
       category: 'ai',
       tag: '🔬 Research & AI System',
@@ -369,9 +369,9 @@ const Projects: React.FC = () => {
       problem:
         'Maritime surveillance requires precise extraction of ship vessels from high-resolution satellite imagery across vast ocean surfaces with heavy cloud clutter.',
       solution:
-        'Designed a post-CNN framework implementing water/non-water land masking followed by YOLOv8 deep learning vessel detection with confidence-aware bounding boxes.',
+        'Trained a YOLOv8 detector on labelled aerial ship imagery and built a Streamlit app that shows bounding boxes, per-ship confidence scores and detection heatmaps.',
       architecture: [
-        'Preprocessing pipeline for cloud artifact removal and land masking',
+        'YOLO-format dataset with train / validation / test splits',
         'YOLOv8 convolutional neural network trained on satellite vessel datasets',
         'Interactive Streamlit inference interface for image uploads and real-time bounding box visualization',
       ],
@@ -380,7 +380,6 @@ const Projects: React.FC = () => {
         'Optimizing model inference time for high-resolution satellite tiles',
       ],
       impact: [
-        'High precision detection rate across varied maritime environments',
         'Published live interactive Streamlit web application',
       ],
     },
