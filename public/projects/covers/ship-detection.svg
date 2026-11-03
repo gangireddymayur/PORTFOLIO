@@ -6,11 +6,9 @@
     <g id="ship"><path d="M-26 0 Q-20 -7 0 -7 L22 -7 Q30 0 22 7 L0 7 Q-20 7 -26 0 Z" fill="#f1f5f9"/><rect x="-6" y="-4" width="12" height="8" rx="2" fill="#94a3b8"/></g>
   </defs>
   <rect width="1200" height="675" fill="url(#sea)"/><rect width="1200" height="675" filter="url(#noise)"/>
-  <!-- Masked coastline (land) -->
+  <!-- Coastline -->
   <path d="M0 0 H420 Q380 90 300 140 Q250 210 290 300 Q330 400 230 470 Q150 540 170 675 H0 Z" fill="#2d3b2a"/>
-  <path d="M0 0 H420 Q380 90 300 140 Q250 210 290 300 Q330 400 230 470 Q150 540 170 675 H0 Z" fill="url(#hatch)"/>
   <path d="M420 0 Q380 90 300 140 Q250 210 290 300 Q330 400 230 470 Q150 540 170 675" fill="none" stroke="#38bdf8" stroke-width="3" stroke-dasharray="10 8" stroke-opacity="0.8"/>
-  <text x="40" y="60" font-family="ui-monospace, Menlo, monospace" font-size="20" fill="#ffffff" fill-opacity="0.55">LAND MASKED</text>
   <!-- Ships with detections -->
   <g font-family="ui-monospace, Menlo, monospace" font-size="18" font-weight="700">
     <g transform="translate(640 210) rotate(-18)"><use href="#ship"/></g>

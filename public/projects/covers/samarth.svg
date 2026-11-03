@@ -22,7 +22,7 @@
       <text x="118" y="454"><tspan fill="#c084fc">ORDER BY</tspan><tspan fill="#e2e8f0"> yield </tspan><tspan fill="#c084fc">DESC LIMIT</tspan><tspan fill="#fbbf24"> 5</tspan></text>
     </g>
     <rect x="420" y="476" width="122" height="26" rx="13" fill="#4ade80" fill-opacity="0.18"/>
-    <text x="481" y="495" text-anchor="middle" font-size="15" font-weight="700" fill="#86efac">✓ AST checked</text>
+    <text x="481" y="495" text-anchor="middle" font-size="15" font-weight="700" fill="#86efac">✓ SQL shown</text>
     <!-- Chart card -->
     <rect x="650" y="110" width="460" height="400" rx="22" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.13"/>
     <text x="682" y="160" font-size="22" font-weight="700" fill="#e2e8f0">Rice yield by district</text>

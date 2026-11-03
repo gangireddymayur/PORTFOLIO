@@ -50,16 +50,16 @@ const Blog: React.FC = () => {
     },
     {
       id: 'nl-to-sql-agents',
-      title: 'Deterministic Natural Language to SQL Agents with Full Data Traceability',
-      category: 'LLMs & Agentic AI',
+      title: 'Deterministic Natural Language to SQL Without an LLM',
+      category: 'NLP & Data Engineering',
       date: 'April 2026',
       readTime: '5 min read',
       summary:
-        'Designing LLM query translation engines over government agricultural and climate datasets that enforce schema-constrained query execution and full SQL traceability.',
+        'Why the Samarth Q&A engine over government agriculture and climate data uses rule-based query parsing instead of an LLM, and how every answer stays traceable to its SQL.',
       content: [
-        'Large Language Models (LLMs) often suffer from hallucinations when generating SQL queries over large multi-table databases. In critical domains like agriculture and government policy, incorrect query logic is unacceptable.',
-        'In the Samarth project, we implemented a schema-aware prompt architecture where the LLM is constrained to validated table schemas and strict column types. Generated SQL is validated against an Abstract Syntax Tree (AST) parser before execution.',
-        'The query is executed in-memory using DuckDB for instant aggregation over millions of rows. Crucially, the system returns both the visual answer chart AND the raw generated SQL query, allowing researchers to audit every result.',
+        'LLMs can write SQL, but over multi-table government datasets they sometimes invent columns or join the wrong year ranges. For policy research, a confident wrong answer is worse than no answer.',
+        'Samarth takes a deterministic route instead: regular-expression intent patterns recognise the question type (compare rainfall, top crops, correlate, trends), entity extraction pulls out states, crops and years, and fuzzy matching handles spelling and naming differences between datasets.',
+        'Each intent maps to a SQL template that DuckDB runs in memory over the rainfall and crop tables, aligning their overlapping year ranges. The answer is returned together with the exact SQL, so researchers can audit every number. The trade-off is coverage: it only answers question shapes it knows, which is the right call when correctness matters most.',
       ],
     },
   ];

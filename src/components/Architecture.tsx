@@ -254,20 +254,20 @@ const Architecture: React.FC = () => {
       tabName: 'Samarth SQL',
       title: 'Samarth Natural Language to SQL Analytics Engine',
       subtitle: 'Intelligent Agricultural & Climate Q&A Architecture',
-      category: 'LLM & Analytical SQL',
+      category: 'NLP & Analytical SQL',
       description:
         'An end-to-end Q&A system that converts natural-language queries into audited SQL statements, executing queries against Indian government rainfall and crop yield datasets via DuckDB for instant analytical results.',
       nodes: [
         { label: 'User Query', sub: 'Natural Language Prompt', icon: Globe },
         { label: 'FastAPI Gateway', sub: 'Python Backend Router', icon: Server },
-        { label: 'NL-to-SQL LLM Engine', sub: 'Query Construction', icon: Sparkles, highlight: true },
+        { label: 'Rule-Based NL-to-SQL', sub: 'Intents & SQL Templates', icon: Sparkles, highlight: true },
         { label: 'DuckDB Engine', sub: 'In-Memory Analytics', icon: Database },
         { label: 'Traceable Output', sub: 'Audited Results & Charts', icon: CheckCircle2 },
       ],
       keyHighlights: [
         'Translates complex multi-variable agricultural questions into executable SQL queries',
         'Uses DuckDB in-memory columnar database for millisecond analytical query execution',
-        'Provides full data lineage and SQL query traceability to eliminate AI hallucinations',
+        'Deterministic, auditable answers: no LLM in the loop, and every result shows its SQL',
       ],
     },
     {
