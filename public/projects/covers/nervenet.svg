@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#110d2e"/><stop offset="1" stop-color="#1a0f3a"/></linearGradient>
+    <radialGradient id="g" cx="0.5" cy="0.45" r="0.45"><stop offset="0" stop-color="#6366f1" stop-opacity="0.3"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04"/></pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#grid)"/><rect width="1200" height="675" fill="url(#g)"/>
+  <g font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+    <!-- Company data -->
+    <g transform="translate(100 150)">
+      <rect width="250" height="300" rx="22" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.14"/>
+      <text x="28" y="52" font-size="20" font-weight="700" fill="#e0e7ff">Company data</text>
+      <g fill="none" stroke="#a5b4fc" stroke-width="4"><ellipse cx="70" cy="110" rx="38" ry="12"/><path d="M32 110 v50 a38 12 0 0 0 76 0 v-50"/><path d="M32 135 a38 12 0 0 0 76 0"/></g>
+      <text x="125" y="128" font-size="17" fill="#a5b4fc">SQL</text>
+      <rect x="32" y="190" width="76" height="80" rx="8" fill="none" stroke="#a5b4fc" stroke-width="4"/><path d="M32 216 h76 M32 242 h76 M70 190 v80" stroke="#a5b4fc" stroke-width="3"/>
+      <text x="125" y="238" font-size="17" fill="#a5b4fc">CSV</text>
+    </g>
+    <!-- Encrypting proxy -->
+    <path d="M360 300 H480" stroke="#818cf8" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round"/>
+    <g transform="translate(600 300)">
+      <circle r="105" fill="#6366f1" fill-opacity="0.18" stroke="#a5b4fc" stroke-width="4"/>
+      <rect x="-36" y="-14" width="72" height="58" rx="10" fill="#c7d2fe"/>
+      <path d="M-22 -14 v-20 a22 22 0 0 1 44 0 v20" fill="none" stroke="#c7d2fe" stroke-width="9"/>
+      <circle cy="12" r="8" fill="#312e81"/><rect x="-3" y="12" width="6" height="16" fill="#312e81"/>
+      <text y="140" text-anchor="middle" font-size="20" font-weight="700" fill="#e0e7ff">MCP proxy · AES-256</text>
+    </g>
+    <path d="M720 300 H840" stroke="#818cf8" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round"/>
+    <!-- Tokens to LLM -->
+    <g font-family="ui-monospace, Menlo, monospace" font-size="17" font-weight="700">
+      <rect x="735" y="215" width="96" height="30" rx="15" fill="#312e81"/><text x="783" y="236" text-anchor="middle" fill="#c7d2fe">tok_7f2a</text>
+      <rect x="735" y="355" width="96" height="30" rx="15" fill="#312e81"/><text x="783" y="376" text-anchor="middle" fill="#c7d2fe">tok_91c4</text>
+    </g>
+    <g transform="translate(980 300)">
+      <path d="M-120 40 a55 55 0 0 1 20 -105 a75 75 0 0 1 140 -10 a60 60 0 0 1 75 60 a50 50 0 0 1 -35 55 Z" fill="#ffffff" fill-opacity="0.07" stroke="#c7d2fe" stroke-width="4"/>
+      <text x="-5" y="12" text-anchor="middle" font-size="26" font-weight="800" fill="#e0e7ff">Cloud LLM</text>
+      <text x="-5" y="74" text-anchor="middle" font-size="16" fill="#a5b4fc">sees tokens, never raw data</text>
+    </g>
+  </g>
+</svg>

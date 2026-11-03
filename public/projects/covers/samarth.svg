@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1f14"/><stop offset="1" stop-color="#0b1a2e"/></linearGradient>
+    <radialGradient id="g" cx="0.5" cy="0.4" r="0.6"><stop offset="0" stop-color="#22c55e" stop-opacity="0.18"/><stop offset="1" stop-color="#22c55e" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04"/></pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#grid)"/><rect width="1200" height="675" fill="url(#g)"/>
+  <g font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+    <!-- Question bubble -->
+    <rect x="90" y="110" width="470" height="110" rx="26" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15"/>
+    <path d="M120 220 L110 250 L150 220 Z" fill="#ffffff" fill-opacity="0.08"/>
+    <text x="122" y="158" font-size="25" fill="#e2e8f0" font-weight="600">Which district had the highest</text>
+    <text x="122" y="194" font-size="25" fill="#e2e8f0" font-weight="600">rice yield in 2020?</text>
+    <!-- Arrow -->
+    <path d="M320 245 V290" stroke="#4ade80" stroke-width="5" stroke-linecap="round"/><path d="M306 278 L320 294 L334 278" fill="none" stroke="#4ade80" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- SQL block -->
+    <rect x="90" y="310" width="470" height="200" rx="18" fill="#020617" fill-opacity="0.7" stroke="#4ade80" stroke-opacity="0.4"/>
+    <g font-family="ui-monospace, Menlo, monospace" font-size="21">
+      <text x="118" y="352"><tspan fill="#c084fc">SELECT</tspan><tspan fill="#e2e8f0"> district, yield</tspan></text>
+      <text x="118" y="386"><tspan fill="#c084fc">FROM</tspan><tspan fill="#e2e8f0"> crops</tspan></text>
+      <text x="118" y="420"><tspan fill="#c084fc">WHERE</tspan><tspan fill="#e2e8f0"> crop = </tspan><tspan fill="#fbbf24">'rice'</tspan></text>
+      <text x="118" y="454"><tspan fill="#c084fc">ORDER BY</tspan><tspan fill="#e2e8f0"> yield </tspan><tspan fill="#c084fc">DESC LIMIT</tspan><tspan fill="#fbbf24"> 5</tspan></text>
+    </g>
+    <rect x="420" y="476" width="122" height="26" rx="13" fill="#4ade80" fill-opacity="0.18"/>
+    <text x="481" y="495" text-anchor="middle" font-size="15" font-weight="700" fill="#86efac">✓ AST checked</text>
+    <!-- Chart card -->
+    <rect x="650" y="110" width="460" height="400" rx="22" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.13"/>
+    <text x="682" y="160" font-size="22" font-weight="700" fill="#e2e8f0">Rice yield by district</text>
+    <text x="682" y="188" font-size="16" fill="#64748b">DuckDB · 2020</text>
+    <g fill="#4ade80">
+      <rect x="700" y="230" width="52" height="240" rx="8"/><rect x="772" y="280" width="52" height="190" rx="8" fill-opacity="0.8"/>
+      <rect x="844" y="320" width="52" height="150" rx="8" fill-opacity="0.65"/><rect x="916" y="350" width="52" height="120" rx="8" fill-opacity="0.5"/>
+      <rect x="988" y="390" width="52" height="80" rx="8" fill-opacity="0.38"/>
+    </g>
+    <path d="M690 470 H1080" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"/>
+  </g>
+</svg>

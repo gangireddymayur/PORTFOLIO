@@ -24,64 +24,61 @@ const Skills: React.FC = () => {
 
   const skillItems = [
     // Languages
-    { name: 'Python', category: 'backend', level: 92, badge: 'Core', experience: '4+ Yrs' },
-    { name: 'Java', category: 'backend', level: 85, badge: 'Core', experience: '3+ Yrs' },
-    { name: 'TypeScript', category: 'frontend', level: 88, badge: 'Advanced', experience: '3+ Yrs' },
-    { name: 'JavaScript (ES6+)', category: 'frontend', level: 90, badge: 'Advanced', experience: '4+ Yrs' },
-    { name: 'Kotlin', category: 'mobile', level: 85, badge: 'Mobile Core', experience: '2+ Yrs' },
-    { name: 'C / C++', category: 'backend', level: 78, badge: 'Systems', experience: '2+ Yrs' },
-    { name: 'Dart', category: 'mobile', level: 80, badge: 'Flutter', experience: '2+ Yrs' },
+    { name: 'Python', category: 'backend', badge: 'Core' },
+    { name: 'Java', category: 'backend', badge: 'Core' },
+    { name: 'TypeScript', category: 'frontend', badge: 'Advanced' },
+    { name: 'JavaScript (ES6+)', category: 'frontend', badge: 'Advanced' },
+    { name: 'Kotlin', category: 'mobile', badge: 'Mobile Core' },
+    { name: 'C / C++', category: 'backend', badge: 'Systems' },
+    { name: 'Dart', category: 'mobile', badge: 'Flutter' },
 
     // AI & ML
-    { name: 'PyTorch', category: 'ai', level: 88, badge: 'Deep Learning', experience: '3+ Yrs' },
-    { name: 'TensorFlow & Keras', category: 'ai', level: 82, badge: 'Deep Learning', experience: '2+ Yrs' },
-    { name: 'Scikit-Learn & XGBoost', category: 'ai', level: 90, badge: 'ML Modeling', experience: '3+ Yrs' },
-    { name: 'YOLOv8 & OpenCV', category: 'ai', level: 86, badge: 'Computer Vision', experience: '2+ Yrs' },
-    { name: 'XGBoost & Time-Series NILM', category: 'ai', level: 92, badge: 'Disaggregation AI', experience: '2+ Yrs' },
-    { name: 'CNNs & Transformers (NILM)', category: 'ai', level: 86, badge: 'Deep Learning', experience: '2+ Yrs' },
-    { name: 'Agentic AI & LangChain', category: 'ai', level: 85, badge: 'LLMs & Agents', experience: '1+ Yrs' },
-    { name: 'Model Context Protocol (MCP)', category: 'ai', level: 90, badge: 'Agent Architecture', experience: '1+ Yrs' },
-    { name: 'OCR & Image Extraction', category: 'ai', level: 88, badge: 'CV Pipeline', experience: '2+ Yrs' },
+    { name: 'PyTorch', category: 'ai', badge: 'Deep Learning' },
+    { name: 'TensorFlow & Keras', category: 'ai', badge: 'Deep Learning' },
+    { name: 'Scikit-Learn & XGBoost', category: 'ai', badge: 'ML Modeling' },
+    { name: 'YOLOv8 & OpenCV', category: 'ai', badge: 'Computer Vision' },
+    { name: 'XGBoost & Time-Series NILM', category: 'ai', badge: 'Disaggregation AI' },
+    { name: 'CNNs & Transformers (NILM)', category: 'ai', badge: 'Deep Learning' },
+    { name: 'Agentic AI & LangChain', category: 'ai', badge: 'LLMs & Agents' },
+    { name: 'Model Context Protocol (MCP)', category: 'ai', badge: 'Agent Architecture' },
+    { name: 'OCR & Image Extraction', category: 'ai', badge: 'CV Pipeline' },
 
     // Backend & Cloud
-    { name: 'Node.js & Express', category: 'backend', level: 88, badge: 'Microservices', experience: '3+ Yrs' },
-    { name: 'FastAPI & Flask', category: 'backend', level: 86, badge: 'Python APIs', experience: '3+ Yrs' },
-    { name: 'REST API Design', category: 'backend', level: 92, badge: 'Architecture', experience: '4+ Yrs' },
-    { name: 'Supabase & Firebase', category: 'backend', level: 88, badge: 'Cloud BaaS', experience: '3+ Yrs' },
-    { name: 'Plesk Server Deployment', category: 'backend', level: 82, badge: 'DevOps', experience: '2+ Yrs' },
-    { name: 'Ktor (Local Embedded Server)', category: 'backend', level: 80, badge: 'Mobile Server', experience: '1+ Yrs' },
+    { name: 'Node.js & Express', category: 'backend', badge: 'Microservices' },
+    { name: 'FastAPI & Flask', category: 'backend', badge: 'Python APIs' },
+    { name: 'REST API Design', category: 'backend', badge: 'Architecture' },
+    { name: 'Supabase & Firebase', category: 'backend', badge: 'Cloud BaaS' },
+    { name: 'Plesk Server Deployment', category: 'backend', badge: 'DevOps' },
+    { name: 'Ktor (Local Embedded Server)', category: 'backend', badge: 'Mobile Server' },
 
     // Frontend & Web
-    { name: 'React.js', category: 'frontend', level: 90, badge: 'Frontend Core', experience: '3+ Yrs' },
-    { name: 'Tailwind CSS', category: 'frontend', level: 92, badge: 'Styling', experience: '3+ Yrs' },
-    { name: 'TanStack Start & Router', category: 'frontend', level: 88, badge: 'Full-Stack SSR', experience: '2+ Yrs' },
-    { name: 'Vite & Webpack', category: 'frontend', level: 88, badge: 'Build Tools', experience: '3+ Yrs' },
-    { name: 'Streamlit', category: 'frontend', level: 92, badge: 'AI Dashboards', experience: '3+ Yrs' },
+    { name: 'React.js', category: 'frontend', badge: 'Frontend Core' },
+    { name: 'Tailwind CSS', category: 'frontend', badge: 'Styling' },
+    { name: 'TanStack Start & Router', category: 'frontend', badge: 'Full-Stack SSR' },
+    { name: 'Vite & Webpack', category: 'frontend', badge: 'Build Tools' },
+    { name: 'Streamlit', category: 'frontend', badge: 'AI Dashboards' },
 
     // Mobile & Hardware
-    { name: 'Android SDK & Studio', category: 'mobile', level: 90, badge: 'Android', experience: '3+ Yrs' },
-    { name: 'Capacitor.js (iOS & Android)', category: 'mobile', level: 90, badge: 'Cross-Platform Bridge', experience: '2+ Yrs' },
-    { name: 'Jetpack Compose & Compose for TV', category: 'mobile', level: 88, badge: 'Android TV & Mobile', experience: '2+ Yrs' },
-    { name: 'USB Serial / IRDA Protocols', category: 'mobile', level: 86, badge: 'Hardware Telemetry', experience: '2+ Yrs' },
-    { name: 'Flutter & Dart', category: 'mobile', level: 82, badge: 'Cross-Platform', experience: '2+ Yrs' },
-    { name: 'XML & Java Mobile Apps', category: 'mobile', level: 88, badge: 'Play Store Published', experience: '3+ Yrs' },
+    { name: 'Android SDK & Studio', category: 'mobile', badge: 'Android' },
+    { name: 'Capacitor.js (iOS & Android)', category: 'mobile', badge: 'Cross-Platform Bridge' },
+    { name: 'Jetpack Compose & Compose for TV', category: 'mobile', badge: 'Android TV & Mobile' },
+    { name: 'USB Serial / IRDA Protocols', category: 'mobile', badge: 'Hardware Telemetry' },
+    { name: 'Flutter & Dart', category: 'mobile', badge: 'Cross-Platform' },
+    { name: 'XML & Java Mobile Apps', category: 'mobile', badge: 'Play Store Published' },
 
     // Databases
-    { name: 'MySQL', category: 'databases', level: 88, badge: 'Relational DB', experience: '3+ Yrs' },
-    { name: 'PostgreSQL', category: 'databases', level: 82, badge: 'Relational DB', experience: '2+ Yrs' },
-    { name: 'DuckDB & Analytical SQL', category: 'databases', level: 85, badge: 'Analytical DB', experience: '2+ Yrs' },
-    { name: 'SQLite (Mobile & Local Sync)', category: 'databases', level: 90, badge: 'Embedded DB', experience: '3+ Yrs' },
+    { name: 'MySQL', category: 'databases', badge: 'Relational DB' },
+    { name: 'PostgreSQL', category: 'databases', badge: 'Relational DB' },
+    { name: 'DuckDB & Analytical SQL', category: 'databases', badge: 'Analytical DB' },
+    { name: 'SQLite (Mobile & Local Sync)', category: 'databases', badge: 'Embedded DB' },
 
     // Tools & DevOps
-    { name: 'Git & GitHub', category: 'tools', level: 92, badge: 'Version Control', experience: '4+ Yrs' },
-    { name: 'Docker', category: 'tools', level: 78, badge: 'Containers', experience: '2+ Yrs' },
-    { name: 'macOS / Unix Shell', category: 'tools', level: 90, badge: 'Environment', experience: '4+ Yrs' },
-    { name: 'Windows OS', category: 'tools', level: 88, badge: 'Environment', experience: '4+ Yrs' },
-    { name: 'Antigravity AI', category: 'tools', level: 92, badge: 'AI IDE & Tooling', experience: '1+ Yrs' },
-    { name: 'VS Code', category: 'tools', level: 95, badge: 'IDE', experience: '4+ Yrs' },
-    { name: 'Android Studio', category: 'tools', level: 92, badge: 'IDE', experience: '3+ Yrs' },
-    { name: 'Xcode', category: 'tools', level: 82, badge: 'iOS / macOS IDE', experience: '2+ Yrs' },
-    { name: 'PyCharm', category: 'tools', level: 90, badge: 'Python IDE', experience: '3+ Yrs' },
+    { name: 'Git & GitHub', category: 'tools', badge: 'Version Control' },
+    { name: 'Docker', category: 'tools', badge: 'Containers' },
+    { name: 'macOS / Unix Shell', category: 'tools', badge: 'Environment' },
+    { name: 'Windows OS', category: 'tools', badge: 'Environment' },
+    { name: 'Android Studio', category: 'tools', badge: 'IDE' },
+    { name: 'Xcode', category: 'tools', badge: 'iOS / macOS IDE' },
   ];
 
   const filteredSkills =
@@ -103,7 +100,7 @@ const Skills: React.FC = () => {
             Skills & Tech Stack
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg">
-            A comprehensive overview of programming languages, frameworks, AI tools, and infrastructure I work with daily.
+            The languages, frameworks and infrastructure behind the projects below.
           </p>
         </div>
 
@@ -145,7 +142,7 @@ const Skills: React.FC = () => {
                 transition={{ duration: 0.2 }}
                 className="p-5 rounded-2xl bg-[#111113] border border-white/10 hover:border-indigo-500/40 transition-all duration-300 shadow-md group hover:shadow-xl hover:shadow-indigo-500/5"
               >
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2">
                     <h3 className="font-bold text-white text-base group-hover:text-indigo-300 transition-colors">
                       {skill.name}
@@ -154,11 +151,6 @@ const Skills: React.FC = () => {
                   <span className="px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-400">
                     {skill.badge}
                   </span>
-                </div>
-
-                <div className="flex items-center justify-between text-xs text-zinc-400 pt-2 border-t border-white/5">
-                  <span className="font-mono text-[11px] text-zinc-400">Experience</span>
-                  <span className="font-mono font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">{skill.experience}</span>
                 </div>
               </motion.div>
             ))}

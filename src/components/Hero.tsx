@@ -30,11 +30,11 @@ const Hero: React.FC = () => {
   };
 
   const stats = [
-    { label: 'Production Projects', value: '10+', icon: Layers, color: 'text-indigo-400' },
-    { label: 'AI & ML Systems', value: '5+', icon: Cpu, color: 'text-cyan-400' },
-    { label: 'Mobile Apps', value: '4+', icon: Smartphone, color: 'text-emerald-400' },
+    { label: 'Shipped Projects', value: '10+', icon: Layers, color: 'text-indigo-400' },
+    { label: 'AI & ML Projects', value: '5+', icon: Cpu, color: 'text-cyan-400' },
+    { label: 'App Downloads', value: '500K+', icon: Smartphone, color: 'text-emerald-400' },
     { label: 'Play & App Store Apps', value: '3', icon: Globe, color: 'text-amber-400' },
-    { label: 'SIH Finalist', value: 'National', icon: Award, color: 'text-rose-400' },
+    { label: 'Smart India Hackathon', value: 'Finalist', icon: Award, color: 'text-rose-400' },
   ];
 
   return (
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               </span>
               <span className="text-zinc-300">Available for Full-Time Roles</span>
               <span className="text-zinc-600">•</span>
-              <span className="text-zinc-400">Remote / Hybrid</span>
+              <span className="text-zinc-400">Remote / Relocation</span>
             </motion.div>
 
             {/* Main Name Heading */}
@@ -81,9 +81,9 @@ const Hero: React.FC = () => {
               <div className="flex flex-wrap items-center gap-2 text-lg sm:text-xl lg:text-2xl font-semibold text-zinc-300">
                 <span className="text-indigo-400">Software Engineer</span>
                 <span className="text-zinc-600">•</span>
-                <span className="text-cyan-400">AI & Machine Learning Specialist</span>
+                <span className="text-cyan-400">AI/ML</span>
                 <span className="text-zinc-600">•</span>
-                <span className="text-emerald-400">Full Stack Engineer</span>
+                <span className="text-emerald-400">Full-Stack & Mobile</span>
               </div>
             </motion.div>
 
@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl font-normal"
             >
-              Building production-grade AI systems, cloud platforms, mobile applications, and scalable backend software. Specialized in transforming complex deep learning models and enterprise requirements into high-performing, resilient applications.
+              I build software across mobile, backend and machine learning: 3 apps on Google Play and the App Store (one with 500K+ downloads), an encrypted LLM data layer built on MCP, and time-series ML research on smart-meter data.
             </motion.p>
 
             {/* CTAs */}
@@ -196,9 +196,6 @@ const Hero: React.FC = () => {
             >
               <div className="flex items-center justify-between mb-3">
                 <stat.icon className={`w-5 h-5 ${stat.color}`} />
-                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
-                  Metric
-                </span>
               </div>
               <div>
                 <p className="text-3xl font-extrabold text-white tracking-tight font-mono">

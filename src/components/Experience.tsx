@@ -55,14 +55,14 @@ const Experience: React.FC = () => {
           apps: [
             {
               name: 'NILM Energy Disaggregation AI',
-              desc: 'Production time-series disaggregation on 5-second interval smart meter feeds. Benchmarked CNNs & Transformers against XGBoost; achieved 96% F1-score on Geysers and ~85% average F1-score across AC, Refrigerator & Washing Machine.',
-              badge: 'Production AI',
+              desc: 'R&D on appliance disaggregation from 5-second smart meter data. Benchmarked CNNs & Transformers against XGBoost; XGBoost reached 96% F1 on geysers and ~85% on AC, refrigerator & washing machine using data from 2 homes. Paused because 2 homes of labelled data could not support the planned 100-home rollout.',
+              badge: 'R&D',
               iconType: 'sparkles',
             },
             {
               name: 'NerveNet – Enterprise MCP Agent Platform',
-              desc: 'Privacy-first enterprise AI platform built on Model Context Protocol (MCP). Features hierarchical org access, CSV/SQL data ingestion, and client-side AES encryption preventing enterprise data exposure to cloud LLMs.',
-              badge: 'Enterprise MCP',
+              desc: 'Privacy-first enterprise AI platform built on Model Context Protocol (MCP), sold to enterprise clients on contract. Features hierarchical org access, CSV/SQL data ingestion, and client-side AES encryption preventing enterprise data exposure to cloud LLMs.',
+              badge: 'Commercial · MCP',
               iconType: 'shield',
             },
           ],
@@ -80,7 +80,7 @@ const Experience: React.FC = () => {
             },
             {
               name: 'Bharat Smart Home',
-              desc: 'Enterprise smart home & IoT lifestyle automation platform. Unified room device hierarchy, condition-based automation schedulers, scenes orchestration, and disaggregated household energy intelligence.',
+              desc: 'Enterprise smart home & IoT lifestyle automation platform. Unified room device hierarchy, condition-based automation schedulers, scenes orchestration, and household energy insights.',
               badge: 'Production App',
               iconType: 'home',
               playStore: 'https://play.google.com/store/apps/details?id=com.bharat.smarthome',

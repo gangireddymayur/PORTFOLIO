@@ -67,13 +67,13 @@ const About: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-mono">
             <Terminal className="w-3.5 h-3.5" />
-            <span>ENGINEERING PHILOSOPHY</span>
+            <span>ABOUT</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Engineering Production-Grade Software & AI
+            From ML Model to Shipped Product
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg leading-relaxed">
-            Bridging the gap between deep machine learning research and resilient production software.
+            I build the model, the API around it, and the app people actually use.
           </p>
         </div>
 
@@ -85,15 +85,15 @@ const About: React.FC = () => {
             <div className="p-8 rounded-2xl bg-[#111113] border border-white/10 space-y-5">
               <h3 className="text-2xl font-bold text-white tracking-tight flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-indigo-400" />
-                <span>Full-Spectrum Software Engineering</span>
+                <span>What I Do</span>
               </h3>
               
               <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                As a Computer Science & AI/ML Engineer (B.Tech '25), my focus is on constructing practical, scalable systems. I don't just build machine learning models in notebooks—I wrap them in high-throughput backend APIs, build sleek frontend interfaces, and deploy them to real-world cloud and mobile environments.
+                I'm a software engineer (B.Tech CSE, AI & ML, 2025) who works across machine learning, backend and mobile. Most of my work runs in production: 3 apps on Google Play and the App Store and client systems running live at temples and hostels. On the ML side I've built an encrypted LLM data layer on MCP and led energy-disaggregation research on smart-meter data.
               </p>
 
               <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                My work spans building non-intrusive load monitoring (NILM) systems for smart meter data at <strong className="text-white">Bharat Smart Services</strong>, publishing official government law enforcement apps for the <strong className="text-white">Telangana State Police Academy</strong>, and building enterprise platforms like <strong className="text-white">Hostel Hub Pro</strong> and <strong className="text-white">SignageHub</strong>.
+                My work spans non-intrusive load monitoring (NILM) research on smart meter data at <strong className="text-white">Bharat Smart Services</strong>, publishing official government law enforcement apps for the <strong className="text-white">Telangana State Police Academy</strong>, and building enterprise platforms like <strong className="text-white">Hostel Hub Pro</strong> and <strong className="text-white">SignageHub</strong>.
               </p>
 
               <div className="pt-4 border-t border-white/10">

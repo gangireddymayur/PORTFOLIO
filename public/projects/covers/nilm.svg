@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#04201c"/><stop offset="1" stop-color="#062033"/></linearGradient>
+    <radialGradient id="g" cx="0.25" cy="0.4" r="0.5"><stop offset="0" stop-color="#14b8a6" stop-opacity="0.22"/><stop offset="1" stop-color="#14b8a6" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04"/></pattern>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2dd4bf" stop-opacity="0.45"/><stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#grid)"/><rect width="1200" height="675" fill="url(#g)"/>
+  <g font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+    <!-- Aggregate mains signal -->
+    <text x="80" y="120" font-size="20" font-weight="700" fill="#99f6e4">Smart meter · 5 s mains power</text>
+    <path d="M80 330 L130 330 L130 250 L190 250 L190 300 L240 300 L240 170 L330 170 L330 230 L380 230 L380 300 L440 300 L440 210 L500 210 L500 330 L540 330 V420 H80 Z" fill="url(#area)"/>
+    <path d="M80 330 L130 330 L130 250 L190 250 L190 300 L240 300 L240 170 L330 170 L330 230 L380 230 L380 300 L440 300 L440 210 L500 210 L500 330 L540 330" fill="none" stroke="#2dd4bf" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M80 420 H540" stroke="#ffffff" stroke-opacity="0.18" stroke-width="2"/>
+    <!-- Model node -->
+    <rect x="560" y="250" width="190" height="90" rx="20" fill="#14b8a6" fill-opacity="0.18" stroke="#5eead4" stroke-width="3"/>
+    <text x="655" y="290" text-anchor="middle" font-size="22" font-weight="800" fill="#ccfbf1">XGBoost</text>
+    <text x="655" y="318" text-anchor="middle" font-size="14" fill="#5eead4">vs CNN · Transformer</text>
+    <path d="M540 295 H556" stroke="#5eead4" stroke-width="4" stroke-linecap="round"/>
+    <!-- Appliance outputs -->
+    <g stroke="#5eead4" stroke-width="3" fill="none" stroke-opacity="0.6">
+      <path d="M750 295 C795 295 795 150 830 150"/><path d="M750 295 C795 295 795 250 830 250"/>
+      <path d="M750 295 C795 295 795 350 830 350"/><path d="M750 295 C795 295 795 450 830 450"/>
+    </g>
+    <g font-size="20" font-weight="700">
+      <rect x="840" y="118" width="280" height="64" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <text x="866" y="158" fill="#e2e8f0">Geyser</text><text x="1096" y="158" text-anchor="end" fill="#5eead4">F1 0.96</text>
+      <rect x="840" y="218" width="280" height="64" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <text x="866" y="258" fill="#e2e8f0">AC</text><path d="M1046 262 l14 -22 l12 14 l14 -24 l14 18" fill="none" stroke="#5eead4" stroke-width="3"/>
+      <rect x="840" y="318" width="280" height="64" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <text x="866" y="358" fill="#e2e8f0">Fridge</text><path d="M1046 362 h12 v-18 h14 v18 h12 v-18 h14 v18" fill="none" stroke="#5eead4" stroke-width="3"/>
+      <rect x="840" y="418" width="280" height="64" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14"/>
+      <text x="866" y="458" fill="#e2e8f0">Washer</text><path d="M1050 462 q8 -24 16 0 q8 24 16 0" fill="none" stroke="#5eead4" stroke-width="3"/>
+    </g>
+  </g>
+</svg>
