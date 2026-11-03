@@ -82,7 +82,7 @@ const Navigation: React.FC = () => {
               Mayur Gangireddy
             </span>
             <span className="block text-[10px] text-zinc-400 font-mono tracking-wider uppercase">
-              Software & AI Engineer
+              Software Engineer · AI/ML
             </span>
           </div>
         </button>

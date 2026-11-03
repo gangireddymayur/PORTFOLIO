@@ -9,6 +9,7 @@ import {
   Apple,
 } from 'lucide-react';
 import ProjectCaseStudyModal, { ProjectData } from './ProjectCaseStudyModal';
+import ProjectCover from './ProjectCover';
 
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('all');
@@ -33,8 +34,13 @@ const Projects: React.FC = () => {
       demo: 'https://play.google.com/store/apps/details?id=in.coral.met',
       playStore: 'https://play.google.com/store/apps/details?id=in.coral.met',
       appStore: 'https://apps.apple.com/in/app/bharat-smart-services/id1584345371',
+      screenshots: [
+        '/projects/bss/home.webp',
+        '/projects/bss/insights.webp',
+        '/projects/bss/devices.webp',
+        '/projects/bss/demand.webp',
+      ],
       tech: ['React 18', 'TypeScript', 'Capacitor.js', 'Java Native Plugins', 'USB Serial IRDA', 'OCR', 'Firebase Messaging', 'Android Widgets', 'iOS WidgetKit', 'Tailwind CSS'],
-      image: 'https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-blue-600 to-cyan-500',
       problem:
         'Electricity consumers and field staff across several discoms (TSSPDCL, TSNPDCL) needed one app to submit accurate meter readings, see live usage and demand, generate bills, and handle water board (HMWSSB) billing, without manual paperwork or errors from mismatched meter data.',
@@ -61,11 +67,12 @@ const Projects: React.FC = () => {
     },
     {
       id: 'bharat-nilm-disaggregation',
+      image: '/projects/covers/nilm.svg',
       title: 'NILM Energy Disaggregation – 5s Smart Meter Appliance AI',
-      subtitle: 'Time-Series Disaggregation Engine • CNNs vs Transformers vs XGBoost Benchmark • 96% Geyser F1-Score',
+      subtitle: 'R&D • CNNs vs Transformers vs XGBoost Benchmark on Pilot-Home Data',
       category: 'ai',
       categories: ['ai', 'enterprise'],
-      tag: '🏢 Bharat Smart Services (Production AI)',
+      tag: '🏢 Bharat Smart Services (R&D)',
       tech: [
         'Python',
         'XGBoost',
@@ -77,12 +84,11 @@ const Projects: React.FC = () => {
         'Scikit-Learn',
         'FastAPI',
       ],
-      image: '/nilm-energy-dashboard.jpg',
       color: 'from-emerald-500 to-cyan-500',
       problem:
         'Electric utilities and consumers had access to 5-second interval smart meter feeds capturing total household mains power (active and reactive power), but had zero visibility into individual appliance power draw without installing expensive sub-meters on every wall socket.',
       solution:
-        'Engineered an end-to-end Non-Intrusive Load Monitoring (NILM) disaggregation engine trained on 5-second interval mains power paired with ground-truth appliance telemetry from office field deployments. Benchmarked deep learning 1D/2D CNNs and Temporal Transformers against tabular gradient boosted trees, concluding with an optimized XGBoost model that achieved superior real-world accuracy, lower inference latency, and exceptional transient feature separation across target appliances.',
+        'Engineered an end-to-end Non-Intrusive Load Monitoring (NILM) disaggregation engine trained on 5-second interval mains power paired with ground-truth appliance telemetry from 2 homes. Benchmarked deep learning 1D/2D CNNs and Temporal Transformers against tabular gradient boosted trees; XGBoost gave the best accuracy and the lightest inference on this data. The project was paused because labelled data from 2 homes could not support the planned 100-home rollout.',
       architecture: [
         'Ingestion of 5-second interval aggregate mains active power, reactive power, and voltage waveforms from smart meters',
         'Sliding-window signal segmentation extracting statistical, temporal, and on/off transient step-change features',
@@ -98,17 +104,18 @@ const Projects: React.FC = () => {
       impact: [
         '🎯 96% F1-Score on Geyser (water heater), reliably isolating high-power resistive cycles',
         '⚡ ~85% Average F1-Score across complex dynamic loads: Air Conditioner (AC), Refrigerator, and Washing Machine',
-        '🏆 Proved XGBoost outperforming deep learning Transformers and CNNs on 5-second interval tabularized time-series metrics',
-        '💡 Zero-Hardware Appliance Monitoring: Delivered per-appliance energy breakdown and peak demand insights directly from existing smart meters',
+        '🏆 XGBoost outperformed Transformers and CNNs on 5-second windowed features for this dataset',
+        '📌 Identified data as the blocker: results come from 2 homes, and scaling to 100 homes needs labelled data from many more households',
       ],
     },
     {
       id: 'bharat-nervenet-mcp',
+      image: '/projects/covers/nervenet.svg',
       title: 'NerveNet – Privacy-First Enterprise AI Agent Platform (MCP)',
       subtitle: 'Hierarchical Model Context Protocol (MCP) Architecture • Client-Side Token Encryption • Enterprise CSV & SQL Data Agents',
       category: 'ai',
       categories: ['ai', 'enterprise'],
-      tag: '🏢 Bharat Smart Services (Enterprise AI)',
+      tag: '🏢 Bharat Smart Services (Commercial)',
       tech: [
         'Model Context Protocol (MCP)',
         'Python',
@@ -119,12 +126,11 @@ const Projects: React.FC = () => {
         'Cloud LLM APIs',
         'RBAC Hierarchical Access',
       ],
-      image: '/nervenet-ai-mcp.jpg',
       color: 'from-purple-600 to-indigo-600',
       problem:
         'Enterprises and departments want to deploy conversational AI agents over proprietary organizational files (CSVs, private spreadsheets, internal SQL databases), but cannot risk transmitting sensitive corporate records or identifiable customer data directly to third-party public cloud LLM APIs due to confidentiality and regulatory privacy risks.',
       solution:
-        'Conceived and architected NerveNet based on the Model Context Protocol (MCP). Implemented a hierarchical organizational interface where leadership uploads office files (CSV tables, database links) and sets role-based permissions. Positioned a secure client-side MCP proxy between user chat queries and cloud LLMs that anonymizes and encrypts enterprise data into tokenized keys. The cloud LLM operates strictly as a query/reasoning engine over encrypted tokens, returning key-based logic that the MCP proxy decrypts locally for the user—ensuring raw enterprise records are never exposed to cloud LLM APIs.',
+        'Built and deployed NerveNet, a commercial product sold to enterprise clients on contract, based on the Model Context Protocol (MCP). Implemented a hierarchical organizational interface where leadership uploads office files (CSV tables, database links) and sets role-based permissions. Positioned a secure client-side MCP proxy between user chat queries and cloud LLMs that anonymizes and encrypts enterprise data into tokenized keys. The cloud LLM operates strictly as a query/reasoning engine over encrypted tokens, returning key-based logic that the MCP proxy decrypts locally for the user—ensuring raw enterprise records are never exposed to cloud LLM APIs.',
       architecture: [
         'Hierarchical Organization Management: Top-level Head (Admin) and departmental sub-components configuring data scopes and role-based access control',
         'Multi-Source Data Ingestion Engine: Seamless onboarding of internal CSV spreadsheets, document repositories, and live SQL database connection links',
@@ -153,18 +159,23 @@ const Projects: React.FC = () => {
       demo: 'https://play.google.com/store/apps/details?id=com.bharat.smarthome',
       playStore: 'https://play.google.com/store/apps/details?id=com.bharat.smarthome',
       appStore: 'https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389',
+      screenshots: [
+        '/projects/bsh/home.webp',
+        '/projects/bsh/geyser.webp',
+        '/projects/bsh/room.webp',
+        '/projects/bsh/automations.webp',
+      ],
       tech: ['React', 'TypeScript', 'Capacitor', 'Tailwind CSS', 'State Machine', 'WebSockets', 'IoT Protocols'],
-      image: 'https://images.pexels.com/photos/1036936/pexels-photo-1036936.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-indigo-600 to-purple-600',
       problem:
         'Consumer smart home applications suffer from fragmented device pairing workflows, complex industrial energy dashboards that confuse everyday users, and high command latency across distributed appliances.',
       solution:
-        'Designed and built an enterprise-grade smart home automation platform featuring room-based organization, customizable lifestyle scenes, condition-based automation schedules, and clear energy intelligence disaggregation.',
+        'Designed and built an enterprise-grade smart home automation platform featuring room-based organization, customizable lifestyle scenes, condition-based automation schedules, and household energy insights.',
       architecture: [
         'Hierarchical Room & Device Control Engine (lighting, climate, relays, smart plugs)',
         'Lifestyle Scene Orchestration & conditional automation scheduler with timer routines',
         'Cross-platform native mobile shell via Capacitor for iOS and Android',
-        'Disaggregated household energy insights translating raw kWh into actionable cost savings',
+        'Household energy insights translating raw kWh into cost estimates',
       ],
       challenges: [
         'Achieving sub-100ms UI responsiveness for device toggle state updates over fluctuating Wi-Fi connections',
@@ -177,13 +188,13 @@ const Projects: React.FC = () => {
     },
     {
       id: 'temple-donation-hub',
+      image: '/projects/covers/temple-kiosk.svg',
       title: 'Temple Donation Signage Hub & Devotee Android TV Network',
       subtitle: 'Dynamic Zero-Fee UPI QR Kiosk + Native Android TV Devotee Signage',
       category: 'fullstack',
       categories: ['fullstack', 'mobile'],
       tag: '💼 Freelance Client Production',
       tech: ['React', 'TypeScript', 'Node.js', 'Express', 'MySQL', 'Kotlin', 'Jetpack Compose', 'ExoPlayer', 'UPI QR API'],
-      image: 'https://images.pexels.com/photos/2161449/pexels-photo-2161449.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-amber-500 to-orange-600',
       problem:
         'Religious institutions and temples faced slow manual paper receipt issuance, massive donation queue bottlenecks during festivals, and lacked digital signage screens to acknowledge devotees and announce pooja schedules.',
@@ -206,13 +217,13 @@ const Projects: React.FC = () => {
     },
     {
       id: 'hostel-hub-pro',
+      image: '/projects/covers/hostel-hub.svg',
       title: 'Hostel Hub Pro & Flutter App – Smart Hostel Management System',
       subtitle: 'Multi-Tenant Web Platform (TanStack Start) + Flutter Companion App',
       category: 'fullstack',
       categories: ['fullstack', 'mobile'],
       tag: '💼 Freelance Client Production',
       tech: ['TanStack Start', 'React', 'TypeScript', 'Node.js', 'Express', 'MySQL', 'Flutter', 'Dart', 'QR Code'],
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-cyan-500 to-blue-600',
       problem:
         'Hostel management in educational institutions faced manual paper logs, security bottlenecks at gates, delay in parent permission approvals, and poor visibility into student whereabouts.',
@@ -235,13 +246,13 @@ const Projects: React.FC = () => {
     },
     {
       id: 'signage-hub',
+      image: '/projects/covers/signagehub.svg',
       title: 'SignageHub – Hybrid Digital Signage & TV Network',
       subtitle: 'Cloud Control + Offline Edge Android TV Architecture',
       category: 'fullstack',
       categories: ['fullstack', 'mobile'],
       tag: '💼 Freelance Client Production',
       tech: ['React', 'TypeScript', 'Node.js', 'Express', 'Supabase', 'Kotlin', 'Jetpack Compose', 'Ktor', 'SQLite'],
-      image: 'https://images.pexels.com/photos/5011647/pexels-photo-5011647.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-blue-600 to-indigo-500',
       problem:
         'Commercial digital signage screens require zero downtime during internet outages and seamless zero-configuration device pairing across retail locations.',
@@ -263,12 +274,12 @@ const Projects: React.FC = () => {
     },
     {
       id: 'feedback-flow',
+      image: '/projects/covers/feedback-flow.svg',
       title: 'Feedback Flow – Enterprise Kiosk Survey & Device Network',
       subtitle: 'Offline-First Tablet Management & Live Canvas Builder',
       category: 'fullstack',
       tag: '💼 Freelance Client Production',
       tech: ['React', 'Node.js', 'Express', 'SQLite', 'Jetpack Compose', 'TypeScript', 'Tailwind CSS'],
-      image: 'https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-teal-500 to-emerald-600',
       problem:
         'Brick-and-mortar storefronts struggle with collecting customer feedback due to lost internet connectivity on kiosk tablets and rigid non-customizable survey UI.',
@@ -290,12 +301,12 @@ const Projects: React.FC = () => {
     },
     {
       id: 'samarth',
+      image: '/projects/covers/samarth.svg',
       title: 'Samarth – Intelligent Agriculture & Climate Q&A Engine',
       subtitle: 'Natural Language to SQL Conversational Analytics',
       category: 'ai',
       tag: '🔬 Research & AI System',
       tech: ['FastAPI', 'DuckDB', 'Python', 'SQL', 'NLP', 'Streamlit'],
-      image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: 'https://github.com/gangireddymayur/Samarth-theChatBot',
       color: 'from-emerald-500 to-teal-500',
       problem:
@@ -318,12 +329,12 @@ const Projects: React.FC = () => {
     },
     {
       id: 'ship-detection',
+      image: '/projects/covers/ship-detection.svg',
       title: 'Post-CNN Framework for Satellite Ship Detection (YOLOv8)',
       subtitle: 'High-Resolution Optical Satellite Imagery Analysis',
       category: 'ai',
       tag: '🔬 Research & AI System',
       tech: ['Python', 'YOLOv8', 'Computer Vision', 'PyTorch', 'OpenCV', 'Streamlit'],
-      image: 'https://images.pexels.com/photos/753331/pexels-photo-753331.jpeg?auto=compress&cs=tinysrgb&w=800',
       demo: 'https://shipdetectionyolov8.streamlit.app/',
       github: 'https://github.com/gangireddymayur/Ship_Detection_YOLOv8',
       color: 'from-indigo-500 to-blue-600',
@@ -347,12 +358,12 @@ const Projects: React.FC = () => {
     },
     {
       id: 'multimodal-emotion',
+      image: '/projects/covers/emotion-detection.svg',
       title: 'Multimodal Emotion Detection System (Face + Voice)',
       subtitle: 'Dual-Stream Deep Learning Fusion Model',
       category: 'ai',
       tag: '🔬 Research & AI System',
       tech: ['Python', 'Streamlit', 'PyTorch', 'EfficientNet-B4', 'OpenCV', 'Librosa', 'MFCC'],
-      image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800',
       github: 'https://github.com/gangireddymayur/Multimodal-Emotion-Detection-System--Face---Voice-/tree/main',
       color: 'from-violet-500 to-purple-600',
       problem:
@@ -375,12 +386,12 @@ const Projects: React.FC = () => {
     },
     {
       id: 'criminal-laws-tgpa',
+      image: '/projects/covers/criminal-laws.svg',
       title: 'Criminal Laws by TGPA – Official Android Application',
       subtitle: 'Telangana State Police Academy (Published on Play Store)',
       category: 'mobile',
       tag: '🏛️ Telangana State Police Academy',
       tech: ['Android SDK', 'Java', 'XML', 'Mobile Security', 'Google Play Store'],
-      image: 'https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=800',
       demo: 'https://play.google.com/store/apps/details?id=com.sphn.tgpa&hl=en_IN',
       playStore: 'https://play.google.com/store/apps/details?id=com.sphn.tgpa&hl=en_IN',
       color: 'from-red-500 to-orange-500',
@@ -398,18 +409,18 @@ const Projects: React.FC = () => {
         'Meeting Google Play Store official government app publishing guidelines',
       ],
       impact: [
-        'Published live on Google Play Store used by Telangana police personnel',
+        'Published on Google Play: 1K+ downloads and a 5.0★ rating from 84 reviews by Telangana police personnel',
         'Significantly reduced time required for officers to verify legal sections',
       ],
     },
     {
       id: 'chit-fund-sys',
+      image: '/projects/covers/chit-fund.svg',
       title: 'Chit Fund Management System – Live Financial Platform',
       subtitle: 'Private Client Production System Deployed on Render',
       category: 'fullstack',
       tag: '💼 Freelance Client Production',
       tech: ['Python', 'Flask', 'Firebase', 'Server-Side Auth', 'Render'],
-      image: 'https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=800',
       color: 'from-slate-600 to-gray-800',
       problem:
         'Private financial firm needed a secure, accurate financial ledger system to track monthly member subscriptions, auctions, payout balances, and late payment penalties.',
@@ -494,10 +505,9 @@ const Projects: React.FC = () => {
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 group-hover:opacity-30 transition-opacity z-10`}
                     />
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    <ProjectCover
+                      project={project}
+                      className="group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#111113] via-transparent to-transparent opacity-90 z-20" />
                     

@@ -29,7 +29,8 @@ const Blog: React.FC = () => {
         'Non-Intrusive Load Monitoring (NILM) enables power utilities and consumers to identify individual appliance energy usage—including water geysers, air conditioners, refrigerators, and washing machines—directly from a single aggregate smart meter feed without per-device sub-metering.',
         'At Bharat Smart Services, our office provided 5-second interval time-series datasets containing total household mains power (active and reactive power) paired with sub-metered ground-truth power readings for each target appliance.',
         'We benchmarked multiple architectures: 1D/2D Convolutional Neural Networks (CNNs), Temporal Attention Transformers, and Gradient Boosted Decision Trees (XGBoost) trained on sliding-window statistical and transient step-change features.',
-        'While deep neural networks captured complex wave shapes, XGBoost delivered markedly superior generalization and lower inference latency on 5-second windowed tabular features—achieving an outstanding 96% F1-score on Geysers and ~85% average F1-score across Air Conditioners, Refrigerators, and Washing Machines.',
+        'While deep neural networks captured complex wave shapes, XGBoost delivered markedly superior generalization and lower inference latency on 5-second windowed tabular features—reaching 96% F1 on geysers and ~85% average F1 across air conditioners, refrigerators and washing machines.',
+        'The catch: all of this came from 2 homes. The goal was a model that works across 100 homes, and appliance signatures vary a lot between households, so 2 homes of labelled data cannot support that. We paused the project until labelled data from many more homes is available. The main lesson: in NILM, data diversity matters more than model choice.',
       ],
     },
     {

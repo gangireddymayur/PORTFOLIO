@@ -45,11 +45,11 @@ const Contact: React.FC = () => {
                 </div>
                 
                 <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-[1.1]">
-                  Let's Build Something Extraordinary
+                  Get in Touch
                 </h2>
                 
                 <p className="text-base sm:text-lg text-zinc-400 leading-relaxed font-normal">
-                  Whether you are hiring for a Full-Time Software Engineer or AI/ML Engineer role, looking to collaborate on a production project, or discussing backend architecture—my inbox is always open.
+                  I'm looking for full-time Software Engineer and AI/ML Engineer roles, remote or in Hyderabad. I usually reply within a day.
                 </p>
               </div>
 
@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
                   <div>
                     <p className="text-xs font-mono text-zinc-500 uppercase">Location & Work Status</p>
                     <p className="text-sm font-bold text-white">
-                      Hyderabad, Telangana, India • <span className="text-emerald-400 font-normal">Remote / Hybrid / On-Site</span>
+                      Hyderabad, Telangana, India • <span className="text-emerald-400 font-normal">Open to Remote & Relocation</span>
                     </p>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Hello Mayur, we are interested in your profile for a Senior Software Engineer / AI Engineer role..."
+                      placeholder="Hello Mayur, we are interested in your profile for a Software Engineer / AI Engineer role..."
                       className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-500 text-xs font-medium transition-colors"
                     />
                   </div>

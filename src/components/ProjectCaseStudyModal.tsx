@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ProjectCover from './ProjectCover';
 import { X, ExternalLink, Github, Zap, CheckCircle2, Play, Apple } from 'lucide-react';
 
 export interface ProjectData {
@@ -10,7 +11,8 @@ export interface ProjectData {
   categories?: string[];
   tag?: string;
   tech: string[];
-  image: string;
+  image?: string;
+  screenshots?: string[];
   demo?: string;
   playStore?: string;
   appStore?: string;
@@ -69,14 +71,24 @@ const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({ project, 
             </p>
           </div>
 
-          {/* Image */}
-          <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-zinc-900">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {/* Screenshots gallery, or cover image */}
+          {project.screenshots && project.screenshots.length > 0 ? (
+            <div className="flex gap-4 overflow-x-auto pb-2 snap-x">
+              {project.screenshots.map((src) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={`${project.title} screenshot`}
+                  loading="lazy"
+                  className="h-[420px] w-auto shrink-0 snap-start rounded-2xl border border-white/10 bg-zinc-900 object-contain"
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10 bg-zinc-900">
+              <ProjectCover project={project} />
+            </div>
+          )}
 
           {/* Tech Stack */}
           <div>

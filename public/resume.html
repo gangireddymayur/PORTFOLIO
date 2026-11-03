@@ -63,7 +63,7 @@
   }
 
   .section {
-    margin-bottom: 4px;
+    margin-bottom: 10px;
   }
   .section-title {
     font-size: 9.6pt;
@@ -80,14 +80,14 @@
   }
 
   .summary {
-    font-size: 8.65pt;
+    font-size: 9.3pt;
     color: #334155;
-    text-align: justify;
+    text-align: left;
     line-height: 1.28;
   }
 
   .job {
-    margin-bottom: 3px;
+    margin-bottom: 7px;
   }
   .job-header {
     display: flex;
@@ -106,9 +106,9 @@
     color: #3730a3;
   }
   .job-date {
-    font-size: 8.2pt;
+    font-size: 8.5pt;
     font-weight: 600;
-    color: #64748b;
+    color: #1e293b;
   }
 
   /* Standard natural flow list without position:relative to preserve strict ATS sequential text stream */
@@ -118,11 +118,11 @@
     margin: 0;
   }
   ul.bullets li {
-    margin-bottom: 1.8px;
-    font-size: 8.5pt;
+    margin-bottom: 3px;
+    font-size: 9.3pt;
     color: #334155;
-    text-align: justify;
-    line-height: 1.27;
+    text-align: left;
+    line-height: 1.38;
   }
 
   .link-pill {
@@ -140,8 +140,8 @@
   .skills-block {
     display: flex;
     flex-direction: column;
-    gap: 1.5px;
-    font-size: 8.5pt;
+    gap: 2.5px;
+    font-size: 9.1pt;
   }
   .skill-item {
     color: #334155;
@@ -168,9 +168,9 @@
     font-weight: 600;
   }
   .edu-date {
-    font-size: 8.2pt;
+    font-size: 8.5pt;
     font-weight: 600;
-    color: #64748b;
+    color: #1e293b;
   }
 
   .achievements {
@@ -198,14 +198,15 @@
   <!-- HEADER -->
   <div class="header">
     <div class="name">MAYUR GANGIREDDY</div>
-    <div class="title-sub">AI/ML Engineer &bull; Full-Stack Systems Developer</div>
+    <div class="title-sub">Software Engineer &bull; AI/ML &bull; Full-Stack &amp; Mobile</div>
     <div class="contact">
-      <span>Hyderabad, Telangana, India</span>
+      <span>Hyderabad, India &middot; Open to Remote &amp; Relocation</span>
       <span class="sep">&nbsp;|&nbsp;</span>
       <span>+91 6281192139</span>
       <span class="sep">&nbsp;|&nbsp;</span>
       <a href="mailto:mayurgangereddy12345@gmail.com">mayurgangereddy12345@gmail.com</a>
-      <span class="sep">&nbsp;|&nbsp;</span>
+    </div>
+    <div class="contact" style="margin-top: 2px;">
       <a href="https://github.com/gangireddymayur" target="_blank">GitHub</a>
       <span class="sep">&nbsp;|&nbsp;</span>
       <a href="http://www.linkedin.com/in/mayur-gangireddy" target="_blank">LinkedIn</a>
@@ -214,148 +215,103 @@
     </div>
   </div>
 
-  <!-- CAREER SUMMARY -->
+  <!-- SUMMARY -->
   <div class="section">
-    <div class="section-title">Professional Summary</div>
+    <div class="section-title">Summary</div>
     <div class="summary">
-      <strong>AI/ML & Full-Stack Engineer</strong> with proven production experience deploying 5-second interval time-series pipelines, edge intelligence, and cross-platform mobile systems published to the Google Play Store and Apple App Store. Specialized in energy disaggregation (NILM), privacy-preserving Model Context Protocol (MCP) data proxies, native hardware integrations (USB IRDA / OCR), and high-throughput web microservices.
+      Software engineer across mobile, backend and ML. Shipped 3 apps on Google Play and the App Store, including a utility app with <strong>500K+ downloads</strong>, and built an encrypted LLM data layer on the Model Context Protocol that the company sells to enterprise clients. Stack: <strong>Python, TypeScript/React, Node.js, SQL, Android/iOS</strong>.
     </div>
   </div>
 
-  <!-- WORK EXPERIENCE -->
+  <!-- EXPERIENCE -->
   <div class="section">
-    <div class="section-title">Work Experience</div>
+    <div class="section-title">Experience</div>
 
-    <!-- BHARAT SMART SERVICES -->
     <div class="job">
       <div class="job-header">
         <div>
-          <span class="job-company">Bharat Smart Services</span> &ndash; <span class="job-title">Machine Learning & Full-Stack Engineer</span>
+          <span class="job-company">Bharat Smart Services</span> &ndash; <span class="job-title">Machine Learning &amp; Full-Stack Engineer</span>
         </div>
-        <div class="job-date">01/2026 &ndash; Present | Hyderabad, India</div>
+        <div class="job-date">Jan 2026 &ndash; Present | Hyderabad</div>
       </div>
       <ul class="bullets">
-        <li>
-          <strong>NILM Time-Series Energy Disaggregation:</strong> Built production appliance disaggregation models on 5-second interval smart meter telemetry. Benchmarked 1D/2D CNNs and Temporal Transformers against an optimized sliding-window <strong>XGBoost</strong> pipeline; achieved <strong>96% F1-score on Geysers</strong> and <strong>~85% F1-score across AC, Refrigerator, and Washing Machines</strong> (evaluated on held-out temporal splits), yielding sub-10ms CPU inference latency.
-        </li>
-        <li>
-          <strong>NerveNet &ndash; Client-Side Encrypted Enterprise MCP Platform:</strong> Architected an enterprise AI agent platform on the <strong>Model Context Protocol (MCP)</strong>. Engineered client-side AES-256 encryption and key tokenization over private CSV tables and SQL databases, allowing cloud LLMs to execute reasoning and queries strictly over anonymized tokens without exposing unencrypted corporate records.
-        </li>
-        <li>
-          <strong>Bharat Smart Services App (Utility & Billing) </strong>
-          <a class="link-pill" href="https://play.google.com/store/apps/details?id=in.coral.met" target="_blank">Google Play</a>
-          <a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-services/id1584345371" target="_blank">App Store</a>:
-          Engineered cross-platform React/Capacitor app for live state discom billing (TSSPDCL, TSNPDCL, HMWSSB). Built custom native Java USB serial drivers for optical IRDA dongles, camera-based OCR meter reading review, and native iOS/Android home screen widgets.
-        </li>
-        <li>
-          <strong>Bharat Smart Home (IoT Automation & Telemetry) </strong>
-          <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.bharat.smarthome" target="_blank">Google Play</a>
-          <a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389" target="_blank">App Store</a>:
-          Architected smart home platform featuring hierarchical device control, condition-based automation schedules, lifestyle scene orchestration, and real-time disaggregated appliance energy intelligence.
-        </li>
+        <li>Built and deployed <strong>NerveNet</strong>, an <strong>MCP</strong>-based AI agent platform sold to enterprise clients on contract. A client-side proxy encrypts (AES-256) and tokenizes private CSV/SQL data, so cloud LLMs never see raw company records.</li>
+        <li>Engineer on the <strong>Bharat Smart Services</strong> utility app (<strong>500K+ downloads, 4.0&#9733; from 1.6K reviews</strong>; React + Capacitor) <a class="link-pill" href="https://play.google.com/store/apps/details?id=in.coral.met" target="_blank">Play</a><a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-services/id1584345371" target="_blank">App Store</a> for meter billing at TSSPDCL, TSNPDCL and HMWSSB; wrote <strong>native Java USB-serial drivers</strong> for IR meter dongles, camera <strong>OCR</strong> reading capture and home-screen widgets.</li>
+        <li>Built <strong>Bharat Smart Home</strong> <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.bharat.smarthome" target="_blank">Play</a><a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389" target="_blank">App Store</a> (1K+ downloads, 5.0&#9733;), an IoT app for room and device control, scheduled automations, scenes and energy usage.</li>
+        <li>Led <strong>NILM</strong> energy-disaggregation R&amp;D on 5-second smart-meter data from pilot homes: benchmarked CNNs and Transformers against <strong>XGBoost</strong>, which performed best (<strong>96% F1</strong> on geysers, <strong>~85%</strong> on AC, fridge and washing machine).</li>
       </ul>
     </div>
 
-    <!-- TELANGANA POLICE ACADEMY -->
+
     <div class="job">
       <div class="job-header">
         <div>
-          <span class="job-company">Telangana State Police Academy (TGPA)</span> &ndash; <span class="job-title">Android Application Developer</span>
+          <span class="job-company">Telangana State Police Academy (TGPA)</span> &ndash; <span class="job-title">Android Developer</span>
         </div>
-        <div class="job-date">03/2024 &ndash; 08/2024 | Hyderabad, India</div>
+        <div class="job-date">Mar 2024 &ndash; Aug 2024 | Hyderabad</div>
       </div>
       <ul class="bullets">
-        <li>
-          <strong>Criminal Laws by TGPA </strong>
-          <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.sphn.tgpa&hl=en_IN" target="_blank">Google Play Store</a>:
-          Sole developer of official state police legal repository app published on Google Play. Built sub-50ms offline search over criminal penal codes using SQLite FTS, bilingual legal document viewers, and AES-encrypted local storage.
-        </li>
+        <li>Sole developer of <strong>Criminal Laws by TGPA</strong> <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.sphn.tgpa&amp;hl=en_IN" target="_blank">Play</a>, the academy&rsquo;s official legal app for officers (<strong>1K+ downloads, 5.0&#9733; from 84 reviews</strong>): <strong>offline search under 50 ms</strong> (SQLite FTS) and old-vs-new law comparison.</li>
       </ul>
     </div>
 
-    <!-- EY GDS × AICTE -->
     <div class="job">
       <div class="job-header">
         <div>
-          <span class="job-company">EY Global Delivery Services &times; AICTE</span> &ndash; <span class="job-title">Web Development Intern (MERN Stack)</span>
+          <span class="job-company">Internships</span> &ndash; <span class="job-title">EY GDS &times; AICTE (MERN, Mar&ndash;Apr 2025) &bull; Acmegrade (Android, Nov 2023&ndash;Jan 2024)</span>
         </div>
-        <div class="job-date">03/2025 &ndash; 04/2025 | Virtual</div>
+        <div class="job-date">Remote</div>
       </div>
       <ul class="bullets">
-        <li>
-          Developed full-stack web applications using MongoDB, Express.js, React.js, and Node.js. Built scalable RESTful APIs, JWT authentication, and responsive administrative dashboards.
-        </li>
-      </ul>
-    </div>
-
-    <!-- ACMEGRADE -->
-    <div class="job">
-      <div class="job-header">
-        <div>
-          <span class="job-company">Acmegrade</span> &ndash; <span class="job-title">Android App Development Intern</span>
-        </div>
-        <div class="job-date">11/2023 &ndash; 01/2024 | Remote</div>
-      </div>
-      <ul class="bullets">
-        <li>
-          Developed and deployed native Android mobile application modules in Java, implementing activity lifecycles, UI layout hierarchies, REST API integration, and local SQLite caching.
-        </li>
+        <li>MERN-stack modules with REST APIs and JWT auth (EY); Java Android modules with REST and SQLite caching (Acmegrade).</li>
       </ul>
     </div>
   </div>
 
-  <!-- SELECTED PROJECTS -->
+  <!-- CLIENT PROJECTS -->
   <div class="section">
-    <div class="section-title">Selected Projects (Client Production)</div>
-
+    <div class="section-title">Client Projects</div>
     <ul class="bullets">
-      <li>
-        <strong>Temple Donation Signage Hub & Devotee Android TV Network: </strong>
-        Devotional donation kiosk & digital signage TV network. Built administrative portal generating dynamic zero-transaction-fee UPI QR codes with automated verification polling, and a native Android TV app (Kotlin, Jetpack Compose, ExoPlayer/media3) featuring 6-character claiming codes and resilient offline media caching; deployed live on temple donation kiosks and display screens.
-      </li>
-      <li>
-        <strong>Hostel Hub Pro & Companion Mobile App: </strong>
-        Multi-tenant accommodation platform connecting administrators, wardens, students, and guards. Built administrative web portal with <strong>TanStack Start SSR & React</strong>, companion <strong>Flutter app</strong> featuring time-restricted (24-hr) HMAC dynamic QR gate passes with server-side nonce verification to prevent pass re-use and sharing, and an Express/MySQL backend on Plesk.
-      </li>
-      <li>
-        <strong>SignageHub &ndash; Hybrid Digital Signage & TV Network: </strong>
-        Commercial digital signage platform featuring cloud media scheduling dashboard and compiled local server broadcasting UDP discovery packets to auto-pair native Android TV screens. Engineered Android TV client in Jetpack Compose, Ktor, and local SQLite caching for continuous offline playlist playback with zero manual IP setup.
-      </li>
+      <li><strong>Temple donation kiosks:</strong> admin portal (React, Node.js, MySQL) with zero-fee <strong>UPI QR</strong> donations, plus an offline-capable Android TV app (Kotlin, Compose). Live at temple sites.</li>
+      <li><strong>Hostel Hub Pro:</strong> multi-tenant SaaS with a TanStack Start web app, <strong>Flutter</strong> app and Express/MySQL API; <strong>HMAC-signed QR gate passes</strong> with nonce checks to stop reuse.</li>
+      <li><strong>SignageHub:</strong> cloud scheduling dashboard plus a local server that auto-pairs Android TV screens over <strong>UDP</strong> and keeps playlists running offline.</li>
     </ul>
   </div>
 
-  <!-- TECHNICAL SKILLS -->
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Open-Source AI Projects</div>
+    <ul class="bullets">
+      <li><strong>Samarth &ndash; NL-to-SQL</strong> <a class="link-pill" href="https://github.com/gangireddymayur/Samarth-theChatBot" target="_blank">GitHub</a>: LLM agent that answers plain-English questions over government data; SQL is AST-checked before running on <strong>DuckDB</strong> and shown with every answer.</li>
+      <li><strong>Satellite Ship Detection</strong> <a class="link-pill" href="https://github.com/gangireddymayur/Ship_Detection_YOLOv8" target="_blank">GitHub</a>: land masking plus <strong>YOLOv8</strong> to detect ships in satellite images with fewer coastline false positives.</li>
+    </ul>
+  </div>
+
+  <!-- SKILLS -->
   <div class="section">
     <div class="section-title">Technical Skills</div>
     <div class="skills-block">
-      <div class="skill-item"><strong>Languages:</strong> Python, TypeScript, JavaScript (ES6+), Java, Kotlin, SQL, Dart, C, C++</div>
-      <div class="skill-item"><strong>AI & Machine Learning:</strong> XGBoost, PyTorch, Transformers, CNNs, Time-Series NILM, Model Context Protocol (MCP), Computer Vision (OCR), Scikit-Learn</div>
-      <div class="skill-item"><strong>Web & Mobile:</strong> React.js, Node.js, Express, FastAPI, Capacitor.js, Flutter, Android (Jetpack Compose/Java), Ktor, Tailwind CSS</div>
-      <div class="skill-item"><strong>Databases & Cloud:</strong> PostgreSQL, MySQL, MariaDB, SQLite, DuckDB, Supabase, Firebase, Plesk Linux, RESTful APIs</div>
-      <div class="skill-item"><strong>Tools & Hardware:</strong> Git, Docker, Android Studio, Xcode, Postman, Linux CLI, USB Serial Hardware (IRDA), UDP Discovery</div>
+      <div class="skill-item"><strong>Languages:</strong> Python, TypeScript, JavaScript, Java, Kotlin, SQL, Dart, C/C++</div>
+      <div class="skill-item"><strong>AI / ML:</strong> PyTorch, XGBoost, Scikit-Learn, Time-Series Modeling, CNNs, Transformers, YOLOv8, OpenCV, OCR, LLM Agents, Model Context Protocol (MCP), NL-to-SQL</div>
+      <div class="skill-item"><strong>Backend &amp; Data:</strong> Node.js, Express, FastAPI, Flask, REST APIs, PostgreSQL, MySQL, SQLite, DuckDB, Supabase, Firebase</div>
+      <div class="skill-item"><strong>Frontend &amp; Mobile:</strong> React, TanStack Start, Tailwind CSS, Android (Java, Kotlin, Jetpack Compose, Android TV), Capacitor, Flutter, iOS WidgetKit</div>
+      <div class="skill-item"><strong>Tools:</strong> Git, Docker, Linux, Postman, Android Studio, Xcode, Plesk, Render, Vercel</div>
     </div>
   </div>
 
-  <!-- EDUCATION & HONORS -->
+  <!-- EDUCATION -->
   <div class="section">
-    <div class="section-title">Education & Honors</div>
+    <div class="section-title">Education &amp; Achievements</div>
     <div class="edu-row">
       <div>
         <span class="edu-inst">Sphoorthy Engineering College</span> &ndash;
-        <span class="edu-deg">B.Tech in Computer Science & Engineering (AIML)</span>
+        <span class="edu-deg">B.Tech, Computer Science &amp; Engineering (AI &amp; ML)</span>
       </div>
-      <div class="edu-date">2021 &ndash; 2025 | Hyderabad, India</div>
-    </div>
-    <div class="edu-row">
-      <div>
-        <span class="edu-inst">Sri Gayatri Junior College</span> &ndash;
-        <span class="edu-deg">Board of Intermediate Education (MPC)</span>
-      </div>
-      <div class="edu-date">2019 &ndash; 2021 | Hyderabad, India</div>
+      <div class="edu-date">2021 &ndash; 2025 | Hyderabad</div>
     </div>
     <div class="achievements">
-      <div class="ach-item"><strong>Grand Finalist</strong> &ndash; Smart India Hackathon (SIH 2022)</div>
-      <div class="ach-item"><strong>Production Systems</strong> &ndash; 3 Published Apps on Google Play & App Store | Live Paid Client Deployments</div>
+      <div class="ach-item"><strong>Grand Finalist</strong> &ndash; Smart India Hackathon 2022 (Ministry of Education)</div>
+      <div class="ach-item"><strong>3 published apps</strong>, one with 500K+ downloads</div>
     </div>
   </div>
 

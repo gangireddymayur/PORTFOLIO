@@ -149,10 +149,10 @@ const Architecture: React.FC = () => {
       id: 'nilm',
       tabName: 'Smart Meter AI',
       title: 'Smart Meter NILM Energy Disaggregation & OCR Engine',
-      subtitle: 'Bharat Smart Services Production AI Architecture',
+      subtitle: 'Bharat Smart Services R&D',
       category: 'AI / Time-Series & Computer Vision',
       description:
-        'An energy disaggregation pipeline that ingests 5-second interval smart meter time-series data, segments power signals using sliding windows, benchmarks CNNs, Transformers, and XGBoost, and deploys an optimized gradient boosted model delivering 96% F1-score on Geysers and ~85% average F1-score across AC, Refrigerator, and Washing Machine.',
+        'An energy disaggregation pipeline that ingests 5-second interval smart meter time-series data, segments power signals using sliding windows, and benchmarks CNNs, Transformers, and XGBoost. On data from 2 homes, XGBoost reached 96% F1 on geysers and ~85% average F1 across AC, refrigerator and washing machine. Paused pending labelled data from more homes.',
       nodes: [
         { label: 'Smart Meter Data', sub: '5s Interval Mains & Appliance Feeds', icon: Activity },
         { label: 'Sliding Window DSP', sub: 'Transient & Temporal Features', icon: Cpu },
@@ -163,7 +163,7 @@ const Architecture: React.FC = () => {
       keyHighlights: [
         'Processes 5-second interval mains and appliance ground-truth power telemetry',
         'Systematic benchmark: evaluated 1D/2D CNNs and Temporal Transformers against XGBoost on sliding-window features',
-        'Selected XGBoost for superior production generalization, achieving 96% Geyser F1-score and ~85% average F1-score across AC, Refrigerator, and Washing Machine',
+        'XGBoost performed best on the 2-home dataset: 96% geyser F1 and ~85% average F1 across AC, refrigerator and washing machine',
         'Computer Vision OCR extracts numerical readings directly from physical smart meter LCD displays to cross-verify cumulative energy',
       ],
     },
@@ -311,7 +311,7 @@ const Architecture: React.FC = () => {
             Production System Diagrams
           </h2>
           <p className="text-zinc-400 text-base sm:text-lg">
-            Detailed engineering visual flows of production AI, cloud, and mobile architectures I have designed and deployed.
+            Detailed engineering visual flows of the AI, cloud, and mobile architectures I have designed and built.
           </p>
         </div>
 

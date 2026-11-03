@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                 Mayur Gangireddy
               </span>
               <span className="block text-[10px] text-zinc-500 font-mono">
-                Software & AI Engineer
+                Software Engineer · AI/ML
               </span>
             </div>
           </div>

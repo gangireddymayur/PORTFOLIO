@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1030"/><stop offset="1" stop-color="#0a1a3a"/></linearGradient>
+    <radialGradient id="g" cx="0.28" cy="0.5" r="0.45"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.28"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04"/></pattern>
+    <g id="tv"><rect x="-110" y="-66" width="220" height="132" rx="10" fill="#020617" stroke="#93c5fd" stroke-width="4"/><rect x="-98" y="-54" width="196" height="108" rx="6" fill="#1d4ed8" fill-opacity="0.45"/><rect x="-20" y="66" width="40" height="16" fill="#93c5fd" fill-opacity="0.5"/></g>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#grid)"/><rect width="1200" height="675" fill="url(#g)"/>
+  <g font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+    <!-- Local server broadcasting -->
+    <rect x="230" y="250" width="140" height="170" rx="16" fill="#1e3a8a" fill-opacity="0.5" stroke="#93c5fd" stroke-width="4"/>
+    <g stroke="#93c5fd" stroke-width="4"><path d="M255 290 H345 M255 330 H345 M255 370 H345"/></g>
+    <circle cx="335" cy="290" r="5" fill="#4ade80"/><circle cx="335" cy="330" r="5" fill="#4ade80"/>
+    <text x="300" y="460" text-anchor="middle" font-size="20" font-weight="700" fill="#bfdbfe">Local server</text>
+    <g fill="none" stroke="#60a5fa" stroke-width="4" stroke-linecap="round">
+      <path d="M400 290 a60 60 0 0 1 0 90" stroke-opacity="0.9"/><path d="M430 260 a100 100 0 0 1 0 150" stroke-opacity="0.6"/><path d="M460 230 a140 140 0 0 1 0 210" stroke-opacity="0.35"/>
+    </g>
+    <text x="440" y="200" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="18" font-weight="700" fill="#93c5fd">UDP discovery</text>
+    <!-- Cloud -->
+    <path d="M200 140 a40 40 0 0 1 15 -76 a55 55 0 0 1 103 -8 a44 44 0 0 1 55 44 a37 37 0 0 1 -26 40 Z" fill="#ffffff" fill-opacity="0.06" stroke="#bfdbfe" stroke-width="3"/>
+    <text x="290" y="118" text-anchor="middle" font-size="16" font-weight="700" fill="#bfdbfe">Cloud schedule</text>
+    <path d="M300 150 V240" stroke="#bfdbfe" stroke-width="3" stroke-dasharray="4 8"/>
+    <!-- TV wall -->
+    <g transform="translate(700 210)"><use href="#tv"/><path d="M-60 30 L-10 -20 L30 15 L60 -10 L98 30" fill="none" stroke="#bfdbfe" stroke-width="4"/></g>
+    <g transform="translate(960 210)"><use href="#tv"/><circle cx="0" cy="0" r="26" fill="#fbbf24" fill-opacity="0.8"/></g>
+    <g transform="translate(700 450)"><use href="#tv"/><rect x="-70" y="-30" width="140" height="18" rx="9" fill="#bfdbfe" fill-opacity="0.7"/><rect x="-70" y="2" width="100" height="14" rx="7" fill="#bfdbfe" fill-opacity="0.4"/></g>
+    <g transform="translate(960 450)"><use href="#tv"/><path d="M-14 -22 L22 0 L-14 22 Z" fill="#bfdbfe"/></g>
+    <g font-size="14" font-weight="700">
+      <rect x="600" y="132" width="98" height="24" rx="12" fill="#16a34a"/><text x="649" y="149" text-anchor="middle" fill="#f0fdf4">● Paired</text>
+      <rect x="860" y="132" width="98" height="24" rx="12" fill="#16a34a"/><text x="909" y="149" text-anchor="middle" fill="#f0fdf4">● Paired</text>
+    </g>
+  </g>
+</svg>
