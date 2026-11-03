@@ -8,10 +8,33 @@ const categoryIcons: Record<string, React.ElementType> = {
   mobile: Smartphone,
 };
 
-// Priority: real app screenshots (shown as a phone-mockup fan), then a single
-// project image, then a generated cover (gradient + category icon + key tech).
+// Priority: real screenshots (a browser window for web apps, a phone-mockup fan
+// for mobile apps), then a single project image, then a generated cover
+// (gradient + category icon + key tech).
 const ProjectCover: React.FC<{ project: ProjectData; className?: string }> = ({ project, className = '' }) => {
   const shots = project.screenshots?.slice(0, 3) ?? [];
+
+  if (shots.length > 0 && project.screenshotFrame === 'browser') {
+    return (
+      <div className={`relative w-full h-full flex items-end justify-center px-5 pt-5 bg-zinc-950 overflow-hidden ${className}`}>
+        <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-30`} />
+        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+        <div className="relative w-full rounded-t-xl border-x-2 border-t-2 border-white/15 bg-zinc-900 shadow-2xl shadow-black/60 overflow-hidden">
+          <div className="flex items-center gap-1.5 px-3 py-2 bg-zinc-800/90">
+            <span className="w-2 h-2 rounded-full bg-red-400/80" />
+            <span className="w-2 h-2 rounded-full bg-amber-400/80" />
+            <span className="w-2 h-2 rounded-full bg-emerald-400/80" />
+          </div>
+          <img
+            src={shots[0]}
+            alt={`${project.title} screenshot`}
+            loading="lazy"
+            className="block w-full aspect-[16/9] object-cover object-left-top"
+          />
+        </div>
+      </div>
+    );
+  }
 
   if (shots.length > 0) {
     // Put the first screenshot in the middle, in front

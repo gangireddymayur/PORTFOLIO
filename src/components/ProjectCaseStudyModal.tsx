@@ -13,6 +13,8 @@ export interface ProjectData {
   tech: string[];
   image?: string;
   screenshots?: string[];
+  // 'phone' (default) shows portrait app screens; 'browser' shows desktop web screenshots
+  screenshotFrame?: 'phone' | 'browser';
   demo?: string;
   playStore?: string;
   appStore?: string;
@@ -80,7 +82,9 @@ const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({ project, 
                   src={src}
                   alt={`${project.title} screenshot`}
                   loading="lazy"
-                  className="h-[420px] w-auto shrink-0 snap-start rounded-2xl border border-white/10 bg-zinc-900 object-contain"
+                  className={`${
+                    project.screenshotFrame === 'browser' ? 'h-[360px]' : 'h-[420px]'
+                  } w-auto shrink-0 snap-start rounded-2xl border border-white/10 bg-zinc-900 object-contain`}
                 />
               ))}
             </div>

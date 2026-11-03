@@ -247,6 +247,12 @@ const Projects: React.FC = () => {
     {
       id: 'signage-hub',
       image: '/projects/covers/signagehub.svg',
+      screenshotFrame: 'browser',
+      screenshots: [
+        '/projects/signagehub/layout-editor.webp',
+        '/projects/signagehub/devices.webp',
+        '/projects/signagehub/dashboard.webp',
+      ],
       title: 'SignageHub – Hybrid Digital Signage & TV Network',
       subtitle: 'Cloud Control + Offline Edge Android TV Architecture',
       category: 'fullstack',
