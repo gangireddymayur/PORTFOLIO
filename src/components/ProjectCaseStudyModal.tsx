@@ -212,7 +212,7 @@ const ProjectCaseStudyModal: React.FC<ProjectCaseStudyModalProps> = ({ project, 
                   className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold flex items-center gap-2 transition-colors shadow-lg shadow-indigo-600/30"
                 >
                   <ExternalLink className="w-4 h-4" />
-                  <span>Live Demo / Store</span>
+                  <span>Open Live Site</span>
                 </a>
               )}
               {project.github && (

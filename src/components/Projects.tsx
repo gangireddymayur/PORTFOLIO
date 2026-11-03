@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ExternalLink,
+  Globe,
   Github,
   Layers,
   BookOpen,
@@ -188,6 +188,7 @@ const Projects: React.FC = () => {
     },
     {
       id: 'temple-donation-hub',
+      demo: 'https://happy-shamir.103-69-196-157.plesk.page/login',
       image: '/projects/covers/temple-kiosk.svg',
       screenshotFrame: 'browser',
       screenshots: [
@@ -218,12 +219,14 @@ const Projects: React.FC = () => {
         'Ensuring 24/7 continuous video playlist looping without memory leaks on entry-level Android TV hardware',
       ],
       impact: [
+        '🌐 Live admin portal — demo access available on request (see Contact)',
         'Eliminated manual cash and paper receipt queues during peak festival rush',
         'Deployed live on temple donation kiosks and large devotional Android TV screens',
       ],
     },
     {
       id: 'hostel-hub-pro',
+      demo: 'https://awesome-hertz.103-69-196-157.plesk.page/',
       image: '/projects/covers/hostel-hub.svg',
       screenshotFrame: 'browser',
       screenshots: [
@@ -256,12 +259,14 @@ const Projects: React.FC = () => {
         'Strict date/time calculations ensuring gate permissions expire dynamically after 24 hours',
       ],
       impact: [
+        '🌐 Live admin portal — demo access available on request (see Contact)',
         'Replaces paper gate registers with a verifiable digital audit trail for every outing',
         'Parent live-photo verification and GPS at each step make passes hard to fake or share',
       ],
     },
     {
       id: 'signage-hub',
+      demo: 'https://agitated-satoshi.103-69-196-157.plesk.page/login',
       image: '/projects/covers/signagehub.svg',
       screenshotFrame: 'browser',
       screenshots: [
@@ -290,6 +295,7 @@ const Projects: React.FC = () => {
         'Bi-directional sync between local Windows SQLite server and cloud Supabase database',
       ],
       impact: [
+        '🌐 Live admin portal — demo access available on request (see Contact)',
         'Continuous display playback guaranteed via offline local SQLite cache',
         'Zero manual IP configuration required for screen deployment',
       ],
@@ -613,9 +619,9 @@ const Projects: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-8 h-8 flex items-center justify-center text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-colors"
-                        title="Live Demo"
+                        title="Open live site"
                       >
-                        <ExternalLink className="w-3.5 h-3.5" />
+                        <Globe className="w-3.5 h-3.5" />
                       </a>
                     )}
                     {project.github && (
