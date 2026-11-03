@@ -76,7 +76,7 @@ const Experience: React.FC = () => {
               badge: 'Production App',
               iconType: 'smartphone',
               playStore: 'https://play.google.com/store/apps/details?id=in.coral.met',
-              appStore: 'https://apps.apple.com/in/app/bharat-smart-services/id1584345371',
+              appStore: 'https://apps.apple.com/in/app/bharat-smart-services/id1574717982',
             },
             {
               name: 'Bharat Smart Home',
@@ -84,7 +84,7 @@ const Experience: React.FC = () => {
               badge: 'Production App',
               iconType: 'home',
               playStore: 'https://play.google.com/store/apps/details?id=com.bharat.smarthome',
-              appStore: 'https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389',
+              appStore: 'https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6751056935',
             },
           ],
         },

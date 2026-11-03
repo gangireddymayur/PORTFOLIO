@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
       tag: '🏢 Bharat Smart Services (Current Role)',
       demo: 'https://play.google.com/store/apps/details?id=in.coral.met',
       playStore: 'https://play.google.com/store/apps/details?id=in.coral.met',
-      appStore: 'https://apps.apple.com/in/app/bharat-smart-services/id1584345371',
+      appStore: 'https://apps.apple.com/in/app/bharat-smart-services/id1574717982',
       screenshots: [
         '/projects/bss/home.webp',
         '/projects/bss/insights.webp',
@@ -159,7 +159,7 @@ const Projects: React.FC = () => {
       tag: '🏢 Bharat Smart Services (Current Role)',
       demo: 'https://play.google.com/store/apps/details?id=com.bharat.smarthome',
       playStore: 'https://play.google.com/store/apps/details?id=com.bharat.smarthome',
-      appStore: 'https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389',
+      appStore: 'https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6751056935',
       screenshots: [
         '/projects/bsh/home.webp',
         '/projects/bsh/geyser.webp',
