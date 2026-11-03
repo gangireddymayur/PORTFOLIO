@@ -227,7 +227,7 @@ def build_resume():
   <div class="section">
     <div class="section-title">Summary</div>
     <div class="summary">
-      Software engineer across mobile, backend and ML. Shipped 3 apps on Google Play and the App Store, including a utility app with <strong>500K+ downloads</strong>, and built an encrypted LLM data layer on the Model Context Protocol that the company sells to enterprise clients. Stack: <strong>Python, TypeScript/React, Node.js, SQL, Android/iOS</strong>.
+      Software engineer across mobile, backend and ML. Shipped 3 apps on Google Play and the App Store, including a utility app with <strong>500K+ downloads</strong>, and built an MCP-based LLM data assistant that the company sells to enterprise clients. Stack: <strong>Python, TypeScript/React, Node.js, SQL, Android/iOS</strong>.
     </div>
   </div>
 
@@ -243,7 +243,7 @@ def build_resume():
         <div class="job-date">Jan 2026 &ndash; Present | Hyderabad</div>
       </div>
       <ul class="bullets">
-        <li>Built and deployed <strong>NerveNet</strong>, an <strong>MCP</strong>-based AI agent platform sold to enterprise clients on contract. A client-side proxy encrypts (AES-256) and tokenizes private CSV/SQL data, so cloud LLMs never see raw company records.</li>
+                <li>Built and deployed <strong>NerveNet</strong>, a Claude-based assistant sold to utilities and enterprise clients on contract. A server-side privacy engine tokenizes customer IDs before the LLM sees them, and a <strong>read-only SQL gateway on MCP</strong> lets staff query live billing data in plain English.</li>
         <li>Engineer on the <strong>Bharat Smart Services</strong> utility app (<strong>500K+ downloads, 4.0&#9733; from 1.6K reviews</strong>; React + Capacitor) <a class="link-pill" href="https://play.google.com/store/apps/details?id=in.coral.met" target="_blank">Play</a><a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-services/id1584345371" target="_blank">App Store</a> for meter billing at TSSPDCL, TSNPDCL and HMWSSB; wrote <strong>native Java USB-serial drivers</strong> for IR meter dongles, camera <strong>OCR</strong> reading capture and home-screen widgets.</li>
         <li>Built <strong>Bharat Smart Home</strong> <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.bharat.smarthome" target="_blank">Play</a><a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389" target="_blank">App Store</a> (1K+ downloads, 5.0&#9733;), an IoT app for device control, automations and energy usage. I own <strong>App Store and Play Store releases</strong> for both apps.</li>
         <li>Led <strong>NILM</strong> energy-disaggregation R&amp;D on 5-second smart-meter data from pilot homes: benchmarked CNNs and Transformers against <strong>XGBoost</strong>, which performed best (<strong>96% F1</strong> on geysers, <strong>~85%</strong> on AC, fridge and washing machine).</li>
@@ -281,7 +281,7 @@ def build_resume():
     <div class="section-title">Client Projects</div>
     <ul class="bullets">
       <li><strong>Temple donation kiosks:</strong> admin portal (React, Node.js, MySQL) with zero-fee <strong>UPI QR</strong> donations, plus an offline-capable Android TV app (Kotlin, Compose). Live at temple sites.</li>
-      <li><strong>Hostel Hub Pro:</strong> multi-tenant SaaS with a TanStack Start web app, <strong>Flutter</strong> app and Express/MySQL API; <strong>HMAC-signed QR gate passes</strong> with nonce checks to stop reuse.</li>
+      <li><strong>Hostel Hub Pro:</strong> multi-tenant SaaS with a TanStack Start web app, <strong>Flutter</strong> app and Express/MySQL API; <strong>HMAC-signed, rotating QR gate passes</strong> that expire in seconds, plus a 5-step GPS audit trail.</li>
       <li><strong>SignageHub:</strong> cloud scheduling dashboard plus a local server that auto-pairs Android TV screens over <strong>UDP</strong> and keeps playlists running offline.</li>
     </ul>
   </div>
@@ -320,6 +320,7 @@ def build_resume():
     <div class="achievements">
       <div class="ach-item"><strong>Grand Finalist</strong> &ndash; Smart India Hackathon 2022 (Ministry of Education)</div>
       <div class="ach-item"><strong>3 published apps</strong>, one with 500K+ downloads</div>
+      <div class="ach-item"><strong>micro1 Certified</strong> &ndash; Senior Mobile Developer (Nov 2026)</div>
     </div>
   </div>
 

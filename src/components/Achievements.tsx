@@ -15,6 +15,15 @@ const Achievements: React.FC = () => {
       link: 'https://play.google.com/store/apps/details?id=in.coral.met',
     },
     {
+      title: 'micro1 Certified: Senior Mobile Developer',
+      category: 'Industry Certification · Nov 2026',
+      description:
+        'Passed micro1\'s AI interview, scored on communication, accuracy and task completion, and was certified for remote AI-training and engineering projects.',
+      icon: ShieldCheck,
+      color: 'text-indigo-400',
+      badge: 'Certified Nov 2026',
+    },
+    {
       title: 'Smart India Hackathon 2022 Finalist',
       category: 'National Recognition',
       description:
@@ -27,7 +36,7 @@ const Achievements: React.FC = () => {
       title: 'Live Production Enterprise Deployments',
       category: 'Cloud & Infrastructure',
       description:
-        'Architected, deployed, and currently maintain live multi-user systems on Plesk and Render with automated database backups and env isolation.',
+        'Built, deployed and currently maintain live multi-user client systems on Plesk and Render (temple donations, hostel management, digital signage).',
       icon: ShieldCheck,
       color: 'text-cyan-400',
       badge: 'Plesk & Render Production',
@@ -62,7 +71,7 @@ const Achievements: React.FC = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievements.map((item, idx) => {
             const Icon = item.icon;
             return (

@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl font-normal"
             >
-              I build software across mobile, backend and machine learning: 3 apps on Google Play and the App Store (one with 500K+ downloads), an encrypted LLM data layer built on MCP, and time-series ML research on smart-meter data.
+              I build software across mobile, backend and machine learning: 3 apps on Google Play and the App Store (one with 500K+ downloads), a privacy-preserving LLM data assistant built on MCP, and time-series ML research on smart-meter data.
             </motion.p>
 
             {/* CTAs */}

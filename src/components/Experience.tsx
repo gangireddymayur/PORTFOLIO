@@ -61,7 +61,7 @@ const Experience: React.FC = () => {
             },
             {
               name: 'NerveNet – Enterprise MCP Agent Platform',
-              desc: 'Privacy-first enterprise AI platform built on Model Context Protocol (MCP), sold to enterprise clients on contract. Features hierarchical org access, CSV/SQL data ingestion, and client-side AES encryption preventing enterprise data exposure to cloud LLMs.',
+              desc: 'Claude-powered assistant for electricity utilities, sold to enterprise clients on contract. A server-side privacy engine tokenizes customer identifiers before the LLM sees them, and a read-only SQL gateway built on MCP lets staff query live billing data in plain English.',
               badge: 'Commercial · MCP',
               iconType: 'shield',
             },

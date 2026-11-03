@@ -89,7 +89,7 @@ const About: React.FC = () => {
               </h3>
               
               <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                I'm a software engineer (B.Tech CSE, AI & ML, 2025) who works across machine learning, backend and mobile. Most of my work runs in production: 3 apps on Google Play and the App Store and client systems running live at temples and hostels. On the ML side I've built an encrypted LLM data layer on MCP and led energy-disaggregation research on smart-meter data.
+                I'm a software engineer (B.Tech CSE, AI & ML, 2025) who works across machine learning, backend and mobile. Most of my work runs in production: 3 apps on Google Play and the App Store and client systems running live at temples and hostels. On the ML side I've built a privacy-preserving LLM data assistant on MCP and led energy-disaggregation research on smart-meter data.
               </p>
 
               <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
