@@ -225,6 +225,14 @@ const Projects: React.FC = () => {
     {
       id: 'hostel-hub-pro',
       image: '/projects/covers/hostel-hub.svg',
+      screenshotFrame: 'browser',
+      screenshots: [
+        '/projects/hostel/audit-report.webp',
+        '/projects/hostel/students.webp',
+        '/projects/hostel/permissions.webp',
+        '/projects/hostel/reports.webp',
+        '/projects/hostel/report-types.webp',
+      ],
       title: 'Hostel Hub Pro & Flutter App – Smart Hostel Management System',
       subtitle: 'Multi-Tenant Web Platform (TanStack Start) + Flutter Companion App',
       category: 'fullstack',
@@ -235,20 +243,21 @@ const Projects: React.FC = () => {
       problem:
         'Hostel management in educational institutions faced manual paper logs, security bottlenecks at gates, delay in parent permission approvals, and poor visibility into student whereabouts.',
       solution:
-        'Architected a full-stack multi-tenant platform serving Students, Parents, Staff, and Security Guards. Built QR-code gate scanner logic, automated time-restricted leave approvals, and multi-hostel admin analytics with companion Flutter mobile app.',
+        'Architected a full-stack multi-tenant platform serving Students, Parents, Staff, and Security Guards. Built a 5-step movement audit trail (student request → parent verification with live photo → warden review → gate exit → gate return, each with GPS), QR gate passes, bulk CSV student import and PDF audit reports. The admin web app is live; the Flutter student/parent app is built and its store release is planned.',
       architecture: [
         'Multi-Role Authorization (Student, Parent, Staff, Security Guard)',
         'Time-Restricted QR Permission Engine for Gate Scanners',
         'Companion Flutter cross-platform mobile app for students and parents',
         'Real-Time Student Flow & Hostel Occupancy Dashboard on Plesk MySQL',
+        'PDF audit reports: daily, monthly, students outside, exit/return history and per-student dossiers',
       ],
       challenges: [
         'Preventing unauthorized cross-hostel access for staff assigned to all hostels vs specific hostels',
         'Strict date/time calculations ensuring gate permissions expire dynamically after 24 hours',
       ],
       impact: [
-        'Eliminated manual paper logs across multi-building student accommodation',
-        'Sub-second QR gate validation response time',
+        'Replaces paper gate registers with a verifiable digital audit trail for every outing',
+        'Parent live-photo verification and GPS at each step make passes hard to fake or share',
       ],
     },
     {
