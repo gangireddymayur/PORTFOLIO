@@ -245,7 +245,7 @@ def build_resume():
       <ul class="bullets">
         <li>Built and deployed <strong>NerveNet</strong>, an <strong>MCP</strong>-based AI agent platform sold to enterprise clients on contract. A client-side proxy encrypts (AES-256) and tokenizes private CSV/SQL data, so cloud LLMs never see raw company records.</li>
         <li>Engineer on the <strong>Bharat Smart Services</strong> utility app (<strong>500K+ downloads, 4.0&#9733; from 1.6K reviews</strong>; React + Capacitor) <a class="link-pill" href="https://play.google.com/store/apps/details?id=in.coral.met" target="_blank">Play</a><a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-services/id1584345371" target="_blank">App Store</a> for meter billing at TSSPDCL, TSNPDCL and HMWSSB; wrote <strong>native Java USB-serial drivers</strong> for IR meter dongles, camera <strong>OCR</strong> reading capture and home-screen widgets.</li>
-        <li>Built <strong>Bharat Smart Home</strong> <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.bharat.smarthome" target="_blank">Play</a><a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389" target="_blank">App Store</a> (1K+ downloads, 5.0&#9733;), an IoT app for room and device control, scheduled automations, scenes and energy usage.</li>
+        <li>Built <strong>Bharat Smart Home</strong> <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.bharat.smarthome" target="_blank">Play</a><a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389" target="_blank">App Store</a> (1K+ downloads, 5.0&#9733;), an IoT app for device control, automations and energy usage. I own <strong>App Store and Play Store releases</strong> for both apps.</li>
         <li>Led <strong>NILM</strong> energy-disaggregation R&amp;D on 5-second smart-meter data from pilot homes: benchmarked CNNs and Transformers against <strong>XGBoost</strong>, which performed best (<strong>96% F1</strong> on geysers, <strong>~85%</strong> on AC, fridge and washing machine).</li>
       </ul>
     </div>
@@ -303,7 +303,7 @@ def build_resume():
       <div class="skill-item"><strong>AI / ML:</strong> PyTorch, XGBoost, Scikit-Learn, Time-Series Modeling, CNNs, Transformers, YOLOv8, OpenCV, OCR, LLM Agents, Model Context Protocol (MCP), NL-to-SQL</div>
       <div class="skill-item"><strong>Backend &amp; Data:</strong> Node.js, Express, FastAPI, Flask, REST APIs, PostgreSQL, MySQL, SQLite, DuckDB, Supabase, Firebase</div>
       <div class="skill-item"><strong>Frontend &amp; Mobile:</strong> React, TanStack Start, Tailwind CSS, Android (Java, Kotlin, Jetpack Compose, Android TV), Capacitor, Flutter, iOS WidgetKit</div>
-      <div class="skill-item"><strong>Tools:</strong> Git, Docker, Linux, Postman, Android Studio, Xcode, Plesk, Render, Vercel</div>
+      <div class="skill-item"><strong>Tools:</strong> Git, Docker, Linux, Postman, Android Studio, Xcode, App Store Connect, Google Play Console, Plesk, Vercel</div>
     </div>
   </div>
 
