@@ -189,6 +189,13 @@ const Projects: React.FC = () => {
     {
       id: 'temple-donation-hub',
       image: '/projects/covers/temple-kiosk.svg',
+      screenshotFrame: 'browser',
+      screenshots: [
+        '/projects/temple/layout-editor.webp',
+        '/projects/temple/donations.webp',
+        '/projects/temple/layouts.webp',
+        '/projects/temple/content.webp',
+      ],
       title: 'Temple Donation Signage Hub & Devotee Android TV Network',
       subtitle: 'Dynamic Zero-Fee UPI QR Kiosk + Native Android TV Devotee Signage',
       category: 'fullstack',
