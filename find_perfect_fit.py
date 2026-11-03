@@ -209,13 +209,13 @@ def test_config(fs, lh, pad_top, pad_bottom, pad_h, bullet_gap, sec_gap):
         <li>
           <strong>Bharat Smart Services App (Utility & Billing)</strong>
           &nbsp;<a class="link-pill" href="https://play.google.com/store/apps/details?id=in.coral.met" target="_blank">Google Play</a>&nbsp;
-          <a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-services/id1584345371" target="_blank">App Store</a>:
+          <a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-services/id1574717982" target="_blank">App Store</a>:
           Engineered cross-platform React/Capacitor app for live state discom billing (TSSPDCL, TSNPDCL, HMWSSB). Built custom native Java USB serial drivers for optical IRDA dongles, camera-based OCR meter reading review, and native iOS/Android home screen widgets.
         </li>
         <li>
           <strong>Bharat Smart Home (IoT Automation & Telemetry)</strong>
           &nbsp;<a class="link-pill" href="https://play.google.com/store/apps/details?id=com.bharat.smarthome" target="_blank">Google Play</a>&nbsp;
-          <a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6737525389" target="_blank">App Store</a>:
+          <a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6751056935" target="_blank">App Store</a>:
           Architected smart home platform featuring hierarchical device control, condition-based automation schedules, lifestyle scene orchestration, and real-time disaggregated appliance energy intelligence.
         </li>
       </ul>
