@@ -26,6 +26,68 @@ const Projects: React.FC = () => {
 
   const projects: ProjectData[] = [
     {
+      id: 'leaflens',
+      title: 'LeafLens – On-Device Plant Disease Detection',
+      subtitle: 'Offline iOS & Android app with a fine-tuned CNN',
+      category: 'ai',
+      tag: '🔬 Open-Source ML Project',
+      tech: ['PyTorch', 'MobileNetV3', 'ONNX Runtime', 'React', 'Capacitor', 'iOS', 'Android'],
+      github: 'https://github.com/gangireddymayur/leaflens',
+      screenshots: [
+        '/projects/leaflens/home.jpg',
+        '/projects/leaflens/result.jpg',
+        '/projects/leaflens/about.jpg',
+      ],
+      color: 'from-emerald-500 to-green-600',
+      problem:
+        'Plant disease apps trained on clean lab photos fail on real field photos. My first model scored 99.8% on lab images but only 27% on real-world photos.',
+      solution:
+        'Fine-tuned a MobileNetV3 classifier on PlantVillage lab photos plus real-world PlantDoc photos, exported it to ONNX and ran it fully offline inside a Capacitor app on iOS and Android, with a confidence threshold that says "Not sure" instead of guessing.',
+      architecture: [
+        'PyTorch training with transfer learning, heavy augmentation and label smoothing',
+        'ONNX export checked against PyTorch for matching outputs, run on-device with ONNX Runtime Web',
+        'React and Capacitor app: camera or gallery photo, top-3 results, care guidance, downloadable PDF report',
+        'Unit tests and GitHub Actions CI for the training package',
+      ],
+      challenges: [
+        'Domain shift: lab-trained accuracy collapsed on real photos, so I retrained with a held-out real-world test set to measure honestly',
+        'Two different backbones plateaued near 70%, so I stopped there and documented the limit instead of tuning for a nicer number',
+      ],
+      impact: [
+        'Real-world top-1 accuracy rose from 27% to 69% (90% top-3) on held-out photos',
+        'Runs offline; no photo leaves the phone',
+      ],
+    },
+    {
+      id: 'plant-health-rag',
+      image: '/projects/covers/plant-rag.svg',
+      title: 'Plant Health RAG – Cited Q&A with Honest Refusals',
+      subtitle: 'Retrieval-augmented generation over 36 Wikipedia articles, fully local',
+      category: 'ai',
+      tag: '🔬 Open-Source ML Project',
+      tech: ['Python', 'RAG', 'ChromaDB', 'Embeddings', 'Ollama', 'LLM Evaluation'],
+      github: 'https://github.com/gangireddymayur/plant-health-rag',
+      color: 'from-lime-500 to-emerald-600',
+      problem:
+        'Language models answer confidently even when they do not know. For plant-health questions, an invented answer is worse than none.',
+      solution:
+        'Built a RAG pipeline that retrieves the best passages from 36 Wikipedia articles, has a local LLM answer only from them with numbered citations, and refuses when the articles do not contain the answer.',
+      architecture: [
+        'Section-aware chunking and BAAI/bge-small-en-v1.5 embeddings stored in Chroma',
+        'Dense retrieval with a similarity gate for refusing; BM25 and rank fusion were tested and compared',
+        'Citation-constrained prompt on a local LLM (qwen3:8b via Ollama), no API key or cloud calls',
+        '28 unit tests and GitHub Actions CI',
+      ],
+      challenges: [
+        'Building a fair 65-question test set, including 15 unanswerable questions, and tuning only on the dev split',
+        'Inspecting every failure by hand to separate retrieval misses from generation mistakes',
+      ],
+      impact: [
+        'Right passage in the top 5 for 92% of questions; 94% of answers judged correct',
+        'Answered 0 of 15 unanswerable questions',
+      ],
+    },
+    {
       id: 'bharat-smart-services',
       title: 'Bharat Smart Services – Smart Meter Reading, Billing & Live Energy Monitoring',
       subtitle: 'Capacitor Android/iOS App + Camera OCR + Native USB IR Dongle + Utility Billing',

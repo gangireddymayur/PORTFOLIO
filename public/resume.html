@@ -219,7 +219,7 @@
   <div class="section">
     <div class="section-title">Summary</div>
     <div class="summary">
-      Software engineer across mobile, backend and ML. Shipped 3 apps on Google Play and the App Store, including a utility app with <strong>500K+ downloads</strong>, and built an MCP-based LLM data assistant that the company sells to enterprise clients. Stack: <strong>Python, TypeScript/React, Node.js, SQL, Android/iOS</strong>.
+      Software engineer across mobile, backend and ML. Shipped 3 apps on Google Play and the App Store, including a utility app with <strong>500K+ downloads</strong>, built an MCP-based LLM data assistant that the company sells to enterprise clients, and published open-source ML projects with measured results (on-device plant disease detection, a RAG assistant). Stack: <strong>Python, TypeScript/React, Node.js, SQL, Android/iOS</strong>.
     </div>
   </div>
 
@@ -268,20 +268,12 @@
     </div>
   </div>
 
-  <!-- CLIENT PROJECTS -->
+  <!-- AI/ML PROJECTS -->
   <div class="section">
-    <div class="section-title">Client Projects</div>
+    <div class="section-title">AI/ML Projects (open source)</div>
     <ul class="bullets">
-      <li><strong>Temple donation kiosks:</strong> admin portal (React, Node.js, MySQL) with zero-fee <strong>UPI QR</strong> donations, plus an offline-capable Android TV app (Kotlin, Compose). Live at temple sites.</li>
-      <li><strong>Hostel Hub Pro:</strong> multi-tenant SaaS with a TanStack Start web app, <strong>Flutter</strong> app and Express/MySQL API; <strong>HMAC-signed, rotating QR gate passes</strong> that expire in seconds, plus a 5-step GPS audit trail.</li>
-      <li><strong>SignageHub:</strong> cloud scheduling dashboard plus a local server that auto-pairs Android TV screens over <strong>UDP</strong> and keeps playlists running offline.</li>
-    </ul>
-  </div>
-
-  <!-- PROJECTS -->
-  <div class="section">
-    <div class="section-title">Open-Source Projects</div>
-    <ul class="bullets">
+      <li><strong>LeafLens &ndash; on-device plant disease detection</strong> <a class="link-pill" href="https://github.com/gangireddymayur/leaflens" target="_blank">GitHub</a> <a class="link-pill" href="https://github.com/gangireddymayur/leaflens/releases/latest" target="_blank">Android APK</a>: trained a <strong>MobileNetV3</strong> classifier in PyTorch on PlantVillage lab photos plus real-world PlantDoc photos, exported it to <strong>ONNX</strong> and shipped it offline in an <strong>iOS and Android</strong> app. The lab-trained model fell to 27% on real-world photos; retraining lifted it to <strong>69% top-1 (90% top-3)</strong> on held-out photos.</li>
+      <li><strong>Plant Health RAG</strong> <a class="link-pill" href="https://github.com/gangireddymayur/plant-health-rag" target="_blank">GitHub</a>: question answering over 36 Wikipedia articles with cited sources, using local embeddings, a <strong>Chroma</strong> vector index and a local LLM, and it refuses when the answer is not in the articles. On a 65-question test set I wrote: right passage in the top 5 for <strong>92%</strong>, <strong>94%</strong> correct answers, <strong>0 of 15</strong> unanswerable questions answered.</li>
       <li><strong>Samarth &ndash; NL-to-SQL</strong> <a class="link-pill" href="https://github.com/gangireddymayur/Samarth-theChatBot" target="_blank">GitHub</a>: rule-based engine (no LLM) for plain-English questions on government rainfall and crop data; regex intents and fuzzy matching build SQL on <strong>DuckDB</strong>, shown with every answer.</li>
       <li><strong>Satellite Ship Detection</strong> <a class="link-pill" href="https://github.com/gangireddymayur/Ship_Detection_YOLOv8" target="_blank">GitHub</a>: <strong>YOLOv8</strong> detector trained on aerial ship imagery, with a live Streamlit app showing boxes, per-ship confidence and heatmaps.</li>
     </ul>
@@ -292,7 +284,7 @@
     <div class="section-title">Technical Skills</div>
     <div class="skills-block">
       <div class="skill-item"><strong>Languages:</strong> Python, TypeScript, JavaScript, Java, Kotlin, SQL, Dart, C/C++</div>
-      <div class="skill-item"><strong>AI / ML:</strong> PyTorch, XGBoost, Scikit-Learn, Time-Series Modeling, CNNs, Transformers, YOLOv8, OpenCV, OCR, LLM Agents, Model Context Protocol (MCP), NL-to-SQL</div>
+      <div class="skill-item"><strong>AI / ML:</strong> PyTorch, ONNX Runtime, XGBoost, Scikit-Learn, CNNs, Transformers, YOLOv8, OpenCV, RAG, Embeddings &amp; Vector Search, LLM Evaluation, LLM Agents, MCP, NL-to-SQL, Time-Series Modeling</div>
       <div class="skill-item"><strong>Backend &amp; Data:</strong> Node.js, Express, FastAPI, Flask, REST APIs, PostgreSQL, MySQL, SQLite, DuckDB, Supabase, Firebase</div>
       <div class="skill-item"><strong>Frontend &amp; Mobile:</strong> React, TanStack Start, Tailwind CSS, Android (Java, Kotlin, Jetpack Compose, Android TV), Capacitor, Flutter, iOS WidgetKit</div>
       <div class="skill-item"><strong>Tools:</strong> Git, Docker, Linux, Postman, Android Studio, Xcode, App Store Connect, Google Play Console, Plesk, Vercel</div>
