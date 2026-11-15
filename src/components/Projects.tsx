@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
       id: 'plant-health-rag',
       image: '/projects/covers/plant-rag.svg',
       title: 'Plant Health RAG – Cited Q&A with Honest Refusals',
-      subtitle: 'Retrieval-augmented generation over 36 Wikipedia articles, fully local',
+      subtitle: 'Retrieval-augmented generation over 141 Wikipedia articles on Indian and US crops, fully local',
       category: 'ai',
       tag: '🔬 Open-Source ML Project',
       tech: ['Python', 'RAG', 'ChromaDB', 'Embeddings', 'Ollama', 'LLM Evaluation'],
@@ -71,20 +71,20 @@ const Projects: React.FC = () => {
       problem:
         'Language models answer confidently even when they do not know. For plant-health questions, an invented answer is worse than none.',
       solution:
-        'Built a RAG pipeline that retrieves the best passages from 36 Wikipedia articles, has a local LLM answer only from them with numbered citations, and refuses when the articles do not contain the answer.',
+        'Built a RAG pipeline that retrieves the best passages from 141 Wikipedia articles on Indian and US crop diseases and pests, has a local LLM answer only from them with numbered citations, and refuses when the articles do not contain the answer.',
       architecture: [
         'Section-aware chunking and BAAI/bge-small-en-v1.5 embeddings stored in Chroma',
         'Dense retrieval with a similarity gate for refusing; BM25 and rank fusion were tested and compared',
         'Citation-constrained prompt on a local LLM (qwen3:8b via Ollama), no API key or cloud calls',
-        '28 unit tests and GitHub Actions CI',
+        '43 unit tests and GitHub Actions CI',
       ],
       challenges: [
-        'Building a fair 65-question test set, including 15 unanswerable questions, and tuning only on the dev split',
+        'Building a fair 153-question test set, including 29 unanswerable questions, and tuning only on the dev split',
         'Inspecting every failure by hand to separate retrieval misses from generation mistakes',
       ],
       impact: [
-        'Right passage in the top 5 for 92% of questions; 94% of answers judged correct',
-        'Answered 0 of 15 unanswerable questions',
+        'Right passage in the top 5 for 94% of questions; 92% of answers judged correct',
+        'Answered 1 of 29 unanswerable questions; I documented every failure, including that case',
       ],
     },
     {
