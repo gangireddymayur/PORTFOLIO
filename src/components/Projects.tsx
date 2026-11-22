@@ -88,6 +88,45 @@ const Projects: React.FC = () => {
       ],
     },
     {
+      id: 'chhupan-chhupai',
+      title: 'Chhupan Chhupai – LLM Agents Playing Hide and Seek',
+      subtitle: 'Two local AI agents in an isometric Indian village at night, measured over 1,300 rounds',
+      category: 'ai',
+      tag: '🔬 Open-Source AI Project',
+      tech: ['LLM Agents', 'Ollama', 'qwen3', 'Structured Output', 'JavaScript', 'HTML Canvas', 'Python', 'LLM Evaluation'],
+      github: 'https://github.com/gangireddymayur/chhupan-chhupai',
+      demo: 'https://gangireddymayur.github.io/chhupan-chhupai/',
+      demoLabel: 'Watch demo video',
+      screenshotFrame: 'browser',
+      screenshots: [
+        '/projects/chhupan/village.webp',
+        '/projects/chhupan/hider.webp',
+        '/projects/chhupan/seeker.webp',
+        '/projects/chhupan/found.webp',
+      ],
+      color: 'from-amber-500 to-orange-600',
+      problem:
+        'Agent demos usually show one good run. I wanted to know whether an LLM agent actually plays better than simple rules, and whether a bigger model, memory or the agents\' abilities change who wins.',
+      solution:
+        'Built a hide-and-seek game where two local LLM agents, Arjun and Meera, play each other in an isometric village drawn in code. Each turn the model picks one option from a shuffled list as structured JSON with one line of inner voice, which is shown as a thought bubble and spoken with the Mac\'s voices. The game\'s rules, not the model, decide who can see whom, so the AI cannot cheat.',
+      architecture: [
+        'qwen3:8b and qwen3:14b through Ollama, JSON-schema output with the choice before the thought',
+        'Memory notes from earlier rounds (0 to 5 rounds, an ability), a repeat check and a scripted fallback brain',
+        'Grid rules: light map, line of sight, BFS paths and a chance to notice a hidden player',
+        'Isometric canvas renderer with cut-away houses and night lighting; a voice queue so lines never overlap',
+        'Headless runner, Wilson 95% intervals, two-proportion tests and GitHub Actions CI',
+      ],
+      challenges: [
+        'The model chose by list position (the same slot 24 of 24 times) until I shuffled the options',
+        'The abilities first had no effect at all (48% vs 50%); the measurement showed my rule was never triggered, so I rewrote it',
+      ],
+      impact: [
+        'The 8b hider did worse than a random one (found 72% vs 42%); the 14b hider was found only 20% of the time vs 80%',
+        'Night vision now changes results (51% vs 37%); memory made no real difference (83% vs 78%)',
+        'Runs fully on one MacBook Pro (M5 Pro, 24 GB); zero invalid AI answers in 12 experiments',
+      ],
+    },
+    {
       id: 'bharat-smart-services',
       title: 'Bharat Smart Services – Smart Meter Reading, Billing & Live Energy Monitoring',
       subtitle: 'Capacitor Android/iOS App + Camera OCR + Native USB IR Dongle + Utility Billing',
@@ -681,7 +720,7 @@ const Projects: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-8 h-8 flex items-center justify-center text-zinc-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-lg border border-white/10 transition-colors"
-                        title="Open live site"
+                        title={project.demoLabel ?? 'Open live site'}
                       >
                         <Globe className="w-3.5 h-3.5" />
                       </a>
