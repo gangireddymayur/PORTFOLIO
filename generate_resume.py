@@ -15,7 +15,7 @@ def build_resume():
   @page { size: A4; margin: 9mm 12mm 8mm 12mm; }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: "Charter", "Georgia", "Times New Roman", serif; font-size: 10pt; line-height: 1.28; color: #111; }
-  a { color: #111; text-decoration: none; }
+  a { color: #1d4ed8; text-decoration: underline; text-decoration-color: #93c5fd; text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
   .name { text-align: center; font-size: 22pt; font-weight: 700; letter-spacing: .01em; }
   .contact { text-align: center; font-size: 9.4pt; margin-top: 3px; }
   .contact .sep { margin: 0 6px; color: #555; }
