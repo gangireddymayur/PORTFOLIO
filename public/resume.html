@@ -1,313 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>Mayur Gangireddy - Resume</title>
 <style>
-  @page {
-    size: A4;
-    margin: 6.5mm 10.5mm 6.5mm 10.5mm;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #1e293b;
-    background: #ffffff;
-    font-size: 8.7pt;
-    line-height: 1.28;
-  }
-  a {
-    color: #1d4ed8;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  .header {
-    text-align: center;
-    border-bottom: 1.2px solid #0f172a;
-    padding-bottom: 3px;
-    margin-bottom: 4px;
-  }
-  .name {
-    font-size: 18.5pt;
-    font-weight: 800;
-    letter-spacing: -0.4px;
-    color: #0f172a;
-    text-transform: uppercase;
-    margin-bottom: 1.5px;
-  }
-  .title-sub {
-    font-size: 9.6pt;
-    font-weight: 700;
-    color: #3730a3;
-    margin-bottom: 2.5px;
-    letter-spacing: 0.2px;
-  }
-  .contact {
-    font-size: 8.5pt;
-    color: #475569;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-  .contact span.sep {
-    color: #94a3b8;
-  }
-
-  .section {
-    margin-bottom: 10px;
-  }
-  .section-title {
-    font-size: 9.6pt;
-    font-weight: 800;
-    color: #0f172a;
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 1px;
-    margin-bottom: 2.5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .summary {
-    font-size: 9.3pt;
-    color: #334155;
-    text-align: left;
-    line-height: 1.28;
-  }
-
-  .job {
-    margin-bottom: 7px;
-  }
-  .job-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 1px;
-  }
-  .job-title {
-    font-size: 8.9pt;
-    font-weight: 700;
-    color: #0f172a;
-  }
-  .job-company {
-    font-size: 8.9pt;
-    font-weight: 700;
-    color: #3730a3;
-  }
-  .job-date {
-    font-size: 8.5pt;
-    font-weight: 600;
-    color: #1e293b;
-  }
-
-  /* Standard natural flow list without position:relative to preserve strict ATS sequential text stream */
-  ul.bullets {
-    list-style-type: disc;
-    padding-left: 14px;
-    margin: 0;
-  }
-  ul.bullets li {
-    margin-bottom: 3px;
-    font-size: 9.3pt;
-    color: #334155;
-    text-align: left;
-    line-height: 1.38;
-  }
-
-  .link-pill {
-    display: inline-block;
-    font-size: 7.2pt;
-    font-weight: 600;
-    color: #1d4ed8;
-    background: #eff6ff;
-    border: 0.5px solid #bfdbfe;
-    padding: 0.5px 4.5px;
-    border-radius: 3px;
-    margin: 0 1px;
-  }
-
-  .skills-block {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5px;
-    font-size: 9.1pt;
-  }
-  .skill-item {
-    color: #334155;
-    line-height: 1.27;
-  }
-  .skill-item strong {
-    color: #0f172a;
-    font-weight: 700;
-  }
-
-  .edu-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 1.5px;
-    font-size: 8.65pt;
-  }
-  .edu-inst {
-    font-weight: 700;
-    color: #0f172a;
-  }
-  .edu-deg {
-    color: #3730a3;
-    font-weight: 600;
-  }
-  .edu-date {
-    font-size: 8.5pt;
-    font-weight: 600;
-    color: #1e293b;
-  }
-
-  .achievements {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    font-size: 8.2pt;
-    margin-top: 2px;
-  }
-  .ach-item {
-    background: #f8fafc;
-    border: 0.5px solid #cbd5e1;
-    padding: 1.5px 6px;
-    border-radius: 4px;
-    color: #1e293b;
-    font-weight: 500;
-  }
-  .ach-item strong {
-    color: #0f172a;
-  }
+  @page { size: A4; margin: 9mm 12mm 8mm 12mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Charter", "Georgia", "Times New Roman", serif; font-size: 10pt; line-height: 1.28; color: #111; }
+  a { color: #111; text-decoration: none; }
+  .name { text-align: center; font-size: 22pt; font-weight: 700; letter-spacing: .01em; }
+  .contact { text-align: center; font-size: 9.4pt; margin-top: 3px; }
+  .contact .sep { margin: 0 6px; color: #555; }
+  h2 { font-size: 13pt; font-weight: 600; margin: 10px 0 4px; padding-bottom: 1px; border-bottom: 1px solid #333; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .item { margin-top: 5px; }
+  .item:first-of-type { margin-top: 2px; }
+  .t { font-weight: 700; }
+  .t .links { font-weight: 400; }
+  .d { white-space: nowrap; }
+  .sub { font-style: italic; }
+  ul { margin: 2px 0 0; padding-left: 17px; }
+  li { margin: 1.5px 0; }
+  li::marker { font-size: 9pt; }
+  .skills div { margin: 1.5px 0; }
 </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="name">MAYUR GANGIREDDY</div>
-    <div class="title-sub">Software Engineer &bull; AI/ML &bull; Full-Stack &amp; Mobile</div>
-    <div class="contact">
-      <span>Hyderabad, India &middot; Open to Remote &amp; Relocation</span>
-      <span class="sep">&nbsp;|&nbsp;</span>
-      <span>+91 6281192139</span>
-      <span class="sep">&nbsp;|&nbsp;</span>
-      <a href="mailto:mayurgangereddy12345@gmail.com">mayurgangereddy12345@gmail.com</a>
-    </div>
-    <div class="contact" style="margin-top: 2px;">
-      <a href="https://github.com/gangireddymayur" target="_blank">GitHub</a>
-      <span class="sep">&nbsp;|&nbsp;</span>
-      <a href="http://www.linkedin.com/in/mayur-gangireddy" target="_blank">LinkedIn</a>
-      <span class="sep">&nbsp;|&nbsp;</span>
-      <a href="https://portfolio-steel-six-n4cc8s07o5.vercel.app" target="_blank">Portfolio</a>
-    </div>
-  </div>
+<div class="name">Mayur Gangireddy</div>
+<div class="contact">
+  Hyderabad, India (open to remote &amp; relocation)<span class="sep">|</span>+91 6281192139<span class="sep">|</span><a href="mailto:mayurgangereddy12345@gmail.com">mayurgangereddy12345@gmail.com</a>
+</div>
+<div class="contact">
+  <a href="http://www.linkedin.com/in/mayur-gangireddy">linkedin.com/in/mayur-gangireddy</a><span class="sep">|</span><a href="https://github.com/gangireddymayur">github.com/gangireddymayur</a><span class="sep">|</span><a href="https://portfolio-steel-six-n4cc8s07o5.vercel.app">Portfolio</a>
+</div>
 
-  <!-- SUMMARY -->
-  <div class="section">
-    <div class="section-title">Summary</div>
-    <div class="summary">
-      Software engineer across mobile, backend and ML. Shipped 3 apps on Google Play and the App Store, including a utility app with <strong>500K+ downloads</strong>, built an MCP-based LLM data assistant that the company sells to enterprise clients, and published open-source ML projects with measured results (on-device plant disease detection, a RAG assistant, LLM agents in a game). Stack: <strong>Python, TypeScript/React, Node.js, SQL, Android/iOS</strong>.
-    </div>
-  </div>
+<h2>Experience</h2>
 
-  <!-- EXPERIENCE -->
-  <div class="section">
-    <div class="section-title">Experience</div>
+<div class="item">
+  <div class="row"><span class="t">Machine Learning &amp; Full-Stack Engineer</span><span class="d">Jan 2026 &ndash; Present</span></div>
+  <div class="row"><span class="sub">Bharat Smart Services, Hyderabad</span></div>
+  <ul>
+    <li>Built <b>NerveNet</b>, a Claude-based data assistant sold to enterprise clients: customer IDs are tokenized server-side before the LLM sees them, and a <b>read-only SQL gateway on MCP</b> lets staff query live billing data in plain English.</li>
+    <li>Engineer on the <a href="https://play.google.com/store/apps/details?id=in.coral.met">Bharat Smart Services</a> utility app (React, Capacitor), <b>500K+ downloads, 4.0&#9733; from 1.6K reviews</b>; wrote native Java USB-serial drivers for IR meter dongles and camera OCR reading capture.</li>
+    <li>Built <a href="https://play.google.com/store/apps/details?id=com.bharat.smarthome">Bharat Smart Home</a>, an IoT energy app (1K+ downloads, 5.0&#9733;); I own the <b>App Store and Play Store releases</b> for both apps.</li>
+    <li>Led NILM energy disaggregation on 5-second smart-meter data: <b>XGBoost</b> beat CNNs and Transformers, reaching <b>96% F1 on geysers</b> and <b>~85%</b> on AC, fridge and washing machine.</li>
+  </ul>
+</div>
 
-    <div class="job">
-      <div class="job-header">
-        <div>
-          <span class="job-company">Bharat Smart Services</span> &ndash; <span class="job-title">Machine Learning &amp; Full-Stack Engineer</span>
-        </div>
-        <div class="job-date">Jan 2026 &ndash; Present | Hyderabad</div>
-      </div>
-      <ul class="bullets">
-                <li>Built and deployed <strong>NerveNet</strong>, a Claude-based assistant sold to utilities and enterprise clients on contract. A server-side privacy engine tokenizes customer IDs before the LLM sees them, and a <strong>read-only SQL gateway on MCP</strong> lets staff query live billing data in plain English.</li>
-        <li>Engineer on the <strong>Bharat Smart Services</strong> utility app (<strong>500K+ downloads, 4.0&#9733; from 1.6K reviews</strong>; React + Capacitor) <a class="link-pill" href="https://play.google.com/store/apps/details?id=in.coral.met" target="_blank">Play</a><a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-services/id1574717982" target="_blank">App Store</a> for meter billing at TSSPDCL, TSNPDCL and HMWSSB; wrote <strong>native Java USB-serial drivers</strong> for IR meter dongles, camera <strong>OCR</strong> reading capture and home-screen widgets.</li>
-        <li>Built <strong>Bharat Smart Home</strong> <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.bharat.smarthome" target="_blank">Play</a><a class="link-pill" href="https://apps.apple.com/in/app/bharat-smart-home-energy-iot/id6751056935" target="_blank">App Store</a> (1K+ downloads, 5.0&#9733;), an IoT app for device control, automations and energy usage. I own <strong>App Store and Play Store releases</strong> for both apps.</li>
-        <li>Led <strong>NILM</strong> energy-disaggregation R&amp;D on 5-second smart-meter data from pilot homes: benchmarked CNNs and Transformers against <strong>XGBoost</strong>, which performed best (<strong>96% F1</strong> on geysers, <strong>~85%</strong> on AC, fridge and washing machine).</li>
-      </ul>
-    </div>
+<div class="item">
+  <div class="row"><span class="t">Android Developer</span><span class="d">Mar 2024 &ndash; Aug 2024</span></div>
+  <div class="row"><span class="sub">Telangana State Police Academy (TGPA), Hyderabad</span></div>
+  <ul>
+    <li>Sole developer of <a href="https://play.google.com/store/apps/details?id=com.sphn.tgpa&amp;hl=en_IN">Criminal Laws by TGPA</a>, the academy's official legal app for officers (<b>1K+ downloads, 5.0&#9733; from 84 reviews</b>), with <b>offline search under 50 ms</b> (SQLite FTS) and old-vs-new law comparison.</li>
+  </ul>
+</div>
 
+<div class="item">
+  <div class="row"><span class="t">Internships</span><span class="d">Nov 2023 &ndash; Apr 2025</span></div>
+  <div class="sub">EY GDS &times; AICTE: MERN modules with REST APIs and JWT auth &middot; Acmegrade: Java Android apps with SQLite</div>
+</div>
 
-    <div class="job">
-      <div class="job-header">
-        <div>
-          <span class="job-company">Telangana State Police Academy (TGPA)</span> &ndash; <span class="job-title">Android Developer</span>
-        </div>
-        <div class="job-date">Mar 2024 &ndash; Aug 2024 | Hyderabad</div>
-      </div>
-      <ul class="bullets">
-        <li>Sole developer of <strong>Criminal Laws by TGPA</strong> <a class="link-pill" href="https://play.google.com/store/apps/details?id=com.sphn.tgpa&amp;hl=en_IN" target="_blank">Play</a>, the academy&rsquo;s official legal app for officers (<strong>1K+ downloads, 5.0&#9733; from 84 reviews</strong>): <strong>offline search under 50 ms</strong> (SQLite FTS) and old-vs-new law comparison.</li>
-      </ul>
-    </div>
+<h2>Projects</h2>
 
-    <div class="job">
-      <div class="job-header">
-        <div>
-          <span class="job-company">Internships</span> &ndash; <span class="job-title">EY GDS &times; AICTE (MERN, Mar&ndash;Apr 2025) &bull; Acmegrade (Android, Nov 2023&ndash;Jan 2024)</span>
-        </div>
-        <div class="job-date">Remote</div>
-      </div>
-      <ul class="bullets">
-        <li>MERN-stack modules with REST APIs and JWT auth (EY); Java Android modules with REST and SQLite caching (Acmegrade).</li>
-      </ul>
-    </div>
-  </div>
+<div class="item">
+  <div class="row"><span class="t">LeafLens: On-Device Plant Disease Detection <span class="links">| <a href="https://github.com/gangireddymayur/leaflens">GitHub</a> &middot; <a href="https://github.com/gangireddymayur/leaflens/releases/latest">Android APK</a></span></span></div>
+  <div class="sub">PyTorch, MobileNetV3, ONNX Runtime, React, Capacitor (iOS &amp; Android)</div>
+  <ul>
+    <li>Trained a disease classifier in PyTorch, exported it to ONNX and shipped it inside an iOS and Android app that works fully offline.</li>
+    <li>The lab-trained model fell to 27% on real-world photos; retraining on mixed data lifted it to <b>69% top-1 (90% top-3)</b> on held-out photos.</li>
+  </ul>
+</div>
 
-  <!-- AI/ML PROJECTS -->
-  <div class="section">
-    <div class="section-title">AI/ML Projects (open source)</div>
-    <ul class="bullets">
-      <li><strong>LeafLens &ndash; on-device plant disease detection</strong> <a class="link-pill" href="https://github.com/gangireddymayur/leaflens" target="_blank">GitHub</a> <a class="link-pill" href="https://github.com/gangireddymayur/leaflens/releases/latest" target="_blank">Android APK</a>: trained a <strong>MobileNetV3</strong> classifier in PyTorch on PlantVillage lab photos plus real-world PlantDoc photos, exported it to <strong>ONNX</strong> and shipped it offline in an <strong>iOS and Android</strong> app. The lab-trained model fell to 27% on real-world photos; retraining lifted it to <strong>69% top-1 (90% top-3)</strong> on held-out photos.</li>
-      <li><strong>Plant Health RAG</strong> <a class="link-pill" href="https://github.com/gangireddymayur/plant-health-rag" target="_blank">GitHub</a>: question answering over 141 Wikipedia articles on Indian and US crop diseases and pests, with cited sources, using local embeddings, a <strong>Chroma</strong> vector index and a local LLM, and it refuses when the answer is not in the articles. On a 153-question test set I wrote: right passage in the top 5 for <strong>94%</strong>, <strong>92%</strong> correct answers, <strong>1 of 29</strong> unanswerable questions answered.</li>
-      <li><strong>Chhupan Chhupai &ndash; LLM agents playing hide and seek</strong> <a class="link-pill" href="https://github.com/gangireddymayur/chhupan-chhupai" target="_blank">GitHub</a> <a class="link-pill" href="https://gangireddymayur.github.io/chhupan-chhupai/" target="_blank">Demo video</a>: two local agents (<strong>qwen3 via Ollama</strong>) in an isometric village; they pick via structured JSON, remember past rounds and speak. In <strong>1,300 measured rounds</strong> the 8b hider did worse than random (found <strong>72% vs 42%</strong>), the 14b was found <strong>20% vs 80%</strong>; memory did not help.</li>
-      <li><strong>Samarth &ndash; NL-to-SQL</strong> <a class="link-pill" href="https://github.com/gangireddymayur/Samarth-theChatBot" target="_blank">GitHub</a>: rule-based engine (no LLM) for plain-English questions on government rainfall and crop data; regex intents and fuzzy matching build SQL on <strong>DuckDB</strong>, shown with every answer.</li>
-      <li><strong>Satellite Ship Detection</strong> <a class="link-pill" href="https://github.com/gangireddymayur/Ship_Detection_YOLOv8" target="_blank">GitHub</a>: <strong>YOLOv8</strong> detector trained on aerial ship imagery, with a live Streamlit app showing boxes, per-ship confidence and heatmaps.</li>
-    </ul>
-  </div>
+<div class="item">
+  <div class="row"><span class="t">Plant Health RAG: Cited Q&amp;A with Honest Refusals <span class="links">| <a href="https://github.com/gangireddymayur/plant-health-rag">GitHub</a></span></span></div>
+  <div class="sub">Python, Embeddings, Chroma, Ollama, unittest, GitHub Actions</div>
+  <ul>
+    <li>Answers questions over 141 Wikipedia articles on crop diseases with numbered citations, fully local, and refuses when the articles lack the answer.</li>
+    <li>Evaluated on a 153-question test set: the right passage ranked in the top 5 for <b>94%</b> of questions, <b>92% answer accuracy</b>, and only <b>1 of 29</b> unanswerable questions answered.</li>
+  </ul>
+</div>
 
-  <!-- SKILLS -->
-  <div class="section">
-    <div class="section-title">Technical Skills</div>
-    <div class="skills-block">
-      <div class="skill-item"><strong>Languages:</strong> Python, TypeScript, JavaScript, Java, Kotlin, SQL, Dart, C/C++</div>
-      <div class="skill-item"><strong>AI / ML:</strong> PyTorch, ONNX Runtime, XGBoost, Scikit-Learn, CNNs, Transformers, YOLOv8, OpenCV, RAG, Embeddings &amp; Vector Search, LLM Evaluation, LLM Agents, MCP, NL-to-SQL, Time-Series Modeling</div>
-      <div class="skill-item"><strong>Backend &amp; Data:</strong> Node.js, Express, FastAPI, Flask, REST APIs, PostgreSQL, MySQL, SQLite, DuckDB, Supabase, Firebase</div>
-      <div class="skill-item"><strong>Frontend &amp; Mobile:</strong> React, TanStack Start, Tailwind CSS, Android (Java, Kotlin, Jetpack Compose, Android TV), Capacitor, Flutter, iOS WidgetKit</div>
-      <div class="skill-item"><strong>Tools:</strong> Git, Docker, Linux, Postman, Android Studio, Xcode, App Store Connect, Google Play Console, Plesk, Vercel</div>
-    </div>
-  </div>
+<div class="item">
+  <div class="row"><span class="t">Chhupan Chhupai: LLM Agents Playing Hide and Seek <span class="links">| <a href="https://github.com/gangireddymayur/chhupan-chhupai">GitHub</a> &middot; <a href="https://gangireddymayur.github.io/chhupan-chhupai/">Demo video</a></span></span></div>
+  <div class="sub">JavaScript, HTML Canvas, Ollama (qwen3 8B &amp; 14B), Python, GitHub Actions</div>
+  <ul>
+    <li>Two local LLM agents choose via structured JSON, remember past rounds and speak their thoughts; the game's rules decide who sees whom.</li>
+    <li>Evaluated over <b>1,300 headless rounds</b> with 95% confidence intervals: the 8B hider was found in <b>72%</b> of rounds vs <b>42%</b> for a random hider; the 14B hider in <b>20%</b> vs <b>80%</b> for the 8B.</li>
+  </ul>
+</div>
 
-  <!-- EDUCATION -->
-  <div class="section">
-    <div class="section-title">Education &amp; Achievements</div>
-    <div class="edu-row">
-      <div>
-        <span class="edu-inst">Sphoorthy Engineering College</span> &ndash;
-        <span class="edu-deg">B.Tech, Computer Science &amp; Engineering (AI &amp; ML)</span>
-      </div>
-      <div class="edu-date">2021 &ndash; 2025 | Hyderabad</div>
-    </div>
-    <div class="achievements">
-      <div class="ach-item"><strong>Grand Finalist</strong> &ndash; Smart India Hackathon 2022 (Ministry of Education)</div>
-      <div class="ach-item"><strong>3 published apps</strong>, one with 500K+ downloads</div>
-      <div class="ach-item"><strong>micro1 Certified</strong> &ndash; Senior Mobile Developer (Nov 2026)</div>
-    </div>
-  </div>
+<h2>Technical Skills</h2>
+<div class="skills">
+  <div><b>Languages:</b> Python, TypeScript, JavaScript, Java, Kotlin, SQL, Dart</div>
+  <div><b>Machine Learning:</b> PyTorch, ONNX Runtime, XGBoost, Scikit-Learn, YOLOv8, OpenCV</div>
+  <div><b>LLMs &amp; Agents:</b> RAG, Embeddings, Vector Search, LLM Agents, LLM Evaluation, MCP, Ollama</div>
+  <div><b>Backend &amp; Data:</b> Node.js, Express, FastAPI, REST APIs, PostgreSQL, MySQL, SQLite, DuckDB, Firebase</div>
+  <div><b>Mobile &amp; Web:</b> Android (Java, Kotlin, Jetpack Compose), Capacitor, iOS WidgetKit, Flutter, React, Tailwind CSS</div>
+  <div><b>Tools:</b> Git, GitHub Actions, Docker, Linux, Xcode, Android Studio, App Store Connect, Google Play Console</div>
+</div>
+
+<h2>Education &amp; Achievements</h2>
+<div class="item">
+  <div class="row"><span class="t">Sphoorthy Engineering College, Hyderabad</span><span class="d">2021 &ndash; 2025</span></div>
+  <div class="sub">B.Tech, Computer Science &amp; Engineering (AI &amp; ML)</div>
+  <ul>
+    <li><b>Grand Finalist</b>, Smart India Hackathon 2022 (Ministry of Education)</li>
+    <li><b>micro1 Certified</b> Senior Mobile Developer (Nov 2026)</li>
+  </ul>
+</div>
 
 </body>
 </html>
